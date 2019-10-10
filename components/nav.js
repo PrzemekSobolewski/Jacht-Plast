@@ -7,25 +7,27 @@ import '../styles/navigation.module.scss'
 
 const Nav = () => (
     <Headroom style={{backgroundColor: 'white'}}>
-        <img src={logoImage} id='logoImage' className={'logo'} alt={"Logo of Jacht-Plast"}/>
+        <Link href={"/"}>
+            <img src={logoImage} id='logoImage' className={'logo'} alt={"Logo of Jacht-Plast"}/>
+        </Link>
         <ul className={'list'}>
             <li>
-                <Link>
+                <Link href={"/about_us"}>
                     <a>O nas</a>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link href={"/gallery"}>
                     <a>Galeria</a>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link href={"/transport"}>
                     <a>Transport</a>
                 </Link>
             </li>
             <li>
-                <Link>
+                <Link href={"/contact"}>
                     <a>Kontakt</a>
                 </Link>
             </li>
