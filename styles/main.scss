@@ -5,9 +5,16 @@
   src: url('../assets/fonts/Montserrat-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Montserrat-medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Montserrat-Medium.ttf');
+}
+
 body {
   margin: 0;
-  font-family: 'Montserrat', serif;
+  font-family: 'Montserrat-medium', serif;
 }
 
 @import "components.module";
