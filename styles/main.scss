@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', serif;
+}
+
+@import "components.module";
+@import "navigation.module";
+@import "contact.module";
+@import "footer.module";

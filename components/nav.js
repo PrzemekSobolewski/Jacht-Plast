@@ -2,8 +2,6 @@ import React, {useContext} from 'react';
 import Headroom from "react-headroom";
 import Link from 'next/link';
 import logoImage from '../images/logo.png';
-import {Navigation} from '../styles/navigation.style'
-import '../styles/navigation.module.scss'
 import NavigationContext from "./NavigationContext";
 
 const Nav = (props) => {

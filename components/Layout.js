@@ -2,6 +2,7 @@ import Nav from "./nav";
 import React from "react";
 import Head from "next/dist/next-server/lib/head";
 import Footer from "./footer";
+import '../styles/main.scss'
 
 const Layout = (props) => {
     return (

@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Layout from "../components/Layout";
-import '../styles/contact.module.scss';
 
 const Contact = () => (
     <Layout>
@@ -23,7 +22,7 @@ const Contact = () => (
             </div>
             <div className="google_maps">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9945.949450330274!2d20.4618076!3d51.4492078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72536c3f299847fc!2sPHUP%20JACHT-PLAST!5e0!3m2!1spl!2spl!4v1571140334742!5m2!1spl!2spl"></iframe>
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9945.949450330274!2d20.4618076!3d51.4492078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72536c3f299847fc!2sPHUP%20JACHT-PLAST!5e0!3m2!1spl!2spl!4v1571140334742!5m2!1spl!2spl"/>
             </div>
         </div>
     </Layout>

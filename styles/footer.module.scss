@@ -5,13 +5,7 @@
 }
 
 .footerList {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center();
   list-style-type: none;
   margin: auto;
   > li {
@@ -20,9 +14,8 @@
     font-size: 0.9em;
     color: black;
     transition: all 0.3s ease;
-    border-style: none solid none none;
-    border-width: 1px;
-    border-color: #DBDADD;
+    border: 1px none #DBDADD;
+    border-right-style: solid;
   }
   > li:last-child {
     border-style: none;
@@ -34,10 +27,7 @@
   transition: all 0.3s ease;
   > a {
     text-decoration: none;
-    color: black;
-  }
-  > a:hover {
-    color: #3f89a2;
+    color: inherit;
   }
 }
 
