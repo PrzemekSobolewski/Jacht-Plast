@@ -1,6 +1,7 @@
 import Nav from "./nav";
 import React from "react";
 import Head from "next/dist/next-server/lib/head";
+import Footer from "./footer";
 
 const Layout = (props) => {
     return (
@@ -11,6 +12,7 @@ const Layout = (props) => {
             </Head>
             <Nav/>
             {props.children}
+            <Footer/>
         </div>
     )
 };

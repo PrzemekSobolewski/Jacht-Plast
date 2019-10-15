@@ -34,12 +34,12 @@ body {
 }
 .list {
   justify-content: space-between;
+  padding-right: 10em;
 }
 
-ul {
+.list {
   list-style-type: none;
   display: flex;
-  padding-right: 10em;
   align-items: center;
   > li {
     text-decoration: none;
