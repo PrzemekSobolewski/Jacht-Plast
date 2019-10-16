@@ -1,0 +1,31 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation {
+  animation-duration: 1s; /* the duration of the animation */
+  animation-timing-function: ease; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 2; /* how many times the animation will play */
+  animation-name: fadeIn; /* the name of the animation we defined above */
+  -webkit-animation-duration: 1s; /* the duration of the animation */
+  -webkit-animation-timing-function: ease; /* how the animation will behave */
+  -webkit-animation-delay: 0s; /* how long to delay the animation from starting */
+  -webkit-animation-iteration-count: 2; /* how many times the animation will play */
+  -webkit-animation-name: fadeIn; /* the name of the animation we defined above */
+}
+
+.thumbnail {
+  background: rgba(0,0,0,0.3);
+  height: inherit;
+  width: inherit;
+  animation: fadeIn 1s;
+}
+
+.gallery {
+  margin: 2em;
+}

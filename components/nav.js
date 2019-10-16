@@ -18,8 +18,8 @@ const Nav = (props) => {
                         O nas
                     </li>
                 </Link>
-                <Link href={"/galle"}>
-                    <li onClick={() => setRoute('/gallery')} className={route === '/gallery' ? 'pressed' : ''}>
+                <Link href={"/library"}>
+                    <li onClick={() => setRoute('/library')} className={route === '/library' ? 'pressed' : ''}>
                         Galeria
                     </li>
                 </Link>

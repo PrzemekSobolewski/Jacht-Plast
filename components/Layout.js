@@ -6,10 +6,10 @@ import '../styles/main.scss'
 
 const Layout = (props) => {
     return (
-        <div>
+        <div className={'container'}>
             <Head>
                 <title>Jacht-Plast</title>
-                <link rel='icon' href='/favicon.ico'/>
+                <link rel='icon' href='../assets/images/logo.png'/>
             </Head>
             <Nav/>
             {props.children}

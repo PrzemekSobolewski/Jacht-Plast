@@ -4,6 +4,7 @@
   right: 0;
   zIndex: 1;
   display: flex;
+  filter: drop-shadow(2px 0px 10px rgba(0,0,0,0.4))
 }
 .headroom--unfixed {
   display: flex;

@@ -15,9 +15,15 @@
 body {
   margin: 0;
   font-family: 'Montserrat-medium', serif;
+  display: grid;
+}
+
+.container {
+  display: grid;
 }
 
 @import "components.module";
 @import "navigation.module";
 @import "contact.module";
 @import "footer.module";
+@import "library.module";
