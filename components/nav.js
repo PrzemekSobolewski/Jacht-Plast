@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import Headroom from "react-headroom";
 import Link from 'next/link';
-import logoImage from '../images/logo.png';
+import logoImage from '../assets/images/logo.png';
 import NavigationContext from "./NavigationContext";
 
 const Nav = (props) => {
@@ -18,7 +18,7 @@ const Nav = (props) => {
                         O nas
                     </li>
                 </Link>
-                <Link href={"/gallery"}>
+                <Link href={"/galle"}>
                     <li onClick={() => setRoute('/gallery')} className={route === '/gallery' ? 'pressed' : ''}>
                         Galeria
                     </li>
