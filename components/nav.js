@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useEffect, useContext} from 'react';
 import Headroom from "react-headroom";
 import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
@@ -6,6 +6,9 @@ import NavigationContext from "./NavigationContext";
 
 const Nav = (props) => {
     const [route, setRoute] = useContext(NavigationContext);
+    useEffect(() => {
+        setRoute(window.location.pathname);
+    }, []);
     return (
         <Headroom style={{backgroundColor: 'white'}}>
             <Link href={"/"}>

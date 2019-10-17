@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import NavigationContext from '../components/NavigationContext'
-const window = require("global/window");
 
 const MyApp = ({ Component, pageProps }) => {
     const [route, setRoute] = useState('/');

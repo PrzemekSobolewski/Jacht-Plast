@@ -1,51 +1,58 @@
 import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
-import Carousel, { Modal, ModalGateway } from 'react-images'
-
+import Carousel, {Modal, ModalGateway} from 'react-images'
 
 function importAll(r) {
     return r.keys().map(r);
 }
+
 const images = importAll(require.context('../assets/images/boats/', false, /\.(png|jpe?g|svg)$/));
 
 const Library = () => {
-    const [rowHeight, setRowHeight] = useState(250);
-    const [lightboxIsOpen, setlightboxIsOpen] = useState(true);
+    const [lightboxIsOpen, setlightboxIsOpen] = useState(false);
     const [number, setNumber] = useState(0);
-    let readyImages = images.map( i => {
+    let readyImages = images.map(i => {
         return {
-            src: i,
-            thumbnail: i,
-            thumbnailWidth: 370,
-            thumbnailHeight: 200,
-            customOverlay: <div className={'thumbnail'} />
+            src: i
         }
     });
 
-    useEffect(() => {
-        if(window.innerWidth <= 800)
-            setRowHeight(100);
-    }, []);
+    const openLightBox = (j) => {
+        console.log(number);
+        setNumber(j);
+        setlightboxIsOpen(true)
+    };
 
+    const mapToImage = (i, j) => {
+        return (
+            <Images key={j}>
+                <img className={"image"} src={i} onClick={() => openLightBox(j)}/>
+            </Images>)
+    };
     return (
         <Layout>
-            <Gallery >
-                {images.map((i) => (
-                    <Images onClick={function(){setNumber(i); setlightboxIsOpen(true)}}>
-                        <img className={"image"} src={i}/>
-                    </Images>
-
-                ))}
-            </Gallery>
-            <ModalGateway>
-                {lightboxIsOpen ? (
-                    <Modal onClose={setlightboxIsOpen(false)}>
-                        <Carousel
-                            currentIndex={number}
-                            views={readyImages}/>
-                    </Modal>
-                ): null}
-            </ModalGateway>
+            <div className={'gallery'}>
+                <Gallery>
+                    {images.map(mapToImage)}
+                </Gallery>
+                <ModalGateway>
+                    {lightboxIsOpen ? (
+                        <Modal onClose={() => setlightboxIsOpen(false)}>
+                            <Carousel
+                                currentIndex={number}
+                                views={readyImages}
+                                frameProps = {{
+                                    autoSize : 'height'
+                                }}
+                                autoSize={ {
+                                    width: 2000,
+                                    height: 500
+                                }}
+                            />
+                        </Modal>
+                    ) : null}
+                </ModalGateway>
+            </div>
         </Layout>
     );
 
@@ -54,14 +61,14 @@ const Library = () => {
 export default Library
 const Gallery = (props) => {
     return (
-      <div className={"gallery"}
-          css={{
-              overflow: 'hidden',
-              marginLeft: -gutter,
-              marginRight: -gutter,
-          }}>
-          {props.children}
-      </div>
+        <div className={"gallery"}
+             css={{
+                 overflow: 'hidden',
+                 marginLeft: -gutter,
+                 marginRight: -gutter,
+             }}>
+            {props.children}
+        </div>
     );
 };
 const gutter = 2;

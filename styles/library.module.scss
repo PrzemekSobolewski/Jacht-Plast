@@ -1,47 +1,28 @@
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.animation {
-  animation-duration: 1s; /* the duration of the animation */
-  animation-timing-function: ease; /* how the animation will behave */
-  animation-delay: 0s; /* how long to delay the animation from starting */
-  animation-iteration-count: 2; /* how many times the animation will play */
-  animation-name: fadeIn; /* the name of the animation we defined above */
-  -webkit-animation-duration: 1s; /* the duration of the animation */
-  -webkit-animation-timing-function: ease; /* how the animation will behave */
-  -webkit-animation-delay: 0s; /* how long to delay the animation from starting */
-  -webkit-animation-iteration-count: 2; /* how many times the animation will play */
-  -webkit-animation-name: fadeIn; /* the name of the animation we defined above */
-}
-
 .thumbnail {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   height: inherit;
   width: inherit;
   animation: fadeIn 1s;
 }
 
 .gallery {
-  margin: 1em;
-}
-.image {
-  background: rgba(0,0,0,0.3);
-  box-sizing: border-box;
-  float: left;
-  margin: 2px;
-  overflow: hidden;
-  position: relative;
-  width: 350px;
-  height: 200px;
-  animation: fadeIn 1s;
+  margin: 2em;
+  @include flex-center();
+  flex-wrap: wrap;
 }
 
-.image:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.image {
+  margin: 0.5em;
+  width: 350px;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    filter: brightness(0.7);
+  }
 }
+
+
