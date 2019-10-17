@@ -27,5 +27,21 @@
 }
 
 .gallery {
-  margin: 2em;
+  margin: 1em;
+}
+.image {
+  background: rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  float: left;
+  margin: 2px;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  height: 200px;
+  animation: fadeIn 1s;
+}
+
+.image:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }
