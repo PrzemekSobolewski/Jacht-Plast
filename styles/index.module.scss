@@ -1,0 +1,44 @@
+.bg {
+  height: 1000px;
+}
+.bgContainer {
+  @include flex-center();
+  flex-direction: column;
+  height: 600px;
+}
+.bgText {
+  color: white;
+  font-size: 5em;
+  filter: drop-shadow(1px 1px 5px #000);
+}
+.bgButtonContainer {
+  position: relative;
+  width: 100%;
+  @include flex-center();
+  >.bgButton {
+    position: absolute;
+    font-size: 1.5em;
+    margin-top: 5em;
+    padding: 1em 3em;
+    filter: drop-shadow(1px 1px 5px #000);
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+
+  >.bgButton2 {
+    @extend .bgButton;
+    background: white;
+    color: black;
+    clip-path: circle(100% at -80% 50%);
+    z-index: 2;
+    transition: clip-path 0.5s ease-in-out;
+  }
+}
+
+.bgButtonContainer:hover {
+  .bgButton2 {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+

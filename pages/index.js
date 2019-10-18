@@ -2,9 +2,24 @@ import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Layout from "../components/Layout";
+import { Parallax } from "react-parallax";
+import jacht from '../assets/images/slider-jachty-2-2560x12002.png'
 
 const Home = () => (
     <Layout>
+        <Parallax bgImage={jacht} strength={600} bgImageStyle={'bg'}>
+            <div className={'bgContainer'}>
+                <div className={'bgText'}>JACHT-PLAST</div>
+                <div className={'bgButtonContainer'}>
+                    <div className={'bgButton2'}>
+                        Czytaj dalej
+                    </div>
+                    <div className={'bgButton'}>
+                        Czytaj dalej
+                    </div>
+                </div>
+            </div>
+        </Parallax>
         <div className={"about_us_div"} style={{height: 1000, backgroundColor: 'gray'}}>
             <h3>Firma ,,JACHT – PLAST” zajmuje się budową jachtów żaglowych i motorowych.Od wielu lat jesteśmy głównym
                 wykonawcą marki ,,TES” . Jachty przez nas wykonane charakteryzują się ciekawą zabudową
