@@ -20,7 +20,7 @@ const Home = () => (
                 </div>
             </div>
         </Parallax>
-        <div className={"about_us_div"} style={{height: 1000, backgroundColor: 'gray'}}>
+        <div className={"about_us_div"} style={{height: 1000, backgroundColor: 'white'}}>
             <h3>Firma ,,JACHT – PLAST” zajmuje się budową jachtów żaglowych i motorowych.Od wielu lat jesteśmy głównym
                 wykonawcą marki ,,TES” . Jachty przez nas wykonane charakteryzują się ciekawą zabudową
                 wnętrza,zapewniają komfort i wygodę na miarę potrzeb każdego klienta. Nasze jednostki spełniają wymagane
