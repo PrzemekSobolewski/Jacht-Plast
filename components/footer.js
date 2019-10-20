@@ -1,7 +1,5 @@
 import React from 'react';
 import {FaFacebookSquare} from "react-icons/fa";
-import {FaAngleUp} from "react-icons/fa";
-import {ScrollTo} from "react-scroll-to";
 import Link from "next/dist/client/link";
 
 const Footer = () => {
@@ -33,7 +31,7 @@ const Footer = () => {
                             O nas
                         </div>
                     </Link>
-                    <Link href={"/"}>
+                    <Link href={"/production"}>
                         <div className={'sites'}>
                             Produkcja
                         </div>
@@ -56,12 +54,12 @@ const Footer = () => {
                 </li>
                 <li>
                     <h4 className={'header'}>Odwiedź nasz profil na Facebooku!</h4>
-                    <li id={"fb_icon"}>
+                    <div id={"fb_icon"}>
                         <a href={"https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685/"}
                            target={'_white'}>
                             <FaFacebookSquare/>
                         </a>
-                    </li>
+                    </div>
                 </li>
             </ul>
         </div>

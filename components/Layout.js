@@ -12,7 +12,7 @@ const Layout = (props) => {
             <div className={'container'}>
                 <Head>
                     <title>Jacht-Plast</title>
-                    <link rel='icon' href='../assets/images/logo.png'/>
+                    <link rel="shortcut icon" type="image/x-icon" href='../public/icon.png'/>
                 </Head>
                 <Nav/>
                 {props.children}
