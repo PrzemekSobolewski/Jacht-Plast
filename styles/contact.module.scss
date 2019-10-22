@@ -1,46 +1,57 @@
 .contact_div {
-  justify-content: center;
-  align-items: center;
+position: relative;
+}
+.mail_data_div {
+  display: flex;
+  margin-bottom: 3em;
 }
 .contact_data {
-  text-align: center;
+  text-align: left;
+  margin-left: 10em;
 }
-.mail_map_div {
-  margin-top: 3em;
-  display: flex;
+.map_div {
+  position: inherit;
+  bottom: 0px;
+  width: 100%;
 }
 .google_maps {
-  width: 40em;
+  width: 100%;
   height: inherit;
-  position: absolute;
-  right: 10em;
 }
 .mail_form {
   display: block;
-  margin-left: 10em;
+  position: absolute;
+  margin-top: 2em;
+  right: 10em;
   width: 30em;
   > input {
+    font-family: 'Montserrat-medium', serif;
+    border-color: gray;
     width: 30em;
     height: 2em;
     padding: 2px;
     margin-bottom: 1em;
     border-radius: 10px;
-    border-style: none;
+    border-style: solid;
   }
   > input:focus {
     outline-style: none ;
-    filter: drop-shadow(3px 3px rgba(63, 137, 162, 1));
+    border-color: #3f89a2;
   }
   > textarea {
+    padding: 4px 2px;
+    font-family: 'Montserrat-medium', serif;
+    border-color: gray;
+    border-width: 2px;
+    border-style: solid;
     width: 30em;
     height: 20em;
     border-radius: 10px;
-    border-style: none;
     box-shadow: none;
   }
   > textarea:focus {
     outline-style: none ;
-    filter: drop-shadow(3px 3px rgba(63, 137, 162, 1));
+    border-color: #3f89a2;
   }
 }
 

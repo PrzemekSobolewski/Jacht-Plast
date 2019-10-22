@@ -39,33 +39,26 @@ const Production = () => {
 
     let list = data.map(i => {
         return (
-            <div onClick={() => openExpand(i)} className={'expandButton'}>
-                {i.title}
+            <div onClick={() => openExpand(i)} className={'expandButton'} style={{display: 'block'}}>
+                <img src={i.photo} width={'200px'} height={'200px'}/>
+                <div>{i.name}</div>
+                <Expand open={i.open}
+                        duration={1000}>
+                    <div>
+                        <div>{i.desc}</div>
+                    </div>
+                </Expand>
             </div>
         )
     });
 
-    let content = data.map(i => {
-        return (
-            <Expand open={i.open}
-                    duration={1000}>
-                <div style={{display: "flex"}}>
-                    <img src={i.photo}/>
-                    <div>{i.desc}</div>
-                </div>
-            </Expand>
-        )
-    });
     return (
         <Layout>
             <div className={"production"} style={{height: 1000}}>
-                <div className={"list_div"}>
+                <div className={"list_div"} style={{display: 'flex'}}>
                     {list}
                 </div>
 
-                <div className={"content_div"}>
-                    {content}
-                </div>
             </div>
         </Layout>
     )

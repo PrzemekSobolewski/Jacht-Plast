@@ -1,7 +1,9 @@
 .expandButton {
+  display: block;
   background: white;
   width: 10em;
   height: 5em;
+  margin: 3em;
 }
 
 .expandButton:hover {
@@ -22,7 +24,6 @@
   transform-origin: left;
 }
 .list_div {
-  margin-top: 3em;
   font-size: 20px;
 }
 .production {
