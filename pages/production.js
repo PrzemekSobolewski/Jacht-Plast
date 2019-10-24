@@ -39,14 +39,13 @@ const Production = () => {
 
     let list = data.map(i => {
         return (
-            <div onClick={() => openExpand(i)} className={'expandButton'} style={{display: 'block'}}>
+            <div onClick={() => openExpand(i)} className={i.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}  >
                 <img src={i.photo} width={'200px'} height={'200px'}/>
-                <div>{i.name}</div>
+                {i.title}
                 <Expand open={i.open}
+                        className={'expand'}
                         duration={1000}>
-                    <div>
-                        <div>{i.desc}</div>
-                    </div>
+                    <div>{i.desc}</div>
                 </Expand>
             </div>
         )

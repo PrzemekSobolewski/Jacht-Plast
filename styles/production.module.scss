@@ -1,27 +1,36 @@
 .expandButton {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px;
   display: block;
   background: white;
   width: 10em;
-  height: 5em;
+  height: 11em;
   margin: 3em;
+  transition-property: border-bottom, border-bottom-left-radius, border-bottom-right-radius;
+  transition-duration: 4.5s;
 }
+
 
 .expandButton:hover {
   cursor: pointer;
 }
-.expandButton::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #3f89a2;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform .5s;
+
+.openedExpand {
+  border-bottom:none;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
 }
-.expandButton:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+
+.expand {
+  width: 11em;
+  margin-left: -0.55em;
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
 }
 .list_div {
   font-size: 20px;
