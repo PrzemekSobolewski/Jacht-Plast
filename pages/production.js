@@ -76,9 +76,9 @@ const Production = () => {
     const [number, setNumber] = useState(0);
 
     const openLightBox = (j) => {
-        console.log(number);
         setNumber(j);
         setlightboxIsOpen(true)
+        console.log(number);
     };
 
     const openExpand = (element) => {
@@ -103,6 +103,7 @@ const Production = () => {
                         className={'expand'}
                         duration={1000}>
                         <div>{i.desc}</div>
+                    <div className={"expandImages"}>
                     {i.photo.map(j =>{
                         return (
                             <Images key={j}>
@@ -110,6 +111,7 @@ const Production = () => {
                             </Images>
                         )
                     })}
+                    </div>
                     <ModalGateway>
                         {lightboxIsOpen ? (
                             <Modal onClose={() => setlightboxIsOpen(false)}>

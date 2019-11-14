@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
 import Carousel, {Modal, ModalGateway} from 'react-images'
+import Images from '../components/Images'
+import Gallery from '../components/Gallery'
 
 function importAll(r) {
     return r.keys().map(r);
@@ -18,9 +20,9 @@ const Library = () => {
     });
 
     const openLightBox = (j) => {
-        console.log(number);
         setNumber(j);
         setlightboxIsOpen(true)
+        console.log(number);
     };
 
     const mapToImage = (i, j) => {
@@ -59,25 +61,5 @@ const Library = () => {
 
 };
 export default Library
-const Gallery = (props) => {
-    return (
-        <div className={"gallery"}
-             css={{
-                 overflow: 'hidden',
-                 marginLeft: -gutter,
-                 marginRight: -gutter,
-             }}>
-            {props.children}
-        </div>
-    );
-};
-const gutter = 2;
-const Images = (props) => {
-    return (
-        <div>
-            {props.children}
-        </div>
-    );
-};
 
 

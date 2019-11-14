@@ -1,0 +1,37 @@
+.transportText {
+  font-weight: bold;
+  padding: 1em 2em 1em 2em;
+}
+.transportLine {
+  margin: 1em 1em 3em 1em;
+  border: 1px none;
+  border-top-style: solid;
+  text-align: center;
+}
+.transportIcon {
+  position: absolute;
+  margin-top: -0.5em;
+  color: black;
+  background: white;
+  font-size: 3em;
+}
+.transportIcon:hover {
+  cursor: pointer;
+  color: #3f89a2;
+  transform: scale(1.1);
+}
+
+.transportIconActive {
+  position: absolute;
+  margin-top: -0.775em;
+  color: black;
+  background: white;
+  font-size: 3em;
+  transform: rotate(180deg);
+}
+
+.transportIconActive:hover {
+  transform: scale(1.1) rotate(180deg);
+  cursor: pointer;
+  color: #3f89a2;
+}
