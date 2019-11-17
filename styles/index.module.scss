@@ -43,9 +43,28 @@
 }
 
 .about_us_div {
-  font-weight: bold;
+  @include flex-center;
+  @include flex-direction(column);
+  margin: auto;
+  width: 70%;
   padding: 2em;
   color: black;
-  font-size: 1.3em
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+.about_us_first {
+  @include flex-center;
+}
+.about_us_logo {
+    width: 12em;
+    height: 12em;
+  margin-left: 4em;
+}
+
+.about_us_photo {
+  width: 12em;
+  height: 12em;
+  margin: 0 2em;
 }
 

@@ -1,5 +1,6 @@
 .transportText {
-  font-weight: bold;
+  @include flex-center();
+  @include flex-direction(column);
   padding: 1em 2em 1em 2em;
 }
 .transportLine {
@@ -18,20 +19,40 @@
 .transportIcon:hover {
   cursor: pointer;
   color: #3f89a2;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .transportIconActive {
-  position: absolute;
-  margin-top: -0.775em;
-  color: black;
-  background: white;
-  font-size: 3em;
+  @extend  .transportIcon;
   transform: rotate(180deg);
+  margin-top: -0.775em;;
 }
 
 .transportIconActive:hover {
   transform: scale(1.1) rotate(180deg);
   cursor: pointer;
   color: #3f89a2;
+}
+
+.transportList {
+  @include flex-center();
+  @include flex-direction(column);
+  list-style: none;
+  li {
+    @include flex-center();
+    padding: .1em 1em 0.1em 1em;
+    margin: 0.6em 0;
+    background: #eee;
+    filter:drop-shadow(1px 2px 4px #aaa);
+  }
+}
+
+.checkmark {
+  font-size: 4em;
+  color: green;
+}
+
+.underList {
+  text-align: center;
+  width: 70%
 }
