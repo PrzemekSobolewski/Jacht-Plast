@@ -5,29 +5,18 @@ import Layout from "../components/Layout";
 import ReactContactForm from 'react-mail-form';
 import axios from 'axios';
 
+
 const Contact = () => {
     function handleSubmit(e){
         e.preventDefault();
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         const subject = document.getElementById('subject').value;
-        axios({
-            method: "POST",
-            url:"http://localhost:3000/send",
-            data: {
-                name: "cos",
-                email: email,
-                subject: subject,
-                message: message
-            }
-        }).then((response)=>{
-            if (response.data.msg === 'success'){
-                alert("Message Sent.");
-                resetForm();
-            }else if(response.data.msg === 'fail'){
-                alert("Message failed to send.")
-            }
-        })
+        /*const form = await axios.post('/api/form', {
+            email,
+            message,
+            subject
+        })*/
     }
 
     function resetForm(){
@@ -52,10 +41,10 @@ const Contact = () => {
                         jachtplast@gmail.com<br/>
                     </div>
                     <div className={"mail_form"}>
-                        <form id="contact-form" onSubmit={handleSubmit.bind(this)} method="POST">
+                        <form id="contact-form" method="POST" action="../../server/app.js" role={'form'}>
                             <input placeholder={"Email"} type={"text"} name={"email"} id={'email'} className={""}/>
                             <input placeholder={"Temat"} type={"text"} name={"subject"} id={'subject'} className={""}/>
-                            <textarea placeholder={"Wiadomość"} className={"message"} id={'message'}> </textarea>
+                            <textarea placeholder={"Wiadomość"} className={"message"} id={'message'} name={"message"}> </textarea>
                             <button type="submit" className="btn btn-primary">Wyślij</button>
                         </form>
                     </div>
