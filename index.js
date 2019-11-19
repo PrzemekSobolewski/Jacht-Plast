@@ -19,7 +19,7 @@ app.post('/api/form', (req, res) => {
         secure: true,
         auth: {
             user: "przemus212@gmail.com",
-            pass: ""
+            pass: "..."
         },
         tls: {
             rejectUnauthorized: false
