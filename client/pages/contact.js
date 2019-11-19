@@ -1,47 +1,48 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Layout from "../components/Layout";
 import axios from 'axios';
 
 const Contact = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [subject, setSubject] = useState('');
 
-    let handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const subject = document.getElementById('subject').value;
-
         const instance = axios.create({
-            baseURL:"http://localhost:8080",
+            baseURL: "http://localhost:8080",
         });
-        if(!((name.trim().length || email.trim().length || subject.trim().length) === 0)) {
-            instance.post('/api/form', {
+        if (!((name.trim().length || email.trim().length || subject.trim().length) === 0)) {
+            let response = await instance.post('/api/form', {
                 name: name,
                 email: email,
                 subject: subject,
                 message: message
-            }).then((response) => {
-                if (response.data.msg === 'success') {
-                    alert("Message Sent.");
-                    resetForm();
-                } else if (response.data.msg === 'fail') {
-                    alert("Message failed to send.")
-                }
-            })
-        }else {
+            });
+            if (response.data.msg === 'success') {
+                alert("Message Sent.");
+                resetForm();
+            } else if (response.data.msg === 'fail') {
+                alert("Message failed to send.")
+            }
+        } else {
             alert("Przed wysłaniem wiadomości wypełnij wszystkie pola");
         }
     };
 
-    function resetForm(){
-        document.getElementById('contact-form').reset();
-    }
+    const resetForm = () => {
+        setName('');
+        setMessage('');
+        setSubject('');
+        setEmail('');
+    };
 
-    return(
+    return (
         <Layout>
             <div className={"contact_div"}>
                 <div className={"mail_data_div"}>
-                    <div className={"contact_data"} style={{padding: 4}}>
+                    <div className={"contact_data"}>
                         <h1>Jacht-Plast</h1>
                         <h2>Zdzisław Sobolewski</h2>
 
@@ -56,10 +57,14 @@ const Contact = () => {
                     </div>
                     <div className={"mail_form"}>
                         <form id="contact-form" method="POST" role={'form'} onSubmit={handleSubmit}>
-                            <input placeholder={"Imię i nazwisko"} type={"text"} name={"name"} id={'name'} className={""}/>
-                            <input placeholder={"Email"} type={"text"} name={"email"} id={'email'} className={""}/>
-                            <input placeholder={"Temat"} type={"text"} name={"subject"} id={'subject'} className={""}/>
-                            <textarea defaultValue={"Wiadomość"} className={"message"} id={'message'} name={"message"}/>
+                            <input placeholder={"Imię i nazwisko"} type={"text"} name={"name"} id={'name'}
+                                   className={""} value={name} onChange={e => setName(e.target.value)}/>
+                            <input placeholder={"Email"} type={"text"} name={"email"} id={'email'} className={""}
+                                   value={email} onChange={e => setEmail(e.target.value)}/>
+                            <input placeholder={"Temat"} type={"text"} name={"subject"} id={'subject'} className={""}
+                                   value={subject} onChange={e => setSubject(e.target.value)}/>
+                            <textarea className={"message"} id={'message'} name={"message"} value={message}
+                                      onChange={e => setMessage(e.target.value)}/>
                             <button type="submit" className="submitButton">Wyślij</button>
                         </form>
                     </div>

@@ -1,9 +1,9 @@
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -12,23 +12,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.post('/api/form', (req, res) => {
-    console.log(req.body);
     const transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        port: 587,
         auth: {
-            user: "przemus212@gmail.com",
+            user: "konradsob12@gmail.com",
             pass: "..."
         },
+        secureConnection: 'false',
         tls: {
+            ciphers: 'SSLv3',
             rejectUnauthorized: false
         }
     });
-    let name = req.body.name;
-    let email = req.body.email;
-    let message = req.body.message;
-    let subject = req.body.subject;
+
+    let {name, email, message, subject} = req.body;
 
     const htmlDetails = `
         <h2>Wiadomość ze strony JachtPlast</h2>
@@ -40,26 +38,19 @@ app.post('/api/form', (req, res) => {
 
     const mail = {
         from: email,
-        to: "przemus212@gmail.com",  //Change to email address that you want to receive messages on
+        to: "konradsob12@gmail.com",  //Change to email address that you want to receive messages on
         replyTo: email,
         subject: subject,
         text: message,
         html: htmlDetails
     };
 
-    console.log(mail);
     transport.sendMail(mail, (err, response) => {
         if (err) {
             console.log(err);
-            res.json({
-                msg: 'fail'
-            })
+            res.json({msg: 'fail'})
         } else {
-            res.json({
-                msg: 'success'
-            });
-            console.log(2);
-            res.render('contact')
+            res.json({msg: 'success'});
         }
     })
 });

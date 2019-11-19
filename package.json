@@ -19,6 +19,7 @@
   "bugs": {
     "url": "https://github.com/PrzemekSobolewski/Jacht-Plast/issues"
   },
+  "preinstall": "rm package-lock.json",
   "homepage": "https://github.com/PrzemekSobolewski/Jacht-Plast#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
