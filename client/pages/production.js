@@ -106,8 +106,8 @@ const Production = () => {
                     <div className={"expandImages"}>
                     {i.photo.map(j =>{
                         return (
-                            <Images key={j}>
-                                <img className={'productionImage'} src={j} width={'200px'} height={'200px'} onClick={() => openLightBox(j)}/>
+                            <Images key={number+1}>
+                                <img className={'productionImage'} src={j} width={'200px'} height={'200px'} onClick={() => openLightBox(number+1)}/>
                             </Images>
                         )
                     })}
