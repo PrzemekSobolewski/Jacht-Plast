@@ -1,23 +1,37 @@
 import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
 import Layout from "../components/Layout";
-import ReactContactForm from 'react-mail-form';
 import axios from 'axios';
 
-
 const Contact = () => {
-    function handleSubmit(e){
+
+    let handleSubmit = async (e) => {
         e.preventDefault();
+        const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
         const subject = document.getElementById('subject').value;
-        /*const form = await axios.post('/api/form', {
-            email,
-            message,
-            subject
-        })*/
-    }
+
+        const instance = axios.create({
+            baseURL:"http://localhost:8080",
+        });
+        if(!((name.trim().length || email.trim().length || subject.trim().length) === 0)) {
+            instance.post('/api/form', {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            }).then((response) => {
+                if (response.data.msg === 'success') {
+                    alert("Message Sent.");
+                    resetForm();
+                } else if (response.data.msg === 'fail') {
+                    alert("Message failed to send.")
+                }
+            })
+        }else {
+            alert("Przed wysłaniem wiadomości wypełnij wszystkie pola");
+        }
+    };
 
     function resetForm(){
         document.getElementById('contact-form').reset();
@@ -41,11 +55,12 @@ const Contact = () => {
                         jachtplast@gmail.com<br/>
                     </div>
                     <div className={"mail_form"}>
-                        <form id="contact-form" method="POST" action="../../server/app.js" role={'form'}>
+                        <form id="contact-form" method="POST" role={'form'} onSubmit={handleSubmit}>
+                            <input placeholder={"Imię i nazwisko"} type={"text"} name={"name"} id={'name'} className={""}/>
                             <input placeholder={"Email"} type={"text"} name={"email"} id={'email'} className={""}/>
                             <input placeholder={"Temat"} type={"text"} name={"subject"} id={'subject'} className={""}/>
-                            <textarea placeholder={"Wiadomość"} className={"message"} id={'message'} name={"message"}> </textarea>
-                            <button type="submit" className="btn btn-primary">Wyślij</button>
+                            <textarea defaultValue={"Wiadomość"} className={"message"} id={'message'} name={"message"}/>
+                            <button type="submit" className="submitButton">Wyślij</button>
                         </form>
                     </div>
                 </div>
@@ -59,4 +74,5 @@ const Contact = () => {
         </Layout>
     );
 };
-export default Contact
+
+export default Contact;

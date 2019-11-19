@@ -2,19 +2,19 @@
   "name": "yacht-plast",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm start server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PrzemekSobolewski/Jacht-Plast.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Przemek Sobolwski",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/PrzemekSobolewski/Jacht-Plast/issues"
