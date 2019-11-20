@@ -1,59 +1,84 @@
 .contact_div {
-position: relative;
+  position: relative;
 }
-#contact-form {
-  display: block;
+
+.contact-form {
+  @include flex-direction(column);
+  justify-content: flex-end;
+  align-items: flex-end;
 }
+
 .mail_data_div {
   display: flex;
-  margin-bottom: 4em;
+  justify-content: space-between;
 }
+
 .contact_data {
   text-align: left;
   margin-left: 10em;
   padding: 5px;
 }
+
 .map_div {
-  position: inherit;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
+
 .google_maps {
   width: 100%;
-  height: inherit;
 }
+
 .mail_form {
   display: block;
-  position: absolute;
-  margin-top: 1em;
-  right: 10em;
+  margin-top: 2em;
+  margin-right: 15em;
   width: 30em;
   > form {
     > input {
       font-family: 'Montserrat-medium', serif;
       width: 30em;
       height: 2em;
-      padding: 2px;
+      padding: 1em;
       margin-bottom: 1em;
-      border-radius: 10px;
+      border-radius: 2px;
       border: 2px solid gray;
     }
     > input:focus {
-      outline-style: none ;
+      outline-style: none;
       border-color: #3f89a2;
     }
     > textarea {
-      padding: 4px 2px;
+      padding: 1em;
       font-family: 'Montserrat-medium', serif;
       border: 2px solid gray;
       width: 30em;
       height: 18em;
-      border-radius: 10px;
+      border-radius: 2px;
       box-shadow: none;
     }
     > textarea:focus {
       outline-style: none;
       border-color: #3f89a2;
+    }
+    > .submitButton {
+      text-align: center;
+      font-family: 'Montserrat-medium', serif;
+      margin: 1em 0 4em 1em;
+      padding: 1em;
+      width: 13em;
+      border-radius: 2px;
+      border: 2px solid gray;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+    .submitButton:hover {
+      cursor: pointer;
+      color: white;
+      background: #3f89a2;
+      border-color: #3f89a2;
+    }
+    .submitButton:focus {
+      outline-style: none;
     }
   }
 }
@@ -63,24 +88,4 @@ iframe {
   height: calc(22em + 6px);
   border-style: none;
   border-radius: 10px;
-}
-
-.submitButton {
-  position: absolute;
-  bottom: 0.3em;
-  margin-left: 1em;
-  text-align: center;
-  font-family: 'Montserrat-medium', serif;
-  width: 5.5em;
-  height: 2.5em;
-  border-radius: 10px;
-  border: 2px solid gray;
-  background-color: white;
-}
-.submitButton:hover {
-  cursor: pointer;
-  border-color: #3f89a2;
-}
-.submitButton:focus {
-  outline-style: none;
 }
