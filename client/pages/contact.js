@@ -1,12 +1,30 @@
 import React, {useState} from 'react'
 import Layout from '../components/Layout';
 import axios from 'axios';
+import {BounceLoader} from 'react-spinners';
+import { css } from '@emotion/core';
 
 const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [subject, setSubject] = useState('');
+    const [loading, setLoading] = useState(true);
+
+    const hideLoading = () => {
+        setLoading(false);
+    };
+
+    const spinnerStyle = css`
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        margin: auto;
+    `;
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,7 +74,8 @@ const Contact = () => {
                         jachtplast@gmail.com<br/>
                     </div>
                     <div className={'mail_form'}>
-                        <form id='contact-form' className={'contact-form'} method='POST' role={'form'} onSubmit={handleSubmit}>
+                        <form id='contact-form' className={'contact-form'} method='POST' role={'form'}
+                              onSubmit={handleSubmit}>
                             <input placeholder={'Imię i nazwisko'} type={'text'} name={'name'} id={'name'}
                                    value={name} onChange={e => setName(e.target.value)}/>
                             <input placeholder={'Email'} type={'text'} name={'email'} id={'email'}
@@ -70,10 +89,23 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className={'map_div'}>
+                    {loading ?
+                        (<BounceLoader
+                            css={spinnerStyle}
+                            className={"spinner"}
+                            sizeUnit={"px"}
+                            size={100}
+                            color={'#3f89a2'}
+                            loading={true}
+                        />) : null
+                    }
                     <div className='google_maps'>
                         <iframe
-                            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9945.949450330274!2d20.4618076!3d51.4492078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72536c3f299847fc!2sPHUP%20JACHT-PLAST!5e0!3m2!1spl!2spl!4v1571140334742!5m2!1spl!2spl'/>
+                            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9945.949450330274!2d20.4618076!3d51.4492078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72536c3f299847fc!2sPHUP%20JACHT-PLAST!5e0!3m2!1spl!2spl!4v1571140334742!5m2!1spl!2spl'
+                            onLoad={hideLoading}
+                        />
                     </div>
+
                 </div>
             </div>
         </Layout>
