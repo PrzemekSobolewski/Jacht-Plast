@@ -7,7 +7,6 @@ import Carousel, {Modal, ModalGateway} from 'react-images'
 import Images from '../components/Images'
 import Gallery from '../components/Gallery'
 import {IoIosArrowDropdown, IoIosCheckmark} from "react-icons/io";
-import {Star} from '@material-ui/icons'
 import Fade from 'react-reveal/Fade'
 
 function importAll(r) {

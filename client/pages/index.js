@@ -1,16 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
-import Nav from '../components/nav'
 import Layout from "../components/Layout";
 import {Parallax} from "react-parallax";
-import jacht from '../assets/images/slider-jachty-2-2560x12002.png'
+import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'
 import {ScrollTo} from "react-scroll-to";
 import logoImage from "../assets/images/logo.png";
-import Link from "next/dist/client/link";
 
 const Home = () => (
     <Layout>
-        <Parallax bgImage={jacht} strength={600} bgImageStyle={'bg'}>
+        <Parallax bgImage={YACHT} strength={600} bgImageStyle={'bg'}>
             <div className={'bgContainer'}>
                 <div className={'bgText'}>JACHT-PLAST</div>
                 <ScrollTo>

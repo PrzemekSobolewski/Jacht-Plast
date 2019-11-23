@@ -2,93 +2,77 @@
   padding-top: 1em;
   position: relative;
   @include flex-center;
-  @include flex-direction(column)
-}
-
-.contact-form {
-  @include flex-center;
-  @include flex-direction(column)
-}
-
-.mail_data_div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact_data {
-  line-height: 1.6em;
-  text-align: left;
-  padding: 5px;
-}
-
-.map_div {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.google_maps {
-  width: 100%;
-}
-
-.contact_content {
-  width: 60%;
-  @include flex-direction(row);
-  justify-content: space-between;
-}
-
-
-.contact_form {
   @include flex-direction(column);
-  margin-top: 2em;
-  text-align: center;
-  align-items: flex-end;
-  > input {
-    font-family: 'Montserrat-medium', serif;
-    width: 40em;
-    height: 2em;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-radius: 2px;
-    border: 2px solid gray;
+  > .contact_content {
+    width: 60%;
+    @include flex-direction(row);
+    justify-content: space-between;
+    > .contact_data {
+      line-height: 1.6em;
+      text-align: left;
+      padding: 5px;
+    }
+    > .contact_form {
+      @include flex-direction(column);
+      margin-top: 2em;
+      text-align: center;
+      align-items: flex-end;
+      > input {
+        font-family: 'Montserrat-medium', serif;
+        width: 40em;
+        height: 2em;
+        padding: 1em;
+        margin-bottom: 1em;
+        border-radius: 2px;
+        border: 2px solid gray;
+      }
+      > input:focus {
+        outline-style: none;
+        border-color: #3f89a2;
+      }
+      > textarea {
+        padding: 1em;
+        font-family: 'Montserrat-medium', serif;
+        border: 2px solid gray;
+        width: 40em;
+        height: 13em;
+        border-radius: 2px;
+        box-shadow: none;
+      }
+      > textarea:focus {
+        outline-style: none;
+        border-color: #3f89a2;
+      }
+      > .submitButton {
+        text-align: center;
+        font-family: 'Montserrat-medium', serif;
+        margin: 1em 0 4em 1em;
+        padding: 1em;
+        width: 13em;
+        border-radius: 2px;
+        border: 2px solid #3f89a2;
+        color: white;
+        background: #3f89a2;
+        transition: all 0.3s ease;
+      }
+      .submitButton:hover {
+        cursor: pointer;
+        color: white;
+        background: #47A8C4;
+        border-color: #47A8C4;
+      }
+      .submitButton:focus {
+        outline-style: none;
+      }
+    }
   }
-  > input:focus {
-    outline-style: none;
-    border-color: #3f89a2;
-  }
-  > textarea {
-    padding: 1em;
-    font-family: 'Montserrat-medium', serif;
-    border: 2px solid gray;
-    width: 40em;
-    height: 13em;
-    border-radius: 2px;
-    box-shadow: none;
-  }
-  > textarea:focus {
-    outline-style: none;
-    border-color: #3f89a2;
-  }
-  > .submitButton {
-    text-align: center;
-    font-family: 'Montserrat-medium', serif;
-    margin: 1em 0 4em 1em;
-    padding: 1em;
-    width: 13em;
-    border-radius: 2px;
-    border: 2px solid #3f89a2;
-    color: white;
-    background: #3f89a2;
-    transition: all 0.3s ease;
-  }
-  .submitButton:hover {
-    cursor: pointer;
-    color: white;
-    background: #47A8C4;
-    border-color: #47A8C4;
-  }
-  .submitButton:focus {
-    outline-style: none;
+  > .map_div {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    > .google_maps {
+      width: 100%;
+    }
   }
 }
 

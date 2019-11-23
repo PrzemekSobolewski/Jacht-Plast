@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Layout from "../components/Layout";
 import Carousel, {Modal, ModalGateway} from 'react-images'
 import Images from '../components/Images'
@@ -11,7 +11,7 @@ function importAll(r) {
 const images = importAll(require.context('../assets/images/boats/', false, /\.(png|jpe?g|svg)$/));
 
 const Library = () => {
-    const [lightboxIsOpen, setlightboxIsOpen] = useState(false);
+    const [lightBoxIsOpen, setlightBoxIsOpen] = useState(false);
     const [number, setNumber] = useState(0);
     let readyImages = images.map(i => {
         return {
@@ -21,7 +21,7 @@ const Library = () => {
 
     const openLightBox = (j) => {
         setNumber(j);
-        setlightboxIsOpen(true)
+        setlightBoxIsOpen(true);
         console.log(number);
     };
 
@@ -38,8 +38,8 @@ const Library = () => {
                     {images.map(mapToImage)}
                 </Gallery>
                 <ModalGateway>
-                    {lightboxIsOpen ? (
-                        <Modal onClose={() => setlightboxIsOpen(false)}>
+                    {lightBoxIsOpen ? (
+                        <Modal onClose={() => setlightBoxIsOpen(false)}>
                             <Carousel
                                 currentIndex={number}
                                 views={readyImages}
