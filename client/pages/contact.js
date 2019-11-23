@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Layout from '../components/Layout';
 import axios from 'axios';
 import {BounceLoader} from 'react-spinners';
-import { css } from '@emotion/core';
+import {css} from '@emotion/core';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -24,7 +24,6 @@ const Contact = () => {
         display: block;
         margin: auto;
     `;
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -59,34 +58,37 @@ const Contact = () => {
     return (
         <Layout>
             <div className={'contact_div'}>
-                <div className={'mail_data_div'}>
+                <h2>Zapraszamy do kontaktu</h2>
+                <div className={'contact_content'}>
                     <div className={'contact_data'}>
-                        <h1>Jacht-Plast</h1>
-                        <h2>Zdzisław Sobolewski</h2>
-
+                        <h1 style={{marginBottom: 8}}>Jacht-Plast</h1>
+                        <h2 style={{marginTop: 0}}>Zdzisław Sobolewski</h2>
                         <h3>Adres:</h3>
                         Ul. Przemysłowa 4<br/>
                         26-340 Drzewica<br/>
+                        NIP: 799-13-31-976<br/>
+
                         <h3>Kontakt:</h3>
                         Tel/fax (48) 375 67 35<br/>
                         Tel. kom. 601 256 133<br/>
-                        <h3>Email:</h3>
-                        jachtplast@gmail.com<br/>
+                        Email: jachtplast@gmail.com<br/>
+
+                        <h3>Godziny pracy:</h3>
+                        Poniedziałek - Piątek<br/>
+                        8:00 - 17:00
                     </div>
-                    <div className={'mail_form'}>
-                        <form id='contact-form' className={'contact-form'} method='POST' role={'form'}
-                              onSubmit={handleSubmit}>
-                            <input placeholder={'Imię i nazwisko'} type={'text'} name={'name'} id={'name'}
-                                   value={name} onChange={e => setName(e.target.value)}/>
-                            <input placeholder={'Email'} type={'text'} name={'email'} id={'email'}
-                                   value={email} onChange={e => setEmail(e.target.value)}/>
-                            <input placeholder={'Temat'} type={'text'} name={'subject'} id={'subject'}
-                                   value={subject} onChange={e => setSubject(e.target.value)}/>
-                            <textarea id={'message'} name={'message'} value={message} placeholder={'Wpisz wiadomość...'}
-                                      onChange={e => setMessage(e.target.value)}/>
-                            <button type='submit' className='submitButton'>Wyślij</button>
-                        </form>
-                    </div>
+                    <form id='contact-form' className={'contact_form'} method='POST' role={'form'}
+                          onSubmit={handleSubmit}>
+                        <input placeholder={'Imię i nazwisko'} type={'text'} name={'name'} id={'name'}
+                               value={name} onChange={e => setName(e.target.value)}/>
+                        <input placeholder={'Email'} type={'text'} name={'email'} id={'email'}
+                               value={email} onChange={e => setEmail(e.target.value)}/>
+                        <input placeholder={'Temat'} type={'text'} name={'subject'} id={'subject'}
+                               value={subject} onChange={e => setSubject(e.target.value)}/>
+                        <textarea id={'message'} name={'message'} value={message} placeholder={'Wpisz wiadomość...'}
+                                  onChange={e => setMessage(e.target.value)}/>
+                        <button type='submit' className='submitButton'>Wyślij</button>
+                    </form>
                 </div>
                 <div className={'map_div'}>
                     {loading ?
