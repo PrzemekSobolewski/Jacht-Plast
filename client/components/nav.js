@@ -1,8 +1,9 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useEffect, useContext, useState} from 'react';
 import Headroom from "react-headroom";
 import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
 import NavigationContext from "./NavigationContext";
+import {stack as Menu} from 'react-burger-menu'
 
 const Nav = (props) => {
     const [route, setRoute] = useContext(NavigationContext);
