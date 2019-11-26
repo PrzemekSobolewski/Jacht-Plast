@@ -7,6 +7,9 @@
     width: 60%;
     @include flex-direction(row);
     justify-content: space-between;
+    @media only screen and (max-width: 1400px) {
+      width: 70%;
+    }
     @media only screen and (max-width: 1000px) {
       width: 80%;
     }
@@ -16,17 +19,24 @@
       width: 100%;
     }
     > .contact_data {
+      width: 100%;
       line-height: 1.6em;
       text-align: left;
       padding: 5px;
+      @media only screen and (max-width: 700px) {
+        text-align: center;
+        padding: 0;
+      }
     }
     > .contact_form {
       @include flex-direction(column);
       margin-top: 2em;
       text-align: center;
       align-items: flex-end;
+      width: 100%;
       @media only screen and (max-width: 700px) {
         align-items: center;
+        margin: 1em;
       }
       > input {
         font-family: 'Montserrat-medium', serif;
@@ -40,10 +50,10 @@
           width: 25em;
         }
         @media only screen and (max-width: 1000px) {
-          width: 100%;
+          width: 80%;
         }
         @media only screen and (max-width: 700px) {
-          width: 100%;
+          width: 80%;
         }
       }
       > input:focus {
@@ -62,10 +72,10 @@
           width: 25em;
         }
         @media only screen and (max-width: 1000px) {
-          width: 100%;
+          width: 80%;
         }
         @media only screen and (max-width: 700px) {
-          width: 100%;
+          width: 80%;
         }
       }
       > textarea:focus {
@@ -84,7 +94,7 @@
         background: #3f89a2;
         transition: all 0.3s ease;
         @media only screen and (max-width: 700px) {
-          width: 100%;
+          width: 80%;
           margin: 1em;
         }
       }
