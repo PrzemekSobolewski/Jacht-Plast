@@ -7,6 +7,14 @@
     width: 60%;
     @include flex-direction(row);
     justify-content: space-between;
+    @media only screen and (max-width: 1000px) {
+      width: 80%;
+    }
+    @media only screen and (max-width: 700px) {
+      @include flex-direction(column);
+      @include flex-center;
+      width: 100%;
+    }
     > .contact_data {
       line-height: 1.6em;
       text-align: left;
@@ -17,6 +25,9 @@
       margin-top: 2em;
       text-align: center;
       align-items: flex-end;
+      @media only screen and (max-width: 700px) {
+        align-items: center;
+      }
       > input {
         font-family: 'Montserrat-medium', serif;
         width: 40em;
@@ -25,6 +36,15 @@
         margin-bottom: 1em;
         border-radius: 2px;
         border: 2px solid gray;
+        @media only screen and (max-width: 1400px) {
+          width: 25em;
+        }
+        @media only screen and (max-width: 1000px) {
+          width: 100%;
+        }
+        @media only screen and (max-width: 700px) {
+          width: 100%;
+        }
       }
       > input:focus {
         outline-style: none;
@@ -38,6 +58,15 @@
         height: 13em;
         border-radius: 2px;
         box-shadow: none;
+        @media only screen and (max-width: 1400px) {
+          width: 25em;
+        }
+        @media only screen and (max-width: 1000px) {
+          width: 100%;
+        }
+        @media only screen and (max-width: 700px) {
+          width: 100%;
+        }
       }
       > textarea:focus {
         outline-style: none;
@@ -54,6 +83,10 @@
         color: white;
         background: #3f89a2;
         transition: all 0.3s ease;
+        @media only screen and (max-width: 700px) {
+          width: 100%;
+          margin: 1em;
+        }
       }
       .submitButton:hover {
         cursor: pointer;

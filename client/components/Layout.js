@@ -21,7 +21,7 @@ const Layout = (props) => {
                     <link rel="shortcut icon" type="image/x-icon" href='../public/icon.png'/>
                 </Head>
                 {
-                    width > 800 ?  <Nav/> : <Hamburger/>
+                    width > 1100 ?  <Nav/> : <Hamburger/>
                 }
                 {props.children}
                 <Footer/>
