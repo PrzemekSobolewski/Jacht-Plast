@@ -5,17 +5,18 @@
   cursor: pointer;
 }
 .hamburger_image {
-  width: 8em;
-  height: 8em;
+  width: 10em;
+  height: 10em;
   @include flex-center;
   margin: 1em auto;
   cursor: pointer;
+  filter: drop-shadow(10px 10px 60px white);
 }
 .cross {
   margin: 0.5em auto;
   filter: brightness(0) invert(1);
-  width: 5em;
-  height: 5em;
+  width: 6em;
+  height: 6em;
 }
 .burger_menu {
   background: transparent;
@@ -26,21 +27,21 @@
   align-items: center;
 }
 .bm-morph-shape {
-  fill: #7a658f;
+  fill: rgb(77, 81, 88);
   width: 300px !important;
 }
 
 .item {
   text-decoration: none;
-  color: #ddd;
+  color: #eee;
   margin: 1em 0;
   font-size: 1.5em;
   transition: all 0.3s ease;
   &.pressed {
-    color: #4db3cd;
+    color: #53c3df;
   }
 }
 .item:hover {
-  color: #4db3cd;
+  color: #53c3df;
   cursor: pointer;
 }

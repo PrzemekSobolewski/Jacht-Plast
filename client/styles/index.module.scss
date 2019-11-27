@@ -1,15 +1,29 @@
 .bg {
-  height: 1000px;
+  height: 600px;
+  @media only screen and (max-width: 1000px) {
+    height: 500px;
+  }
+}
+.react-parallax-bgimage {
+  @media only screen and (max-width: 1000px) {
+    transform: scale(0.8) translate3d(-84%, -406.826px, 0px) !important;
+  }
 }
 .bgContainer {
   @include flex-center();
   flex-direction: column;
   height: 600px;
+  @media only screen and (max-width: 1000px) {
+    height: 500px;
+  }
 }
 .bgText {
   color: white;
   font-size: 5em;
   filter: drop-shadow(1px 1px 5px #000);
+  @media only screen and (max-width: 1000px) {
+    font-size: 3em;
+  }
 }
 .bgButtonContainer {
   position: relative;
@@ -24,6 +38,9 @@
     color: white;
     border: 1px solid white;
     cursor: pointer;
+    @media only screen and (max-width: 1000px) {
+      margin-top: 3em;
+    }
   }
 
   >.bgButton2 {
@@ -33,6 +50,9 @@
     clip-path: circle(100% at -80% 50%);
     z-index: 2;
     transition: clip-path 0.5s ease-in-out;
+    @media only screen and (max-width: 1000px) {
+      margin-top: 3em;
+    }
   }
 }
 
@@ -51,20 +71,37 @@
   color: black;
   font-size: 1.1em;
   line-height: 1.5em;
+  @media only screen and (max-width: 1000px) {
+    width: 90%;
+    padding: 1em;
+    font-size: 0.7em;
+    line-height: 1.3em;
+  }
 }
 
 .about_us_first {
   @include flex-center;
+  margin: 1em 0;
 }
 .about_us_logo {
-    width: 12em;
-    height: 12em;
+  width: 12em;
+  height: 12em;
   margin-left: 4em;
+  @media only screen and (max-width: 1000px) {
+    width: 8em;
+    height: 8em;
+    margin: 1em;
+  }
 }
 
 .about_us_photo {
   width: 12em;
   height: 12em;
   margin: 0 2em;
+  @media only screen and (max-width: 1000px) {
+    width: 8em;
+    height: 8em;
+    margin: 1em;
+  }
 }
 
