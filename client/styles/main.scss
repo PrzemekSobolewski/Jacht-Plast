@@ -47,7 +47,10 @@ body {
   @include flex-center;
 }
 .arrow_up_layout:hover {
-  transform: rotate(0deg);
   color: #3f89a2;
+}
+.arrow_up_layout_active {
+  @extend .arrow_up_layout;
+  transform: rotate(0deg);
   cursor: pointer;
 }
