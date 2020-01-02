@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
 import Layout from "../components/Layout";
-import Expand from "react-expand-animated"
-import Carousel, {Modal, ModalGateway} from 'react-images'
+import Expand from "react-expand-animated";
+import Images from '../components/Images';
+import Carousel, {Modal, ModalGateway} from 'react-images';
+import Gallery from "../components/Gallery";
+import {IoIosArrowDropright} from "react-icons/io";
 
 
 function importAll(r) {
@@ -21,7 +24,7 @@ const versus = importAll(require.context('../assets/images/production/versus/', 
 const elements = [
     {
         id: 1,
-        open: false,
+        open: true,
         photo: master,
         title: 'TES 550 MASTER',
         desc: 'text 1'
@@ -77,7 +80,7 @@ const Production = () => {
 
     const openLightBox = (j) => {
         setNumber(j);
-        setlightboxIsOpen(true)
+        setlightboxIsOpen(true);
         console.log(number);
     };
 
@@ -85,33 +88,34 @@ const Production = () => {
         setData(data.map(i => {
                 if(element.id === i.id && i.open === true) {
                     i.open = false;
-                    return i;
+                   return i;
                 }
                 i.open = element.id === i.id;
                 return i;
             })
         );
     };
-
-    let list = data.map(i => {
+    const mapExpands = (i) => {
         return (
             <div className={'fullExpand'}>
                 <div onClick={() => openExpand(i)} className={i.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
+                    <IoIosArrowDropright className={'fa-blink'} style={i.open ? {display: ''} : {display: 'none'}}> </IoIosArrowDropright>
                     {i.title}
                 </div>
                 <Expand open={i.open}
                         className={'expand'}
                         duration={1000}>
-                        <div>{i.desc}</div>
-                    <div className={"expandImages"}>
-                    {i.photo.map(j =>{
-                        return (
-                            <Images key={number+1}>
-                                <img className={'productionImage'} src={j} width={'200px'} height={'200px'} onClick={() => openLightBox(number+1)}/>
-                            </Images>
-                        )
-                    })}
-                    </div>
+                    <div className={'boutDesc'}>{i.desc}</div>
+                    <Gallery>
+                        {i.photo.map(j =>{
+                            console.log(j);
+                            return (
+                                <Images key={j}>
+                                    <img className={'productionImage'} src={j} width={'300px'} height={'200px'} onClick={() => openLightBox(j)}/>
+                                </Images>
+                            )
+                        })}
+                    </Gallery>
                     <ModalGateway>
                         {lightboxIsOpen ? (
                             <Modal onClose={() => setlightboxIsOpen(false)}>
@@ -129,30 +133,20 @@ const Production = () => {
                             </Modal>
                         ) : null}
                     </ModalGateway>
-
                 </Expand>
-
             </div>
         )
-    });
+    };
 
     return (
         <Layout>
             <div className={"production"}>
                 <div className={"list_div"}>
-                    {list}
+                    {data.map(mapExpands)}
                 </div>
-
             </div>
         </Layout>
     )
 };
 
-const Images = (props) => {
-    return (
-        <div>
-            {props.children}
-        </div>
-    );
-};
 export default Production;
