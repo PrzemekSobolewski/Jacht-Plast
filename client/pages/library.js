@@ -22,13 +22,12 @@ const Library = () => {
     const openLightBox = (j) => {
         setNumber(j);
         setlightBoxIsOpen(true);
-        console.log(number);
     };
 
-    const mapToImage = (i, j) => {
+    const mapToImage = (photo, index) => {
         return (
-            <Images key={j}>
-                <img className={"image"} src={i} onClick={() => openLightBox(j)}/>
+            <Images key={index}>
+                <img className={"image"} src={photo} onClick={() => openLightBox(index)}/>
             </Images>)
     };
     return (
@@ -38,7 +37,7 @@ const Library = () => {
                     {images.map(mapToImage)}
                 </Gallery>
                 <ModalGateway>
-                    {lightBoxIsOpen ? (
+                    {lightBoxIsOpen && (
                         <Modal onClose={() => setlightBoxIsOpen(false)}>
                             <Carousel
                                 currentIndex={number}
@@ -52,7 +51,7 @@ const Library = () => {
                                 }}
                             />
                         </Modal>
-                    ) : null}
+                    )}
                 </ModalGateway>
             </div>
         </Layout>

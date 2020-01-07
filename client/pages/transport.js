@@ -77,7 +77,7 @@ const Transport = () => {
                         {images.map(mapToImage)}
                     </Gallery>
                     <ModalGateway>
-                        {lightboxIsOpen ? (
+                        {lightboxIsOpen && (
                             <Modal onClose={() => setlightboxIsOpen(false)}>
                                 <Carousel
                                     currentIndex={number}
@@ -91,7 +91,7 @@ const Transport = () => {
                                     }}
                                 />
                             </Modal>
-                        ) : null}
+                        )}
                     </ModalGateway>
                 </div>
             </Expand>
