@@ -1,0 +1,99 @@
+.footer {
+  height: 5em;
+  align-items: center;
+  width: 100%;
+  padding-top: 2em;
+  padding-bottom: 17em;
+  @media only screen and (max-width: 1000px) {
+    padding-bottom: 12em;
+  }
+  @media only screen and (max-width: 700px) {
+    padding-bottom: 10em;
+  }
+  background: linear-gradient(90deg, rgba(20,22,26,1) 0%, rgba(60,64,71,1) 100%);
+  color: #ddd;
+}
+.header {
+  color: white;
+  text-transform: uppercase;
+}
+.footerList {
+  @include flex();
+  justify-content: center;
+  list-style-type: none;
+  margin: auto;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+  @media only screen and (max-width: 1000px) {
+    line-height: 1.2em;
+  }
+  @media only screen and (max-width: 700px) {
+    line-height: 1em;
+    padding: 0;
+  }
+  > li {
+    text-decoration: none;
+    padding: 1em 5em;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border: 1px none #DBDADD;
+    border-right-style: solid;
+    @media only screen and (max-width: 1400px) {
+      padding: 1em 2em;
+    }
+    @media only screen and (max-width: 1000px) {
+      padding: 1em 1em;
+      font-size: 0.65em;
+      text-align:center;
+    }
+    @media only screen and (max-width: 700px) {
+      padding: 1em 1.5em;
+      font-size: 0.50em;
+      text-align:center;
+    }
+  }
+  > li:nth-child(3) {
+    @media only screen and (max-width: 700px) {
+      border-right-style: none;
+    }
+  }
+  > li:last-child {
+    border-style: none;
+    @media only screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+}
+#fb_icon {
+  margin-top: 1em;
+  font-size: 3em;
+  text-align: center;
+  color: rgba(79, 140, 224, 1);
+  transition: all 0.3s ease;
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+#fb_icon:hover {
+  color: #3B5998;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.sitesContainer {
+
+  >.sites {
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.2em 0;
+    @media only screen and (max-width: 700px) {
+      padding: 0.1em 0;
+    }
+    &:hover {
+      color: white;
+    }
+  }
+}
