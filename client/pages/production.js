@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
-import Expand from "react-expand-animated";
 import Images from '../components/Images';
-import Carousel, {Modal, ModalGateway} from 'react-images';
 import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
 import {useDispatch} from "react-redux";

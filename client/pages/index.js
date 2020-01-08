@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import Layout from "../components/Layout";
 import {Parallax} from "react-parallax";
 import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'

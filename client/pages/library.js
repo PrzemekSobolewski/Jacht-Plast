@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import Layout from "../components/Layout";
 import Images from '../components/Images'
 import Gallery from '../components/Gallery'
@@ -20,7 +20,7 @@ const Library = () => {
                 src: i
             }
         });
-       dispatch(actions.loadDataModal(readyImages));
+        dispatch(actions.loadDataModal(readyImages));
     }, []);
 
     const openLightBox = (index) => {

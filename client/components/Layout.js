@@ -1,5 +1,5 @@
 import Nav from "./nav";
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import Head from "next/dist/next-server/lib/head";
 import Footer from "./footer";
 import '../styles/main.scss'
