@@ -18,10 +18,9 @@
 }
 
 .expandButton {
-  padding: 10px;
   background: white;
   width: 15em;
-  margin: 2em;
+  margin: 2em 0em 1em 2em;
 }
 
 .expandButton:hover {
@@ -34,8 +33,11 @@
 }
 
 .boutDesc {
-  padding: 1em 1em 0em 1em;
-  text-align: center;
+  margin: 1em 1em 0em 1em;
+  width: 17.5em;
+  padding: 1em 1em 1em 1em;
+  text-align: left;
+  border-left: solid 1px lightgrey;
 }
 
 .expand {
@@ -48,9 +50,10 @@
   box-shadow:         inset 0 0 10px rgba(0,0,0,0.4);
 }
 
-.gallery{
-  margin: 1em 1em 0em 1em;
-  padding-bottom: 1em;
+.galleryProd{
+  margin: -1em 1em 0em 1em;
+  padding: 0em 1em 1em 1em;
+  width: 47em;
 }
 
 .expandImages {
@@ -88,5 +91,6 @@
 }
 
 .details {
-  padding: 3em;
+  padding: 1em 1em 2em 0em;
+  display: flex;
 }

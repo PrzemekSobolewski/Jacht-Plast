@@ -117,26 +117,28 @@ const Production = () => {
                 </div>
                 <div className={"details"}>
                     <div className={'boutDesc'}>{pickedOne.desc}</div>
-                    <Gallery>
-                        {pickedOne.photos.map(mapToImage)}
-                    </Gallery>
-                    <ModalGateway>
-                        {lightboxIsOpen && (
-                            <Modal onClose={() => setlightboxIsOpen(false)}>
-                                <Carousel
-                                    currentIndex={currentIndex}
-                                    views={pickedOne.photos}
-                                    frameProps={{
-                                        autoSize: 'height'
-                                    }}
-                                    autoSize={{
-                                        width: 2000,
-                                        height: 500
-                                    }}
-                                />
-                            </Modal>
-                        )}
-                    </ModalGateway>
+                    <div className={'galleryProd'}>
+                        <Gallery>
+                            {pickedOne.photos.map(mapToImage)}
+                        </Gallery>
+                        <ModalGateway>
+                            {lightboxIsOpen && (
+                                <Modal onClose={() => setlightboxIsOpen(false)}>
+                                    <Carousel
+                                        currentIndex={currentIndex}
+                                        views={pickedOne.photos}
+                                        frameProps={{
+                                            autoSize: 'height'
+                                        }}
+                                        autoSize={{
+                                            width: 2000,
+                                            height: 500
+                                        }}
+                                    />
+                                </Modal>
+                            )}
+                        </ModalGateway>
+                    </div>
                 </div>
             </div>
         </Layout>

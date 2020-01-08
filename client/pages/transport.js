@@ -33,7 +33,6 @@ const Transport = () => {
     };
 
     const mapToImage = (i, j) => {
-        console.log(j);
         return (
             <Images key={j}>
                 <img className={"image"} src={i} onClick={() => openLightBox(j)}/>
