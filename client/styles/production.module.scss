@@ -64,7 +64,7 @@
 }
 
 .production {
-  display: block;
+  @include flex;
   margin-bottom: 2em;
 }
 
@@ -85,4 +85,8 @@
   transform: scale(1.05);
   filter: brightness(0.7);
   transition-duration: 200ms;
+}
+
+.details {
+  padding: 3em;
 }
