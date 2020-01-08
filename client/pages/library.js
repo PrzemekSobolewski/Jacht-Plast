@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from "../components/Layout";
-import Carousel, {Modal, ModalGateway} from 'react-images'
 import Images from '../components/Images'
 import Gallery from '../components/Gallery'
+import {useDispatch} from "react-redux";
+import * as actions from "../redux/actions/modalActions";
 
 function importAll(r) {
     return r.keys().map(r);
@@ -11,17 +12,20 @@ function importAll(r) {
 const images = importAll(require.context('../assets/images/boats/', false, /\.(png|jpe?g|svg)$/));
 
 const Library = () => {
-    const [lightBoxIsOpen, setlightBoxIsOpen] = useState(false);
-    const [number, setNumber] = useState(0);
-    let readyImages = images.map(i => {
-        return {
-            src: i
-        }
-    });
+    const dispatch = useDispatch();
 
-    const openLightBox = (j) => {
-        setNumber(j);
-        setlightBoxIsOpen(true);
+    useEffect(() => {
+        let readyImages = images.map(i => {
+            return {
+                src: i
+            }
+        });
+       dispatch(actions.loadDataModal(readyImages));
+    }, []);
+
+    const openLightBox = (index) => {
+        dispatch(actions.setNumberModal(index));
+        dispatch(actions.openModal());
     };
 
     const mapToImage = (photo, index) => {
@@ -36,23 +40,6 @@ const Library = () => {
                 <Gallery>
                     {images.map(mapToImage)}
                 </Gallery>
-                <ModalGateway>
-                    {lightBoxIsOpen && (
-                        <Modal onClose={() => setlightBoxIsOpen(false)}>
-                            <Carousel
-                                currentIndex={number}
-                                views={readyImages}
-                                frameProps = {{
-                                    autoSize : 'height'
-                                }}
-                                autoSize={ {
-                                    width: 2000,
-                                    height: 500
-                                }}
-                            />
-                        </Modal>
-                    )}
-                </ModalGateway>
             </div>
         </Layout>
     );

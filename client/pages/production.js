@@ -5,6 +5,8 @@ import Images from '../components/Images';
 import Carousel, {Modal, ModalGateway} from 'react-images';
 import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
+import {useDispatch} from "react-redux";
+import * as actions from "../redux/actions/modalActions";
 
 function importAll(r) {
     return r.keys().map(r);
@@ -72,13 +74,22 @@ const elements = [
 ];
 const Production = () => {
     const [data, setData] = useState(elements);
-    const [lightboxIsOpen, setlightboxIsOpen] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [pickedOne, setPickedOne] = useState(data[0]);
 
-    const openLightBox = (index) => {
-        setCurrentIndex(index);
-        setlightboxIsOpen(true);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        let readyImages = pickedOne.photos.map(i => {
+            return {
+                src: i
+            }
+        });
+        dispatch(actions.loadDataModal(readyImages));
+    }, [pickedOne]);
+
+    const openLightBox = (index) => {;
+        dispatch(actions.setNumberModal(index));
+        dispatch(actions.openModal());
     };
 
     const openExpand = (element) => {
@@ -121,23 +132,6 @@ const Production = () => {
                         <Gallery>
                             {pickedOne.photos.map(mapToImage)}
                         </Gallery>
-                        <ModalGateway>
-                            {lightboxIsOpen && (
-                                <Modal onClose={() => setlightboxIsOpen(false)}>
-                                    <Carousel
-                                        currentIndex={currentIndex}
-                                        views={pickedOne.photos}
-                                        frameProps={{
-                                            autoSize: 'height'
-                                        }}
-                                        autoSize={{
-                                            width: 2000,
-                                            height: 500
-                                        }}
-                                    />
-                                </Modal>
-                            )}
-                        </ModalGateway>
                     </div>
                 </div>
             </div>

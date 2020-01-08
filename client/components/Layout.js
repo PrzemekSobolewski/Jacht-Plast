@@ -6,10 +6,15 @@ import '../styles/main.scss'
 import {ScrollTo} from "react-scroll-to";
 import {FaAngleUp} from "react-icons/fa";
 import Hamburger from './hamburgerMenu'
+import { useDispatch, useSelector } from "react-redux";
+import * as actions from "../redux/actions/modalActions";
+import Carousel, {Modal, ModalGateway} from 'react-images'
 
 const Layout = (props) => {
     const [width, setWidth] = useState(1200);
     const [arrowUp, setArrowUp] = useState(false);
+    const dispatch = useDispatch();
+    const modalState = useSelector(state => state.modal);
 
     const arrowElement = (scrollTo) => {
         return arrowUp ?
@@ -53,6 +58,23 @@ const Layout = (props) => {
             <ScrollTo>
                 {({scrollTo}) => arrowElement(scrollTo)}
             </ScrollTo>
+            <ModalGateway>
+                {modalState.isOpen && (
+                    <Modal onClose={() => dispatch(actions.closeModal())}>
+                        <Carousel
+                            currentIndex={modalState.index}
+                            views={modalState.photos}
+                            frameProps = {{
+                                autoSize : 'height'
+                            }}
+                            autoSize={ {
+                                width: 2000,
+                                height: 500
+                            }}
+                        />
+                    </Modal>
+                )}
+            </ModalGateway>
         </>
     )
 };

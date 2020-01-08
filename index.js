@@ -47,7 +47,6 @@ app.post('/api/form', (req, res) => {
 
     transport.sendMail(mail, (err, response) => {
         if (err) {
-            console.log(err);
             res.json({msg: 'fail'})
         } else {
             res.json({msg: 'success'});
