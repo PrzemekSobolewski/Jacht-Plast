@@ -19,71 +19,57 @@ const master = importAll(require.context('../assets/images/production/master/', 
 const magnam = importAll(require.context('../assets/images/production/magnam/', false, /\.(png|jpe?g|svg)$/));
 const versus = importAll(require.context('../assets/images/production/versus/', false, /\.(png|jpe?g|svg)$/));
 const navighator = importAll(require.context('../assets/images/production/navighator/', false, /\.(png|jpe?g|svg)$/));
-
+const diffrent = importAll(require.context('../assets/images/production/diffrent/', false, /\.(png|jpe?g|svg)$/));
 const elements = [
     {
         id: 0,
         open: true,
-        photos: master,
-        title: 'TES 550 MASTER',
-        desc: 'text 1',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: navighator,
+        title: 'NAVIGHATOR'
     },
     {
         id: 1,
         open: false,
-        photos: bt_tes,
-        title: 'TES 678 BT-TES 720',
-        desc: 'text 1',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: illuminatus,
+        title: 'TES 393 ILLUMINATUS'
     },
     {
         id: 2,
         open: false,
-        photos: versus,
-        title: 'TES 246 VERSUS',
-        desc: 'text 1',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: dreamer,
+        title: 'TES 32 DREAMER'
     },
     {
         id: 3,
         open: false,
         photos: magnam,
-        title: 'TES 28 MAGNAM',
-        desc: 'text 1',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        title: 'TES 28 MAGNAM'
     },
     {
         id: 4,
         open: false,
-        photos: dreamer,
-        title: 'TES 32 DREAMER',
-        desc: 'text 1',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: versus,
+        title: 'TES 246 VERSUS'
     },
     {
         id: 5,
         open: false,
-        photos: illuminatus,
-        title: 'TES 393 ILLUMINATUS',
-        desc: 'text 2',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: bt_tes,
+        title: 'TES 678 BT-TES 720'
     },
     {
         id: 6,
         open: false,
-        photos: navighator,
-        title: 'NAVIGHATOR',
-        desc: 'text 2',
-        upper_radius: upper_radius,
-        bottom_radius: bottom_radius
+        photos: master,
+        title: 'TES 550 MASTER'
+    },
+    {
+        id: 7,
+        open: false,
+        photos: diffrent,
+        title: 'INNE MODELE'
     }
+
 
 ];
 const Production = () => {
@@ -127,13 +113,13 @@ const Production = () => {
     const mapExpands = (item) => {
         return (
             <div className={'fullExpand'}>
-                <span className={'upper_radius'}><img src={item.open ? item.upper_radius : ''} style={item.open ? {display: ''} : {display: 'none'}}/> </span>
+                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''} style={item.open ? {display: ''} : {display: 'none'}}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
                     {item.title}
                 </div>
-                <span className={'bottom_radius'}><img src={item.open ? item.bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
+                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
             </div>
         )
     };
@@ -154,7 +140,6 @@ const Production = () => {
                     {data.map(mapExpands)}
                 </div>
                 <div className={"details"}>
-                    <div className={'boutDesc'}>{pickedOne.desc}</div>
                     <div className={'galleryProd'}>
                         <Gallery>
                             {pickedOne.photos.map(mapToImage)}

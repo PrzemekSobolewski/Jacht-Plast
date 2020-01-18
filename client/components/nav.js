@@ -26,11 +26,6 @@ const Nav = (props) => {
                         Produkcja
                     </li>
                 </Link>
-                <Link href={"/library"}>
-                    <li onClick={() => setRoute('/library')} className={route === '/library' ? 'pressed' : ''}>
-                        Galeria
-                    </li>
-                </Link>
                 <Link href={"/transport"}>
                     <li onClick={() => setRoute('/transport')} className={route === '/transport' ? 'pressed' : ''}>
                         Transport

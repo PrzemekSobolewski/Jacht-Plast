@@ -33,7 +33,7 @@
 
 .openedExpand {
   color: white;
-  background: #d9ffa0;
+  background: #b3d9ff;//#d9ffa0;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   text-shadow: 1px 1px grey;
@@ -41,13 +41,6 @@
 
 .openedExpand:hover {
   color: white;
-}
-
-.boutDesc {
-  margin: 1em 1em 0em 1em;
-  width: 17.5em;
-  padding: 1em 1em 1em 1em;
-  text-align: left;
 }
 
 .expand {
@@ -62,8 +55,7 @@
 
 .galleryProd {
   margin: -1em 1em 0em 1em;
-  padding: 0em 1em 1em 1em;
-  width: 46em;
+  padding: 1em 1em 1em 1em;
 }
 
 .expandImages {
@@ -71,7 +63,7 @@
 }
 
 .list_div {
-  padding-top: 4em;
+  padding-top: 3em;
   font-size: 20px;
   display: block;
   align-items: center;
@@ -102,11 +94,12 @@
 }
 
 .details {
-  border: solid 1px #d9ffa0;
+  border: solid 1px #b3d9ff;//#d9ffa0;
   border-radius: 15px;
   margin: 2em 1em 2em 0em;
+  padding: 1em 0em 1em 0em;
   display: flex;
-  background: #d9ffa0;
+  background: #b3d9ff;
 }
 .upper_radius,
 .bottom_radius {
