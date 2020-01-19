@@ -36,11 +36,6 @@ const Footer = () => {
                             Produkcja
                         </div>
                     </Link>
-                    <Link href={"/library"}>
-                        <div className={'sites'}>
-                            Galeria
-                        </div>
-                    </Link>
                     <Link href={"/transport"}>
                         <div className={'sites'}>
                             Transport

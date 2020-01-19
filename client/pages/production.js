@@ -25,7 +25,7 @@ const elements = [
         id: 0,
         open: true,
         photos: navighator,
-        title: 'NAVIGHATOR'
+        title: 'NAVIGATHOR 30'
     },
     {
         id: 1,
