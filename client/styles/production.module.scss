@@ -51,6 +51,7 @@
   -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.4);
   -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
   box-shadow:         inset 0 0 10px rgba(0,0,0,0.4);
+  transition: all ease 0.3s;
 }
 
 .galleryProd {
@@ -79,12 +80,9 @@
   padding: 1em 0em 1em 0em;
 }
 
-.productionImage:hover {
-  cursor: pointer;
-}
-
 .productionImage {
   margin: 1em;
+  cursor: pointer;
 }
 
 .productionImage:hover {
@@ -94,12 +92,14 @@
 }
 
 .details {
-  border: solid 1px #b3d9ff;//#d9ffa0;
+  border-left: solid 1px #b3d9ff;//#d9ffa0;
   border-radius: 15px;
   margin: 2em 1em 2em 0em;
-  padding: 1em 0em 1em 0em;
-  display: flex;
-  background: #b3d9ff;
+  padding: 1em 0em 1em 0em;;
+  background: linear-gradient(130deg, #b3d9ff 15%, #FFF 100%);
+  height: 53em;
+  width: 100%;
+  @include flex-center();
 }
 .upper_radius,
 .bottom_radius {

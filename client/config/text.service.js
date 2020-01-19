@@ -1,9 +1,8 @@
 import * as textConfig from "./text"
 
 export default class TextService {
-    static text = textConfig.pl;
 
-    static isPL = () => {
-        return TextService.text === textConfig.pl;
-    }
+    static textPl = textConfig.pl;
+    static textEng = textConfig.eng;
+
 }

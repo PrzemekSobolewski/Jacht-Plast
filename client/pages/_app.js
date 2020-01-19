@@ -3,9 +3,11 @@ import NavigationContext from '../components/NavigationContext'
 import {createStore, combineReducers} from "redux";
 import modalReducer from "../redux/reducers/modalReducer";
 import {Provider} from "react-redux";
+import switchReducer from "../redux/reducers/switchReducer";
 
 const rootReducer = combineReducers({
     modal: modalReducer,
+    switch: switchReducer
 });
 
 const store = createStore(rootReducer);
