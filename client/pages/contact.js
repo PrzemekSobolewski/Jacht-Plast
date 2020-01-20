@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import axios from 'axios';
 import {BounceLoader} from 'react-spinners';
 import {css} from '@emotion/core';
+import {useSelector} from "react-redux";
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -10,6 +11,7 @@ const Contact = () => {
     const [message, setMessage] = useState('');
     const [subject, setSubject] = useState('');
     const [loading, setLoading] = useState(true);
+    const switchState = useSelector(state => state.switch);
 
     const hideLoading = () => {
         setLoading(false);
@@ -44,7 +46,7 @@ const Contact = () => {
                 alert('Message failed to send.')
             }
         } else {
-            alert('Przed wysłaniem wiadomości wypełnij wszystkie pola');
+            alert(switchState.language.alert);
         }
     };
 
@@ -58,36 +60,21 @@ const Contact = () => {
     return (
         <Layout>
             <div className={'contact_div'}>
-                <h2>Zapraszamy do kontaktu</h2>
+                <h2>{switchState.language.contact_header}</h2>
                 <div className={'contact_content'}>
-                    <div className={'contact_data'}>
-                        <h1 style={{marginBottom: 8}}>Jacht-Plast</h1>
-                        <h2 style={{marginTop: 0}}>Zdzisław Sobolewski</h2>
-                        <h3>Adres:</h3>
-                        Ul. Przemysłowa 4<br/>
-                        26-340 Drzewica<br/>
-                        NIP: 799-13-31-976<br/>
+                    <div className={'contact_data'} dangerouslySetInnerHTML={{__html: switchState.language.contact_text}}/>
 
-                        <h3>Kontakt:</h3>
-                        Tel/fax (48) 375 67 35<br/>
-                        Tel. kom. 601 256 133<br/>
-                        Email: jachtplast@gmail.com<br/>
-
-                        <h3>Godziny pracy:</h3>
-                        Poniedziałek - Piątek<br/>
-                        8:00 - 17:00
-                    </div>
                     <form id='contact-form' className={'contact_form'} method='POST' role={'form'}
                           onSubmit={handleSubmit}>
-                        <input placeholder={'Imię i nazwisko'} type={'text'} name={'name'} id={'name'}
+                        <input placeholder={switchState.language.form_name} type={'text'} name={'name'} id={'name'}
                                value={name} onChange={e => setName(e.target.value)}/>
                         <input placeholder={'Email'} type={'text'} name={'email'} id={'email'}
                                value={email} onChange={e => setEmail(e.target.value)}/>
-                        <input placeholder={'Temat'} type={'text'} name={'subject'} id={'subject'}
+                        <input placeholder={switchState.language.form_topic} type={'text'} name={'subject'} id={'subject'}
                                value={subject} onChange={e => setSubject(e.target.value)}/>
-                        <textarea id={'message'} name={'message'} value={message} placeholder={'Wpisz wiadomość...'}
+                        <textarea id={'message'} name={'message'} value={message} placeholder={switchState.language.form_message}
                                   onChange={e => setMessage(e.target.value)}/>
-                        <button type='submit' className='submitButton'>Wyślij</button>
+                        <button type='submit' className='submitButton'>{switchState.language.form_send}</button>
                     </form>
                 </div>
                 <div className={'map_div'}>

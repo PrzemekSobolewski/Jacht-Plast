@@ -6,7 +6,7 @@ import Gallery from '../components/Gallery'
 import {IoIosArrowDropdown, IoIosCheckmark} from "react-icons/io";
 import Fade from 'react-reveal/Fade'
 import * as actions from "../redux/actions/modalActions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 function importAll(r) {
     return r.keys().map(r);
@@ -17,6 +17,7 @@ const images = importAll(require.context('../assets/images/transport/', false, /
 const Transport = () => {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
+    const switchState = useSelector(state => state.switch);
 
     useEffect(() => {
         let readyImages = images.map(i => {
@@ -44,31 +45,24 @@ const Transport = () => {
                 <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>
                 <Fade>
                     <ul className={'transportList'}>
-                        <li><IoIosCheckmark className={'checkmark'}/>Świadczymy usługi z zakresu krajowego i
-                            międzynarodowego transportu towarów
+                        <li><IoIosCheckmark className={'checkmark'}/>
+                            {switchState.language.transport_list_one}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>Zapewniamy w pełni profesjonalny i ubezpieczony
-                            transport jachtów żaglowych i łodzi motorowych
-                            oraz pojazdów
+                        <li><IoIosCheckmark className={'checkmark'}/>
+                            {switchState.language.transport_list_two}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>Dysponujemy samochodami dostosowanymi do przewozu
-                            jednostek do 12 m długości i masie 8 ton oraz
-                            mniejszych, poniżej 3,5 tony
+                        <li><IoIosCheckmark className={'checkmark'}/>
+                            {switchState.language.transport_list_three}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>Posiadamy wymagane w transporcie drogowym
-                            zezwolenia i ubezpieczenia ładunku
+                        <li><IoIosCheckmark className={'checkmark'}/>
+                            {switchState.language.transport_list_four}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>Ustalamy indywidualne ceny, w zależności od zakresu
-                            uaługi oraz odpowiadamy na zadawane mailem
-                            lub telefonicznie pytania
+                        <li><IoIosCheckmark className={'checkmark'}/>
+                            {switchState.language.transport_list_five}
                         </li>
                     </ul>
                 </Fade>
-                <div className={'underList'}><h3>Nasza firma posiada wieloletnie doświadczenie w budowie i
-                    naprawie jachtów żaglowych i motorowych, co daje nam wiedzę o potrzebach klientów zainteresowanych
-                    transportem swoich jednostek.<br/>
-                    <br/>
-                    Kliknij poniżej żeby zobaczyć galerię!</h3></div>
+                <div className={'underList'} dangerouslySetInnerHTML={{__html: switchState.language.transport_text}}/>
 
             </div>
             <div className={"transportLine"}>

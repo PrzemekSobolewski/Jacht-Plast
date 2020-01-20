@@ -37,7 +37,7 @@ const Nav = (props) => {
                 <ul className={'list'}>
                     <Link href={"/"}>
                         <li onClick={() => setRoute('/')} className={route === '/' ? 'pressed' : ''}>
-                            O nas
+                            {switchState.language.about_us}
                         </li>
                     </Link>
                     <Link href={"/production"}>
@@ -47,12 +47,12 @@ const Nav = (props) => {
                     </Link>
                     <Link href={"/transport"}>
                         <li onClick={() => setRoute('/transport')} className={route === '/transport' ? 'pressed' : ''}>
-                            Transport
+                            {switchState.language.transport}
                         </li>
                     </Link>
                     <Link href={"/contact"}>
                         <li onClick={() => setRoute('/contact')} className={route === '/contact' ? 'pressed' : ''}>
-                            Kontakt
+                            {switchState.language.contact}
                         </li>
                     </Link>
                 </ul>

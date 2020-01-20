@@ -1,54 +1,46 @@
 import React from 'react';
 import {FaFacebookSquare} from "react-icons/fa";
 import Link from "next/dist/client/link";
+import {useSelector} from "react-redux";
 
 const Footer = () => {
+    const switchState = useSelector(state => state.switch);
     return (
         <div className={"footer"}>
             <ul className="footerList">
                 <li>
-                    <h4 className={'header'}>Kontakt</h4>
-                    Tel/fax (48) 375 67 35<br/>
-                    Tel. kom. 601 256 133 <br/>
-                    E-mail: jachtplast@gmail.com<br/>
-                    <br/>
-                    Godziny pracy:<br/>
-                    Poniedziałek - Piątek<br/>
-                    8:00 - 17:00
+                    <h4 className={'header'}>{switchState.language.footer_contact}</h4>
+                    <div dangerouslySetInnerHTML={{__html: switchState.language.footer_contact_data}}/>
                 </li>
                 <li>
-                    <h4 className={'header'}>Dane firmy:</h4>
-                    PHUP JACHT-PLAST<br/>
-                    ul. Przemysłowa 4<br/>
-                    26-340 Drzewica<br/>
-                    <br/>
-                    NIP: 799-13-31-976<br/>
+                    <h4 className={'header'}>{switchState.language.footer_data}</h4>
+                    <div dangerouslySetInnerHTML={{__html: switchState.language.footer_data_data}}/>
                 </li>
                 <li className={'sitesContainer'}>
-                    <h4 className={'header'}>Strony:</h4>
+                    <h4 className={'header'}>{switchState.language.footer_pages}</h4>
                     <Link href={"/"}>
                         <div className={'sites'}>
-                            O nas
+                            {switchState.language.about_us}
                         </div>
                     </Link>
                     <Link href={"/production"}>
                         <div className={'sites'}>
-                            Produkcja
+                            {switchState.language.production}
                         </div>
                     </Link>
                     <Link href={"/transport"}>
                         <div className={'sites'}>
-                            Transport
+                            {switchState.language.transport}
                         </div>
                     </Link>
                     <Link href={"/contact"}>
                         <div className={'sites'}>
-                            Kontakt
+                            {switchState.language.contact}
                         </div>
                     </Link>
                 </li>
                 <li>
-                    <h4 className={'header'}>Odwiedź nasz profil na Facebooku!</h4>
+                    <h4 className={'header'}>{switchState.language.footer_invite}</h4>
                     <div id={"fb_icon"}>
                         <a href={"https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685/"}
                            target={'_white'}>

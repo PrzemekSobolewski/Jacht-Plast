@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Images from '../components/Images';
 import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
 import bottom_radius from "../assets/images/production/img/bottom_radius.png";
 import upper_radius from "../assets/images/production/img/upper_radius.png";
@@ -11,6 +11,7 @@ import upper_radius from "../assets/images/production/img/upper_radius.png";
 function importAll(r) {
     return r.keys().map(r);
 }
+
 
 const bt_tes = importAll(require.context('../assets/images/production/bt_tes/', false, /\.(png|jpe?g|svg)$/));
 const dreamer = importAll(require.context('../assets/images/production/dreamer/', false, /\.(png|jpe?g|svg)$/));
@@ -67,7 +68,7 @@ const elements = [
         id: 7,
         open: false,
         photos: diffrent,
-        title: 'INNE MODELE'
+        title: false
     }
 
 
@@ -75,7 +76,7 @@ const elements = [
 const Production = () => {
     const [data, setData] = useState(elements);
     const [pickedOne, setPickedOne] = useState(data[0]);
-
+    const switchState = useSelector(state => state.switch);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -117,7 +118,7 @@ const Production = () => {
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
-                    {item.title}
+                    {item.title ? item.title : switchState.language.production_models}
                 </div>
                 <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
             </div>
