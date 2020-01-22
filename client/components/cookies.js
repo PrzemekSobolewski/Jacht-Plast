@@ -2,7 +2,7 @@ import React from 'react';
 import Cancel from '@material-ui/icons/Cancel';
 import Fab from '@material-ui/core/Fab';
 
-const Cookies = (props) => {
+const CookiesModal = (props) => {
     return (
         <div className={'containerCookies'}>
             <div className={'content'}>
@@ -30,4 +30,4 @@ const Cookies = (props) => {
     )
 };
 
-export default Cookies;
+export default CookiesModal;

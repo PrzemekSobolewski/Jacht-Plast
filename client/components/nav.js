@@ -4,14 +4,14 @@ import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
 import NavigationContext from "./NavigationContext";
 import * as actions from "../redux/actions/switchActions";
+import * as cookieActions from "../redux/actions/cookieActions"
 import * as cookie from  "../redux/actions/cookieActions";
 import {useDispatch, useSelector} from "react-redux";
 import Switch from "react-switch";
 import POLAND from "../assets/images/poland.png";
 import ENG from "../assets/images/uk.png";
-import TextService from "../config/text.service";
-import {CookiesProvider, useCookies} from 'react-cookie';
-import Cookies from '../components/cookies';
+import {useCookies, CookiesProvider} from 'react-cookie';
+import CookiesModal from '../components/cookies';
 
 const Nav = (props) => {
     const [route, setRoute] = useContext(NavigationContext);
@@ -24,25 +24,29 @@ const Nav = (props) => {
         setRoute(window.location.pathname);
     }, []);
 
+    useEffect(() => {
+        console.log(cookies);
+        if (cookies.switch !== undefined) {
+            dispatch(cookieActions.acceptCookie());
+            setSwitch(cookies.switch === "true")
+        }
+    }, [cookies]);
+
     const setSwitch = (value) => {
         if (value) {
             dispatch(actions.setPl())
         } else {
             dispatch(actions.setEng())
         }
+        if (switchState.cookieAccepted) {
+            setCookie('switch', switchState, {path: '/'});
+        }
+
     };
 
-    useEffect(() => {
-        if(cookies.switch !== undefined) {
-            cookieState.showCookies = false;
-            cookieState.cookieAccepted = true;
-            cookies.switch === 'true' ? setSwitch(true) : setSwitch(false);
-        }
-    });
-
     const accept = () => {
+        console.log(cookies);
         setCookie('switch', switchState, {path: '/'});
-        dispatch(cookie.acceptCookie());
     };
 
     const close = () => {
@@ -50,7 +54,7 @@ const Nav = (props) => {
     };
 
     return (
-        <>
+        <CookiesProvider>
             <Headroom style={{backgroundColor: 'white'}}>
                 <Link href={"/"}>
                     <img src={logoImage} id='logoImage' className={'logo'} alt={"Logo of Jacht-Plast"}
@@ -90,10 +94,8 @@ const Nav = (props) => {
                     </div>
                 </div>
             </Headroom>
-            <CookiesProvider>
-                {cookieState.showCookies ? <Cookies close={close} accept={accept}/> : null}
-            </CookiesProvider>
-        </>
+            {cookieState.showCookies ? <CookiesModal close={close} accept={accept}/> : null}
+        </CookiesProvider>
     )
 };
 
