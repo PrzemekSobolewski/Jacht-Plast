@@ -118,7 +118,7 @@ const Production = () => {
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
-                    {item.title ? item.title : switchState.language.production_models}
+                    {item.title ? item.title : switchState.language.productionModels}
                 </div>
                 <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
             </div>

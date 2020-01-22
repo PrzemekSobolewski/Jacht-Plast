@@ -46,19 +46,19 @@ const Transport = () => {
                 <Fade>
                     <ul className={'transportList'}>
                         <li><IoIosCheckmark className={'checkmark'}/>
-                            {switchState.language.transport_list_one}
+                            {switchState.language.transportListOne}
                         </li>
                         <li><IoIosCheckmark className={'checkmark'}/>
-                            {switchState.language.transport_list_two}
+                            {switchState.language.transportListTwo}
                         </li>
                         <li><IoIosCheckmark className={'checkmark'}/>
-                            {switchState.language.transport_list_three}
+                            {switchState.language.transportListThree}
                         </li>
                         <li><IoIosCheckmark className={'checkmark'}/>
-                            {switchState.language.transport_list_four}
+                            {switchState.language.transportListFour}
                         </li>
                         <li><IoIosCheckmark className={'checkmark'}/>
-                            {switchState.language.transport_list_five}
+                            {switchState.language.transportListFive}
                         </li>
                     </ul>
                 </Fade>

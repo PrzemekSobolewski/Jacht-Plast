@@ -18,10 +18,10 @@ const Home = () => {
                         {({scrollTo}) => <div className={'bgButtonContainer'}
                                               onClick={() => scrollTo({x: 0, y: 700, smooth: true})}>
                             <div className={'bgButton2'}>
-                                {switchState.language.about_us_button}
+                                {switchState.language.aboutUsButton}
                             </div>
                             <div className={'bgButton'}>
-                                {switchState.language.about_us_button}
+                                {switchState.language.aboutUsButton}
                             </div>
                         </div>}
                     </ScrollTo>
@@ -30,19 +30,19 @@ const Home = () => {
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
                     <div>
-                        {switchState.language.about_us_first_text}
+                        {switchState.language.aboutUsFirstText}
                     </div>
                     <img src={logoImage} className={'about_us_logo'} alt={"Logo of Jacht-Plast"}/>
                 </div>
                 <div className={'about_us_first'}>
                     <img src={logoImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
                     <div>
-                        {switchState.language.about_us_second_text}
+                        {switchState.language.aboutUsSecondText}
                     </div>
                 </div>
                 <div className={'about_us_first'}>
                     <div>
-                        {switchState.language.about_us_third_text}
+                        {switchState.language.aboutUsThirdText}
                     </div>
                     <img src={logoImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
                 </div>

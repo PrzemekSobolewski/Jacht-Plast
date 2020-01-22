@@ -9,18 +9,18 @@ const Footer = () => {
         <div className={"footer"}>
             <ul className="footerList">
                 <li>
-                    <h4 className={'header'}>{switchState.language.footer_contact}</h4>
-                    <div dangerouslySetInnerHTML={{__html: switchState.language.footer_contact_data}}/>
+                    <h4 className={'header'}>{switchState.language.footerContact}</h4>
+                    <div dangerouslySetInnerHTML={{__html: switchState.language.footerContactData}}/>
                 </li>
                 <li>
-                    <h4 className={'header'}>{switchState.language.footer_data}</h4>
-                    <div dangerouslySetInnerHTML={{__html: switchState.language.footer_data_data}}/>
+                    <h4 className={'header'}>{switchState.language.footerData}</h4>
+                    <div dangerouslySetInnerHTML={{__html: switchState.language.footerDataData}}/>
                 </li>
                 <li className={'sitesContainer'}>
-                    <h4 className={'header'}>{switchState.language.footer_pages}</h4>
+                    <h4 className={'header'}>{switchState.language.footerPages}</h4>
                     <Link href={"/"}>
                         <div className={'sites'}>
-                            {switchState.language.about_us}
+                            {switchState.language.aboutUs}
                         </div>
                     </Link>
                     <Link href={"/production"}>
@@ -40,7 +40,7 @@ const Footer = () => {
                     </Link>
                 </li>
                 <li>
-                    <h4 className={'header'}>{switchState.language.footer_invite}</h4>
+                    <h4 className={'header'}>{switchState.language.footerInvite}</h4>
                     <div id={"fb_icon"}>
                         <a href={"https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685/"}
                            target={'_white'}>

@@ -60,21 +60,21 @@ const Contact = () => {
     return (
         <Layout>
             <div className={'contact_div'}>
-                <h2>{switchState.language.contact_header}</h2>
+                <h2>{switchState.language.contactHeader}</h2>
                 <div className={'contact_content'}>
-                    <div className={'contact_data'} dangerouslySetInnerHTML={{__html: switchState.language.contact_text}}/>
+                    <div className={'contact_data'} dangerouslySetInnerHTML={{__html: switchState.language.contactText}}/>
 
                     <form id='contact-form' className={'contact_form'} method='POST' role={'form'}
                           onSubmit={handleSubmit}>
-                        <input placeholder={switchState.language.form_name} type={'text'} name={'name'} id={'name'}
+                        <input placeholder={switchState.language.formName} type={'text'} name={'name'} id={'name'}
                                value={name} onChange={e => setName(e.target.value)}/>
                         <input placeholder={'Email'} type={'text'} name={'email'} id={'email'}
                                value={email} onChange={e => setEmail(e.target.value)}/>
-                        <input placeholder={switchState.language.form_topic} type={'text'} name={'subject'} id={'subject'}
+                        <input placeholder={switchState.language.formTopic} type={'text'} name={'subject'} id={'subject'}
                                value={subject} onChange={e => setSubject(e.target.value)}/>
-                        <textarea id={'message'} name={'message'} value={message} placeholder={switchState.language.form_message}
+                        <textarea id={'message'} name={'message'} value={message} placeholder={switchState.language.formMessage}
                                   onChange={e => setMessage(e.target.value)}/>
-                        <button type='submit' className='submitButton'>{switchState.language.form_send}</button>
+                        <button type='submit' className='submitButton'>{switchState.language.formSend}</button>
                     </form>
                 </div>
                 <div className={'map_div'}>

@@ -46,7 +46,7 @@ const Hamburger = () => {
                         setRoute('/');
                         setIsOpen(false);
                     }} className={route === '/' ? 'item pressed' : 'item'}>
-                        O nas
+                        {switchState.language.aboutUs}
                     </div>
                 </Link>
                 <Link href={"/production"}>
@@ -54,7 +54,7 @@ const Hamburger = () => {
                         setRoute('/production');
                         setIsOpen(false);
                     }} className={route === '/production' ? 'item pressed' : 'item'}>
-                        Produkcja
+                        {switchState.language.production}
                     </div>
                 </Link>
                 <Link href={"/transport"}>
@@ -62,7 +62,7 @@ const Hamburger = () => {
                         setRoute('/transport');
                         setIsOpen(false);
                     }} className={route === '/transport' ? 'item pressed' : 'item'}>
-                        Transport
+                        {switchState.language.transport}
                     </div>
                 </Link>
                 <Link href={"/contact"}>
@@ -70,7 +70,7 @@ const Hamburger = () => {
                         setRoute('/contact');
                         setIsOpen(false);
                     }} className={route === '/contact' ? 'item pressed' : 'item'}>
-                        Kontakt
+                        {switchState.language.contact}
                     </div>
                 </Link>
                 <div className={'switchContainerMobile'}>

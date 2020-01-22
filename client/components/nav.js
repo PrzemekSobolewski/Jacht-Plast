@@ -36,7 +36,7 @@ const Nav = (props) => {
         if(cookies.switch !== undefined) {
             cookieState.showCookies = false;
             cookieState.cookieAccepted = true;
-
+            cookies.switch === 'true' ? setSwitch(true) : setSwitch(false);
         }
     });
 
@@ -60,7 +60,7 @@ const Nav = (props) => {
                     <ul className={'list'}>
                         <Link href={"/"}>
                             <li onClick={() => setRoute('/')} className={route === '/' ? 'pressed' : ''}>
-                                {switchState.language.about_us}
+                                {switchState.language.aboutUs}
                             </li>
                         </Link>
                         <Link href={"/production"}>
