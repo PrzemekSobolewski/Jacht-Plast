@@ -12,9 +12,9 @@ const CookiesModal = (props) => {
                 </div>
                 <div className={'body'}>
                     This website or its third-party tools use cookies, which are necessary to its functioning and
-                    required to achieve the purposes illustrated in the
-                    <a href="/#" target="_blank" rel="noopener noreferrer" className={'href'}> cookie policy</a>.
-                    If you want to know more or withdraw your consent to all or some of the cookies, please refer to the
+                    required to achieve the purposes illustrated in the&nbsp;
+                    <a href="/#" target="_blank" rel="noopener noreferrer" className={'href'}>Cookie Policy.</a>
+                    &nbsp;If you want to know more or withdraw your consent to all or some of the cookies, please refer to the
                     cookie policy.
                 </div>
                 <div className={'buttonContainer'}>

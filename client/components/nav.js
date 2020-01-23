@@ -5,7 +5,6 @@ import logoImage from '../assets/images/logo.png';
 import NavigationContext from "./NavigationContext";
 import * as actions from "../redux/actions/switchActions";
 import * as cookieActions from "../redux/actions/cookieActions"
-import * as cookie from  "../redux/actions/cookieActions";
 import {useDispatch, useSelector} from "react-redux";
 import Switch from "react-switch";
 import POLAND from "../assets/images/poland.png";
@@ -25,12 +24,11 @@ const Nav = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log(cookies);
         if (cookies.switch !== undefined) {
             dispatch(cookieActions.acceptCookie());
             setSwitch(cookies.switch === "true")
         }
-    }, [cookies]);
+    });
 
     const setSwitch = (value) => {
         if (value) {
@@ -38,19 +36,19 @@ const Nav = (props) => {
         } else {
             dispatch(actions.setEng())
         }
-        if (switchState.cookieAccepted) {
+        if (cookieState.cookieAccepted) {
             setCookie('switch', switchState, {path: '/'});
         }
 
     };
 
     const accept = () => {
-        console.log(cookies);
+        dispatch(cookieActions.acceptCookie());
         setCookie('switch', switchState, {path: '/'});
     };
 
     const close = () => {
-        dispatch(cookie.cancelCookie());
+        dispatch(cookieActions.cancelCookie());
     };
 
     return (

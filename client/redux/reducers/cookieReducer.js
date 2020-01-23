@@ -1,4 +1,4 @@
-import {CLOSE_COOKIE, ACCEPT_COOKIE, CANCEL_COOKIE} from "../actions/cookieActions";
+import {ACCEPT_COOKIE, CANCEL_COOKIE} from "../actions/cookieActions";
 
 const initialState = {
     cookieAccepted: false,
