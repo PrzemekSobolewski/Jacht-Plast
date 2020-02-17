@@ -4,6 +4,7 @@ import axios from 'axios';
 import {BounceLoader} from 'react-spinners';
 import {css} from '@emotion/core';
 import {useSelector} from "react-redux";
+import {Helmet} from "react-helmet";
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -59,6 +60,11 @@ const Contact = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Kontakt - Jacht Plast</title>
+                <meta name="description" content="Prosimy o kontakt z Jacht Plast telefonicznie lub drogą elektroniczną"/>
+            </Helmet>
             <div className={'contact_div'}>
                 <h2>{switchState.language.contactHeader}</h2>
                 <div className={'contact_content'}>

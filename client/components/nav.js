@@ -86,7 +86,7 @@ const Nav = (props) => {
                                 checked={switchState.isPl}
                                 width={100}
                                 onColor={'#888'}
-                                checkedIcon={<img src={POLAND} alt={"pl"} className={'checkedSwitch'}/>}
+                                checkedIcon={<img src={POLAND} alt={"PL"} className={'checkedSwitch'}/>}
                                 uncheckedIcon={<img src={ENG} alt={"ENG"} className={'uncheckedSwitch'}/>}
                         />
                     </div>

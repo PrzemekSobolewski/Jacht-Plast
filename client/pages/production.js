@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
 import bottom_radius from "../assets/images/production/img/bottom_radius.png";
 import upper_radius from "../assets/images/production/img/upper_radius.png";
+import {Helmet} from "react-helmet";
 
 function importAll(r) {
     return r.keys().map(r);
@@ -136,6 +137,11 @@ const Production = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Produkcja - Jacht Plast</title>
+                <meta name="description" content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek."/>
+            </Helmet>
             <div className={"production"}>
                 <div className={"list_div"}>
                     {data.map(mapExpands)}

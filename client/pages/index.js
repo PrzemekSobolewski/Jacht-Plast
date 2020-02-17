@@ -5,12 +5,18 @@ import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'
 import {ScrollTo} from "react-scroll-to";
 import logoImage from "../assets/images/logo.png";
 import {useSelector} from "react-redux";
+import {Helmet} from "react-helmet";
 
 const Home = () => {
     const switchState = useSelector(state => state.switch);
 
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Strona Główna - Jacht Plast</title>
+                <meta name="description" content="Jacht Plast zajmuje się budową jachtow, wyrobami laminotowymi oraz trasnsportem"/>
+            </Helmet>
             <Parallax bgImage={YACHT} strength={600} bgImageStyle={'bg'}>
                 <div className={'bgContainer'}>
                     <div className={'bgText'}>JACHT-PLAST</div>

@@ -7,6 +7,7 @@ import {IoIosArrowDropdown, IoIosCheckmark} from "react-icons/io";
 import Fade from 'react-reveal/Fade'
 import * as actions from "../redux/actions/modalActions";
 import {useDispatch, useSelector} from "react-redux";
+import {Helmet} from "react-helmet";
 
 function importAll(r) {
     return r.keys().map(r);
@@ -41,6 +42,11 @@ const Transport = () => {
     };
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Transport - Jacht Plast</title>
+                <meta name="description" content="Jacht plast zajmuje się transportem na terenie całej Europy."/>
+            </Helmet>
             <div className={"transportText"}>
                 <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>
                 <Fade>
