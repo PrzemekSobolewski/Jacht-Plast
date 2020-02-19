@@ -48,7 +48,7 @@
     "contact": "Contact",
     "contactHeader": "Contact us",
     "contactText": "<h1 style={{marginBottom: 8}}>Jacht-Plast</h1><h2 style={{marginTop: 0}}>Zdzisław Sobolewski</h2><h3>Address:</h3>St. Przemysłowa 4<br/>26-340 Drzewica<br/>NIP: 799-13-31-976<br/><h3>Contact:</h3>Fax: (48) 375 67 35<br/>Pone: 601 256 133<br/>Email: jachtplast@gmail.com<br/><h3>Work hours:</h3>Monday - Friday<br/>8am - 5pm",
-    "formName": "Name i surname",
+    "formName": "Name and surname",
     "formTopic": "Topic",
     "formMessage": "Write a message...",
     "formSend": "Send",

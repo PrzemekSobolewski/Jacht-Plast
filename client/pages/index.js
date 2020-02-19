@@ -3,7 +3,9 @@ import Layout from "../components/Layout";
 import {Parallax} from "react-parallax";
 import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'
 import {ScrollTo} from "react-scroll-to";
-import logoImage from "../assets/images/logo.png";
+import harborImage from "../assets/images/transport/20190515_073912.jpg"
+import interiorImage from "../assets/images/production/versus/20170919_070131.jpg"
+import exteriorImage from "../assets/images/transport/20190603_091020.jpg"
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 
@@ -38,10 +40,10 @@ const Home = () => {
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
-                    <img src={logoImage} className={'about_us_logo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={harborImage} className={'about_us_logo'} alt={"Logo of Jacht-Plast"}/>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={logoImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={exteriorImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsSecondText}
                     </div>
@@ -50,7 +52,7 @@ const Home = () => {
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>
-                    <img src={logoImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
                 </div>
             </div>
         </Layout>

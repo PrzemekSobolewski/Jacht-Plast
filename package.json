@@ -27,5 +27,8 @@
     "express": "^4.17.1",
     "nodemailer": "^6.3.1",
     "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "terser-brunch": "^4.0.0"
   }
 }
