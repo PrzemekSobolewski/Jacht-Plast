@@ -1,12 +1,12 @@
 import React from 'react';
-import Cancel from '@material-ui/icons/Cancel';
+import {MdCancel} from 'react-icons/md';
 import Fab from '@material-ui/core/Fab';
 
 const CookiesModal = (props) => {
     return (
         <div className={'containerCookies'}>
             <div className={'content'}>
-                <Cancel className={'cancel'} onClick={() => props.close()}/>
+                <MdCancel className={'cancel'} onClick={() => props.close()}/>
                 <div className={'title'}>
                     Cookies Policy
                 </div>

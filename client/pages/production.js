@@ -27,49 +27,57 @@ const elements = [
         id: 0,
         open: true,
         photos: navighator,
-        title: 'NAVIGATHOR 30'
+        title: 'NAVIGATHOR 30',
+        alt: 'Jednostka NAVIGATHOR 30'
     },
     {
         id: 1,
         open: false,
         photos: illuminatus,
-        title: 'TES 393 ILLUMINATUS'
+        title: 'TES 393 ILLUMINATUS',
+        alt: 'Jednostka TES 393 ILLUMINATUS'
     },
     {
         id: 2,
         open: false,
         photos: dreamer,
-        title: 'TES 32 DREAMER'
+        title: 'TES 32 DREAMER',
+        alt: 'Jednostka TES 32 DREAMER'
     },
     {
         id: 3,
         open: false,
         photos: magnam,
-        title: 'TES 28 MAGNAM'
+        title: 'TES 28 MAGNAM',
+        alt: 'Jednostka TES 28 MAGNAM'
     },
     {
         id: 4,
         open: false,
         photos: versus,
-        title: 'TES 246 VERSUS'
+        title: 'TES 246 VERSUS',
+        alt: 'Jednostka TES 246 VERSUS'
     },
     {
         id: 5,
         open: false,
         photos: bt_tes,
-        title: 'TES 678 BT-TES 720'
+        title: 'TES 678 BT-TES 720',
+        alt: 'Jednostki TES 678 oraz BT-TES 720'
     },
     {
         id: 6,
         open: false,
         photos: master,
-        title: 'TES 550 MASTER'
+        title: 'TES 550 MASTER',
+        alt: 'Jednostka TES 550 MASTER'
     },
     {
         id: 7,
         open: false,
         photos: diffrent,
-        title: false
+        title: false,
+        alt: 'Inne modele jak i jednostki'
     }
 
 
@@ -115,7 +123,7 @@ const Production = () => {
     const mapExpands = (item) => {
         return (
             <div className={'fullExpand'}>
-                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''} style={item.open ? {display: ''} : {display: 'none'}}/> </span>
+                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}  style={item.open ? {display: ''} : {display: 'none'}}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>

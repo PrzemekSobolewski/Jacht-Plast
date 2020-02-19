@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import switchReducer from "../redux/reducers/switchReducer";
 import cookieReducer from "../redux/reducers/cookieReducer";
 import {CookiesProvider} from 'react-cookie';
+import {Helmet} from "react-helmet";
 
 const rootReducer = combineReducers({
     modal: modalReducer,
@@ -21,6 +22,7 @@ const MyApp = ({Component, pageProps}) => {
     return (
         <CookiesProvider>
             <Provider store={store}>
+                <Helmet htmlAttributes={{ lang : 'en' }}/>
                 <NavigationContext.Provider value={[route, setRoute]}>
                     <Component {...pageProps} />
                 </NavigationContext.Provider>
