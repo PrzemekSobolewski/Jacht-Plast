@@ -68,7 +68,7 @@ const Transport = () => {
                         </li>
                     </ul>
                 </Fade>
-                <div className={'underList'} dangerouslySetInnerHTML={{__html: switchState.language.transport_text}}/>
+                <div className={'underList'} dangerouslySetInnerHTML={{__html: switchState.language.transportText}}/>
 
             </div>
             <div className={"transportLine"}>

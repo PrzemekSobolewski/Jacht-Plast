@@ -1,4 +1,4 @@
-import React, {useEffect, useContext, useMemo, useState} from 'react';
+import React, {useEffect, useContext} from 'react';
 import Headroom from "react-headroom";
 import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
@@ -39,7 +39,6 @@ const Nav = (props) => {
         if (cookieState.cookieAccepted) {
             setCookie('switch', switchState, {path: '/'});
         }
-
     };
 
     const accept = () => {
