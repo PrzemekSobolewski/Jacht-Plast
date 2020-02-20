@@ -22,7 +22,7 @@ const MyApp = ({Component, pageProps}) => {
     return (
         <CookiesProvider>
             <Provider store={store}>
-                <Helmet htmlAttributes={{ lang : 'en' }}/>
+                <Helmet htmlAttributes={{ lang : 'pl' }}/>
                 <NavigationContext.Provider value={[route, setRoute]}>
                     <Component {...pageProps} />
                 </NavigationContext.Provider>

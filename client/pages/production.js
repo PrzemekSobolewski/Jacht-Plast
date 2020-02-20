@@ -122,14 +122,14 @@ const Production = () => {
 
     const mapExpands = (item) => {
         return (
-            <div className={'fullExpand'}>
-                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}  style={item.open ? {display: ''} : {display: 'none'}}/> </span>
+            <div className={'fullExpand'} key={item.id}>
+                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}  style={item.open ? {display: ''} : {display: 'none'}} alt={"Upper image"}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
-                    <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
+                    <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}} alt={"Icon fading"}/>
                     {item.title ? item.title : switchState.language.productionModels}
                 </div>
-                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
+                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}} alt={"Lower image"}/> </span>
             </div>
         )
     };
@@ -138,7 +138,7 @@ const Production = () => {
         return (
             <Images key={index}>
                 <img className={"productionImage"} src={photo} width={'300px'} height={'200px'}
-                     onClick={() => openLightBox(index)}/>
+                     onClick={() => openLightBox(index)} alt={"Image of production " + index}/>
             </Images>
         )
     };
@@ -148,7 +148,7 @@ const Production = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Produkcja - Jacht Plast</title>
-                <meta name="description" content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek."/>
+                <meta name="description" content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek w naszej firmie."/>
             </Helmet>
             <div className={"production"}>
                 <div className={"list_div"}>

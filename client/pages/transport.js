@@ -21,9 +21,9 @@ const Transport = () => {
     const switchState = useSelector(state => state.switch);
 
     useEffect(() => {
-        let readyImages = images.map(i => {
+        let readyImages = images.map(image => {
             return {
-                src: i
+                src: image
             }
         });
         dispatch(actions.loadDataModal(readyImages));
@@ -34,10 +34,10 @@ const Transport = () => {
         dispatch(actions.openModal());
     };
 
-    const mapToImage = (i, j) => {
+    const mapToImage = (image, index) => {
         return (
-            <Images key={j}>
-                <img className={"image"} src={i} onClick={() => openLightBox(j)}/>
+            <Images key={index}>
+                <img className={"image"} src={image} onClick={() => openLightBox(index)} alt={"Image of transport " + index}/>
             </Images>)
     };
     return (
@@ -45,25 +45,25 @@ const Transport = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Transport - Jacht Plast</title>
-                <meta name="description" content="Jacht plast zajmuje się transportem na terenie całej Europy."/>
+                <meta name="description" content="Jacht plast zajmuje się transportem na terenie całej Europy. Od wielu lat świadczymy usługi logistyczne. Poniżej przedstawiamy informacje oraz przegląd usług."/>
             </Helmet>
             <div className={"transportText"}>
                 <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>
                 <Fade>
                     <ul className={'transportList'}>
-                        <li><IoIosCheckmark className={'checkmark'}/>
+                        <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
                             {switchState.language.transportListOne}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>
+                        <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
                             {switchState.language.transportListTwo}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>
+                        <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
                             {switchState.language.transportListThree}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>
+                        <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
                             {switchState.language.transportListFour}
                         </li>
-                        <li><IoIosCheckmark className={'checkmark'}/>
+                        <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
                             {switchState.language.transportListFive}
                         </li>
                     </ul>
