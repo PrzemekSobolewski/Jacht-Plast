@@ -1,17 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
 import Images from '../components/Images';
 import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
-import * as rellaxActions from "../redux/actions/rellaxActions";
 import bottom_radius from "../assets/images/production/img/bottom_radius.png";
 import upper_radius from "../assets/images/production/img/upper_radius.png";
 import {Helmet} from "react-helmet";
-import ParallaxComponent from 'react-parallax-component';
-import ReactResizeDetector from 'react-resize-detector';
-
 
 function importAll(r) {
     return r.keys().map(r);
@@ -84,19 +80,13 @@ const elements = [
         alt: 'Inne modele jak i jednostki'
     }
 
-];
 
+];
 const Production = () => {
     const [data, setData] = useState(elements);
     const [pickedOne, setPickedOne] = useState(data[0]);
     const switchState = useSelector(state => state.switch);
-    const rellaxState = useSelector(state => state.rellax);
     const dispatch = useDispatch();
-    const productionRef = useRef(null);
-
-    useEffect(() => {
-        setRellaxSpeed();
-    }, []);
 
     useEffect(() => {
         setData(data.map(item => {
@@ -123,48 +113,23 @@ const Production = () => {
         dispatch(actions.openModal());
     };
 
-    const openExpand = async (element) => {
+    const openExpand = (element) => {
         data[pickedOne.id].open = false;
         data[element.id].open = true;
-        await setPickedOne(element);
-        setRellaxSpeed();
+        setPickedOne(element);
         setData(data);
-    };
-
-    const setRellaxSpeed = () => {
-        const width = productionRef.current ? productionRef.current.offsetWidth : 0;
-        if (pickedOne.id === 7 && width < 1148) {
-            dispatch(rellaxActions.moveWithManyPic());
-        }
-        else if (pickedOne.id === 7 && width >= 1148 && width <= 1300) {
-            dispatch(rellaxActions.moveFast());
-        }
-        else if (pickedOne.id === 7 && width > 1300) {
-            dispatch(rellaxActions.move());
-        }
-        else if (pickedOne.id !== 7 && width < 1148) {
-            dispatch(rellaxActions.moveFast());
-        }
-        else if (pickedOne.id !== 7 && width >= 1148 && width <= 1300) {
-            dispatch(rellaxActions.move());
-        }
-        else if (pickedOne.id !== 7 && width > 1300) {
-            dispatch(rellaxActions.notMove());
-        }
     };
 
     const mapExpands = (item) => {
         return (
             <div className={'fullExpand'}>
-                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}
-                                                      style={item.open ? {display: ''} : {display: 'none'}}/> </span>
+                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}  style={item.open ? {display: ''} : {display: 'none'}}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
                     {item.title ? item.title : switchState.language.productionModels}
                 </div>
-                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''}
-                                                       style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
+                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}}/> </span>
             </div>
         )
     };
@@ -181,19 +146,14 @@ const Production = () => {
     return (
         <Layout>
             <Helmet>
-                <meta charSet="utf-8"/>
+                <meta charSet="utf-8" />
                 <title>Produkcja - Jacht Plast</title>
-                <meta name="description"
-                      content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek."/>
+                <meta name="description" content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek."/>
             </Helmet>
-            <div className={"production"} ref={productionRef}>
-
-                    <ParallaxComponent
-                        className={"list_div"}
-                        speed={rellaxState.speed}
-                    >
-                        {data.map(mapExpands)}
-                    </ParallaxComponent>
+            <div className={"production"}>
+                <div className={"list_div"}>
+                    {data.map(mapExpands)}
+                </div>
                 <div className={"details"}>
                     <div className={'galleryProd'}>
                         <Gallery>

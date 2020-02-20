@@ -17,9 +17,9 @@ const Home = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Strona Główna - Jacht Plast</title>
-                <meta name="description" content="Jacht Plast zajmuje się budową jachtow, wyrobami laminotowymi oraz trasnsportem"/>
+                <meta name="description" content="Jacht Plast zajmuje się budową jachtów, wyrobami laminotowymi oraz trasnsportem. Świadczymy usługi dla zadowolonych klientów z całego świata."/>
             </Helmet>
-            <Parallax bgImage={YACHT} strength={600} bgImageStyle={'bg'}>
+            <Parallax bgImage={YACHT} strength={600}>
                 <div className={'bgContainer'}>
                     <div className={'bgText'}>JACHT-PLAST</div>
                     <ScrollTo>
@@ -40,10 +40,10 @@ const Home = () => {
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
-                    <img src={harborImage} className={'about_us_logo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={harborImage} className={'about_us_logo'} alt={"Image of Jacht-Plast"}/>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={exteriorImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsSecondText}
                     </div>
@@ -52,7 +52,7 @@ const Home = () => {
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>
-                    <img src={interiorImage} className={'about_us_photo'} alt={"Logo of Jacht-Plast"}/>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                 </div>
             </div>
         </Layout>

@@ -63,7 +63,7 @@ const Contact = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Kontakt - Jacht Plast</title>
-                <meta name="description" content="Prosimy o kontakt z Jacht Plast telefonicznie lub drogą elektroniczną"/>
+                <meta name="description" content="Prosimy o kontakt z Jacht Plast telefonicznie lub drogą elektroniczną."/>
             </Helmet>
             <div className={'contact_div'}>
                 <h2>{switchState.language.contactHeader}</h2>
