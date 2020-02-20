@@ -7,11 +7,13 @@ import switchReducer from "../redux/reducers/switchReducer";
 import cookieReducer from "../redux/reducers/cookieReducer";
 import {CookiesProvider} from 'react-cookie';
 import {Helmet} from "react-helmet";
+import rellaxReducer from "../redux/reducers/rellaxReducer";
 
 const rootReducer = combineReducers({
     modal: modalReducer,
     switch: switchReducer,
-    cookie: cookieReducer
+    cookie: cookieReducer,
+    rellax: rellaxReducer
 });
 
 const store = createStore(rootReducer);
