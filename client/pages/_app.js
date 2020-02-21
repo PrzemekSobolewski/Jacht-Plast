@@ -7,13 +7,13 @@ import switchReducer from "../redux/reducers/switchReducer";
 import cookieReducer from "../redux/reducers/cookieReducer";
 import {CookiesProvider} from 'react-cookie';
 import {Helmet} from "react-helmet";
-import rellaxReducer from "../redux/reducers/rellaxReducer";
+import Head from 'next/head';
+import icon from '../public/icon.png'
 
 const rootReducer = combineReducers({
     modal: modalReducer,
     switch: switchReducer,
     cookie: cookieReducer,
-    rellax: rellaxReducer
 });
 
 const store = createStore(rootReducer);
@@ -24,6 +24,9 @@ const MyApp = ({Component, pageProps}) => {
     return (
         <CookiesProvider>
             <Provider store={store}>
+                <Head>
+                    <link rel="shortcut icon" href={icon} />
+                </Head>
                 <Helmet htmlAttributes={{ lang : 'pl' }}/>
                 <NavigationContext.Provider value={[route, setRoute]}>
                     <Component {...pageProps} />

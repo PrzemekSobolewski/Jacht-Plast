@@ -1,22 +1,18 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import Layout from "../components/Layout";
 import Images from '../components/Images';
 import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
-import * as rellaxActions from "../redux/actions/rellaxActions";
 import bottom_radius from "../assets/images/production/img/bottom_radius.png";
 import upper_radius from "../assets/images/production/img/upper_radius.png";
 import {Helmet} from "react-helmet";
-import ParallaxComponent from 'react-parallax-component';
-import ReactResizeDetector from 'react-resize-detector';
-
+import {Parallax, ParallaxProvider} from "react-scroll-parallax";
 
 function importAll(r) {
     return r.keys().map(r);
 }
-
 
 const bt_tes = importAll(require.context('../assets/images/production/bt_tes/', false, /\.(png|jpe?g|svg)$/));
 const dreamer = importAll(require.context('../assets/images/production/dreamer/', false, /\.(png|jpe?g|svg)$/));
@@ -83,19 +79,17 @@ const elements = [
         title: false,
         alt: 'Inne modele jak i jednostki'
     }
-
-
 ];
+
 const Production = () => {
     const [data, setData] = useState(elements);
     const [pickedOne, setPickedOne] = useState(data[0]);
+    const [width, setWidth] = useState(1200);
     const switchState = useSelector(state => state.switch);
-    const rellaxState = useSelector(state => state.rellax);
     const dispatch = useDispatch();
-    const productionRef = useRef(null);
 
     useEffect(() => {
-        setRellaxSpeed();
+        setWidth(window.innerWidth);
     }, []);
 
     useEffect(() => {
@@ -127,42 +121,53 @@ const Production = () => {
         data[pickedOne.id].open = false;
         data[element.id].open = true;
         await setPickedOne(element);
-        setRellaxSpeed();
         setData(data);
     };
 
-    const setRellaxSpeed = () => {
-        const width = productionRef.current ? productionRef.current.offsetWidth : 0;
-        if (pickedOne.id === 7 && width < 1148) {
-            dispatch(rellaxActions.moveWithManyPic());
+    const getParallaxSpeed = () => {
+        if (width <= 513|| (width > 600 && width < 1166)) {
+            return <Parallax
+                className={"list_div"}
+                y={[-40, 72]}
+            >
+                {data.map(mapExpands)}
+            </Parallax>;
         }
-        else if (pickedOne.id === 7 && width >= 1148 && width <= 1300) {
-            dispatch(rellaxActions.moveFast());
+        else if (width >= 1166 && width <= 1300) {
+            return <Parallax
+                className={"list_div"}
+                y={[-15.5, 25]}
+
+            >
+                {data.map(mapExpands)}
+            </Parallax>;
         }
-        else if (pickedOne.id === 7 && width > 1300) {
-            dispatch(rellaxActions.move());
-        }
-        else if (pickedOne.id !== 7 && width < 1148) {
-            dispatch(rellaxActions.moveFast());
-        }
-        else if (pickedOne.id !== 7 && width >= 1148 && width <= 1300) {
-            dispatch(rellaxActions.move());
-        }
-        else if (pickedOne.id !== 7 && width > 1300) {
-            dispatch(rellaxActions.notMove());
+        else if ((width > 1300) || (width > 513 && width <= 600)) {
+            return <Parallax
+                className={"list_div"}
+                y={[0, 0]}
+
+            >
+                {data.map(mapExpands)}
+            </Parallax>;
         }
     };
+
 
     const mapExpands = (item) => {
         return (
             <div className={'fullExpand'} key={item.id}>
-                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}  style={item.open ? {display: ''} : {display: 'none'}} alt={"upper image"}/> </span>
+                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}
+                                                      style={item.open ? {display: ''} : {display: 'none'}}
+                                                      alt={"upper image"}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
                     {item.title ? item.title : switchState.language.productionModels}
                 </div>
-                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''} style={item.open ? {display: 'block'} : {display: 'none'}} alt={"lower image"}/> </span>
+                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''}
+                                                       style={item.open ? {display: 'block'} : {display: 'none'}}
+                                                       alt={"lower image"}/> </span>
             </div>
         )
     };
@@ -170,37 +175,33 @@ const Production = () => {
     const mapToImage = (photo, index) => {
         return (
             <Images key={index}>
-                <img className={"productionImage"} src={photo} width={'300px'} height={'200px'}
+                <img className={"productionImage"} src={photo}
                      onClick={() => openLightBox(index)} alt={"Image of production " + index}/>
             </Images>
         )
     };
 
     return (
-        <Layout>
-            <Helmet>
-                <meta charSet="utf-8"/>
-                <title>Produkcja - Jacht Plast</title>
-                <meta name="description"
-                      content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek w nsazej firmie."/>
-            </Helmet>
-            <div className={"production"} ref={productionRef}>
-
-                    <ParallaxComponent
-                        className={"list_div"}
-                        speed={rellaxState.speed}
-                    >
-                        {data.map(mapExpands)}
-                    </ParallaxComponent>
-                <div className={"details"}>
-                    <div className={'galleryProd'}>
-                        <Gallery>
-                            {pickedOne.photos.map(mapToImage)}
-                        </Gallery>
+        <ParallaxProvider>
+            <Layout>
+                <Helmet>
+                    <meta charSet="utf-8"/>
+                    <title>Produkcja - Jacht Plast</title>
+                    <meta name="description"
+                          content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek w nsazej firmie."/>
+                </Helmet>
+                <div className={"production"}>
+                    {getParallaxSpeed()}
+                    <div className={"details"}>
+                        <div className={'galleryProd'}>
+                            <Gallery>
+                                {pickedOne.photos.map(mapToImage)}
+                            </Gallery>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Layout>
+            </Layout>
+        </ParallaxProvider>
     )
 };
 
