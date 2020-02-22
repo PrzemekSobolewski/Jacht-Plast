@@ -176,7 +176,7 @@ const Production = () => {
         return (
             <Images key={index}>
                 <img className={"productionImage"} src={photo}
-                     onClick={() => openLightBox(index)} alt={"Image of production " + index}/>
+                     onClick={() => openLightBox(index)} alt={"Image of production. " + index}/>
             </Images>
         )
     };
