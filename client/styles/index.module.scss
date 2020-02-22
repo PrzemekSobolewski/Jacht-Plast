@@ -3,6 +3,7 @@
     transform: scale(0.7) translate3d(-84%, -406.826px, 0px) !important;
   }
 }
+
 .bgContainer {
   @include flex-center();
   flex-direction: column;
@@ -11,6 +12,7 @@
     height: 500px;
   }
 }
+
 .bgText {
   color: white;
   font-size: 5em;
@@ -19,11 +21,12 @@
     font-size: 3em;
   }
 }
+
 .bgButtonContainer {
   position: relative;
   width: 100%;
   @include flex-center();
-  >.bgButton {
+  > .bgButton {
     position: absolute;
     font-size: 1.5em;
     margin-top: 5em;
@@ -37,7 +40,7 @@
     }
   }
 
-  >.bgButton2 {
+  > .bgButton2 {
     @extend .bgButton;
     background: white;
     color: black;
@@ -75,8 +78,11 @@
 
 .about_us_first {
   @include flex-center;
+  text-align: center;
+  justify-content: space-between;
   margin: 1em 0;
 }
+
 .about_us_logo {
   width: 17.36em;
   height: 14em;

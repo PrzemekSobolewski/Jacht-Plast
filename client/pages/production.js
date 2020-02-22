@@ -124,7 +124,7 @@ const Production = () => {
         setData(data);
     };
 
-    const getParallaxSpeed = () => {
+    const changeParallax = () => {
         if (width <= 513|| (width > 600 && width < 1166)) {
             return <Parallax
                 className={"list_div"}
@@ -191,7 +191,7 @@ const Production = () => {
                           content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek w nsazej firmie."/>
                 </Helmet>
                 <div className={"production"}>
-                    {getParallaxSpeed()}
+                    {changeParallax()}
                     <div className={"details"}>
                         <div className={'galleryProd'}>
                             <Gallery>

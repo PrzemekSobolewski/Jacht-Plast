@@ -3,9 +3,12 @@
 .containerCookies {
   position: fixed;
   bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
   @include flex-center();
   height: auto;
-  width: 100%;
+  width: 65%;
   z-index: 1000;
   filter: drop-shadow(10px 0px 10px rgba(0,0,0,0.4));
   @media only screen and (max-width: 1280px) {
@@ -50,7 +53,7 @@
       }
     }
     > .body {
-      padding: 0.5em 0 0 0;
+      padding: 1.5em 0;
       text-align: center;
     }
     > .buttonContainer {
