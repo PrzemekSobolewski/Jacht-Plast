@@ -1,4 +1,5 @@
 import React, {useEffect, useContext} from 'react';
+import {useRouter} from 'next/router';
 import Headroom from "react-headroom";
 import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
@@ -18,6 +19,7 @@ const Nav = (props) => {
     const switchState = useSelector(state => state.switch);
     const cookieState = useSelector(state => state.cookie);
     const [cookies, setCookie] = useCookies(['switch']);
+    const router = useRouter();
 
     useEffect(() => {
         setRoute(window.location.pathname);
@@ -59,26 +61,18 @@ const Nav = (props) => {
                 </Link>
                 <div className={'rightBox'}>
                     <ul className={'list'}>
-                        <Link href={"/"}>
-                            <li onClick={() => setRoute('/')} className={route === '/' ? 'pressed' : ''}>
-                                {switchState.language.aboutUs}
-                            </li>
-                        </Link>
-                        <Link href={"/production"}>
-                            <li onClick={() => setRoute('/production')} className={route === '/production' ? 'pressed' : ''}>
-                                {switchState.language.production}
-                            </li>
-                        </Link>
-                        <Link href={"/transport"}>
-                            <li onClick={() => setRoute('/transport')} className={route === '/transport' ? 'pressed' : ''}>
-                                {switchState.language.transport}
-                            </li>
-                        </Link>
-                        <Link href={"/contact"}>
-                            <li onClick={() => setRoute('/contact')} className={route === '/contact' ? 'pressed' : ''}>
-                                {switchState.language.contact}
-                            </li>
-                        </Link>
+                        <li onClick={() => router.push("/")} className={route === '/' ? 'pressed' : ''}>
+                            {switchState.language.aboutUs}
+                        </li>
+                        <li onClick={() => router.push("/production")} className={route === '/production' ? 'pressed' : ''}>
+                            {switchState.language.production}
+                        </li>
+                        <li onClick={() => router.push("/transport")} className={route === '/transport' ? 'pressed' : ''}>
+                            {switchState.language.transport}
+                        </li>
+                        <li onClick={() => router.push("/contact")} className={route === '/contact' ? 'pressed' : ''}>
+                            {switchState.language.contact}
+                        </li>
                     </ul>
                     <div className={'switchContainer'}>
                         <Switch onChange={(value) => setSwitch(value)}
