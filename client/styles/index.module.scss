@@ -81,18 +81,9 @@
   text-align: center;
   justify-content: space-between;
   margin: 1em 0;
-}
-
-.about_us_logo {
-  width: 17.36em;
-  height: 14em;
-  border: solid 1px grey;
-  filter: drop-shadow(1px 1px 5px #000);
-  margin-left: 4em;
+  font-size: 1em;
   @media only screen and (max-width: 1000px) {
-    width: 8em;
-    height: 8em;
-    margin: 1em;
+    font-size: 0.8em;
   }
 }
 
@@ -100,12 +91,12 @@
   width: 17.36em;
   height: 14em;
   border: solid 1px grey;
-  filter: drop-shadow(1px 1px 5px #000);
+  filter: drop-shadow(1px 1px 3px #000);
   margin: 0 2em;
   @media only screen and (max-width: 1000px) {
-    width: 8em;
-    height: 8em;
-    margin: 1em;
+    width: 12em;
+    height: 9em;
+    margin: 1em 1.5em;
   }
 }
 

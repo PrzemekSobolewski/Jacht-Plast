@@ -1,10 +1,12 @@
 import React from 'react';
 import {FaFacebookSquare} from "react-icons/fa";
-import Link from "next/dist/client/link";
 import {useSelector} from "react-redux";
+import {useRouter} from 'next/router';
 
 const Footer = () => {
+    const router = useRouter();
     const switchState = useSelector(state => state.switch);
+
     return (
         <div className={"footer"}>
             <ul className="footerList">
@@ -18,26 +20,18 @@ const Footer = () => {
                 </li>
                 <li className={'sitesContainer'}>
                     <h4 className={'header'}>{switchState.language.footerPages}</h4>
-                    <Link href={"/"}>
-                        <div className={'sites'}>
-                            {switchState.language.aboutUs}
-                        </div>
-                    </Link>
-                    <Link href={"/production"}>
-                        <div className={'sites'}>
-                            {switchState.language.production}
-                        </div>
-                    </Link>
-                    <Link href={"/transport"}>
-                        <div className={'sites'}>
-                            {switchState.language.transport}
-                        </div>
-                    </Link>
-                    <Link href={"/contact"}>
-                        <div className={'sites'}>
-                            {switchState.language.contact}
-                        </div>
-                    </Link>
+                    <div className={'sites'} onClick={() => router.push("/")}>
+                        {switchState.language.aboutUs}
+                    </div>
+                    <div className={'sites'} onClick={() => router.push("/production")}>
+                        {switchState.language.production}
+                    </div>
+                    <div className={'sites'} onClick={() => router.push("/transport")}>
+                        {switchState.language.transport}
+                    </div>
+                    <div className={'sites'} onClick={() => router.push("/contact")}>
+                        {switchState.language.contact}
+                    </div>
                 </li>
                 <li>
                     <h4 className={'header'}>{switchState.language.footerInvite}</h4>

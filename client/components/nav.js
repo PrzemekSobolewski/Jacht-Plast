@@ -1,7 +1,6 @@
 import React, {useEffect, useContext} from 'react';
 import {useRouter} from 'next/router';
 import Headroom from "react-headroom";
-import Link from 'next/link';
 import logoImage from '../assets/images/logo.png';
 import NavigationContext from "./NavigationContext";
 import * as actions from "../redux/actions/switchActions";
@@ -55,19 +54,19 @@ const Nav = (props) => {
     return (
         <CookiesProvider>
             <Headroom style={{backgroundColor: 'white'}}>
-                <Link href={"/"}>
-                    <img src={logoImage} id='logoImage' className={'logo'} alt={"Logo of Jacht-Plast"}
-                         onClick={() => setRoute('/')}/>
-                </Link>
+                <img src={logoImage} id='logoImage' className={'logo'} alt={"Logo of Jacht-Plast"}
+                     onClick={() => router.push("/")}/>
                 <div className={'rightBox'}>
                     <ul className={'list'}>
                         <li onClick={() => router.push("/")} className={route === '/' ? 'pressed' : ''}>
                             {switchState.language.aboutUs}
                         </li>
-                        <li onClick={() => router.push("/production")} className={route === '/production' ? 'pressed' : ''}>
+                        <li onClick={() => router.push("/production")}
+                            className={route === '/production' ? 'pressed' : ''}>
                             {switchState.language.production}
                         </li>
-                        <li onClick={() => router.push("/transport")} className={route === '/transport' ? 'pressed' : ''}>
+                        <li onClick={() => router.push("/transport")}
+                            className={route === '/transport' ? 'pressed' : ''}>
                             {switchState.language.transport}
                         </li>
                         <li onClick={() => router.push("/contact")} className={route === '/contact' ? 'pressed' : ''}>

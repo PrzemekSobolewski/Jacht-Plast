@@ -1,6 +1,6 @@
 import {elastic as Menu} from "react-burger-menu";
 import React, {useContext, useEffect, useState} from "react";
-import Link from "next/dist/client/link";
+import {useRouter} from 'next/router';
 import NavigationContext from "./NavigationContext";
 import HAMBURGER from '../assets/hamburger.png'
 import DELETE from '../assets/delete.png'
@@ -16,6 +16,7 @@ const Hamburger = () => {
     const [isOpen, setIsOpen] = useState(false);
     const dispatch = useDispatch();
     const switchState = useSelector(state => state.switch);
+    const router = useRouter();
 
     const setSwitch = (value) => {
         if (value) {
@@ -37,42 +38,39 @@ const Hamburger = () => {
                   disableAutoFocus
                   customCrossIcon={<img src={DELETE} className={'cross'} onClick={() => setIsOpen(false)}/>}
                   customBurgerIcon={<img src={HAMBURGER} className={'hamburger'} onClick={() => setIsOpen(true)}/>}>
-                <Link href={"/"}>
-                    <img src={logoImage} id='logoImage' className={'hamburger_image'} alt={"Logo of Jacht-Plast"}
-                         onClick={() => setRoute('/')}/>
-                </Link>
-                <Link href={"/"}>
-                    <div onClick={() => {
-                        setRoute('/');
-                        setIsOpen(false);
-                    }} className={route === '/' ? 'item pressed' : 'item'}>
-                        {switchState.language.aboutUs}
-                    </div>
-                </Link>
-                <Link href={"/production"}>
-                    <div onClick={() => {
-                        setRoute('/production');
-                        setIsOpen(false);
-                    }} className={route === '/production' ? 'item pressed' : 'item'}>
-                        {switchState.language.production}
-                    </div>
-                </Link>
-                <Link href={"/transport"}>
-                    <div onClick={() => {
-                        setRoute('/transport');
-                        setIsOpen(false);
-                    }} className={route === '/transport' ? 'item pressed' : 'item'}>
-                        {switchState.language.transport}
-                    </div>
-                </Link>
-                <Link href={"/contact"}>
-                    <div onClick={() => {
-                        setRoute('/contact');
-                        setIsOpen(false);
-                    }} className={route === '/contact' ? 'item pressed' : 'item'}>
-                        {switchState.language.contact}
-                    </div>
-                </Link>
+                <img src={logoImage} id='logoImage' className={'hamburger_image'} alt={"Logo of Jacht-Plast"}
+                     onClick={() => {
+                         setRoute('/')
+                         router.push("/");
+                     }}/>
+                <div onClick={() => {
+                    setRoute('/');
+                    setIsOpen(false);
+                    router.push("/");
+                }} className={route === '/' ? 'item pressed' : 'item'}>
+                    {switchState.language.aboutUs}
+                </div>
+                <div onClick={() => {
+                    setRoute('/production');
+                    setIsOpen(false);
+                    router.push("/production");
+                }} className={route === '/production' ? 'item pressed' : 'item'}>
+                    {switchState.language.production}
+                </div>
+                <div onClick={() => {
+                    setRoute('/transport');
+                    setIsOpen(false);
+                    router.push("/transport");
+                }} className={route === '/transport' ? 'item pressed' : 'item'}>
+                    {switchState.language.transport}
+                </div>
+                <div onClick={() => {
+                    setRoute('/contact');
+                    setIsOpen(false);
+                    router.push("/contact");
+                }} className={route === '/contact' ? 'item pressed' : 'item'}>
+                    {switchState.language.contact}
+                </div>
                 <div className={'switchContainerMobile'}>
                     <Switch onChange={(value) => setSwitch(value)}
                             checked={switchState.isPl}

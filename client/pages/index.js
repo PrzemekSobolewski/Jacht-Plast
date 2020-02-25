@@ -40,7 +40,7 @@ const Home = () => {
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
-                    <img src={harborImage} className={'about_us_logo'} alt={"Image of Jacht-Plast"}/>
+                    <img src={harborImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                 </div>
                 <div className={'about_us_first'}>
                     <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
