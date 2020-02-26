@@ -53,11 +53,13 @@
 }
 
 .openedExpand {
+
   color: white;
   background: #b3d9ff; //#d9ffa0;
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   text-shadow: 1px 1px grey;
+
 }
 
 .openedExpand:hover {
@@ -107,6 +109,7 @@
 }
 
 .fullExpand {
+  position: relative;
   width: 100%;
   padding: 1em 0 1em 0;
   @media only screen and (max-width: 1000px) {
@@ -137,6 +140,8 @@
 }
 
 .details {
+  position: relative;
+  z-index: 0.5;
   border-left: solid 1px #b3d9ff; //#d9ffa0;
   border-radius: 15px;
   margin: 2em 1em 2em 0;

@@ -37,10 +37,10 @@ const Home = () => {
             </Parallax>
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
+                    <img src={harborImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
-                    <img src={harborImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                 </div>
                 <div className={'about_us_first'}>
                     <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
@@ -49,10 +49,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={'about_us_first'}>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>
-                    <img src={interiorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                 </div>
             </div>
         </Layout>
