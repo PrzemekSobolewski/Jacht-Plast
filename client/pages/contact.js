@@ -31,7 +31,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const instance = axios.create({
-            baseURL: 'http://localhost:8080',
+            baseURL: 'http://cocky-wilson-df27de.netlify.com',
         });
         if (!((name.trim().length || email.trim().length || subject.trim().length) === 0)) {
             let response = await instance.post('/api/form', {

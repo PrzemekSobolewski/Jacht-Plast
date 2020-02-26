@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "https://www.jacht-plast.pl"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
@@ -16,8 +16,8 @@ app.post('/api/form', (req, res) => {
         host: 'smtp.gmail.com',
         port: 587,
         auth: {
-            user: "konradsob12@gmail.com",
-            pass: "..."
+            user: "przemus212@gmail.com",
+            pass: "5fmWy4HU"
         },
         secureConnection: 'false',
         tls: {
@@ -38,7 +38,7 @@ app.post('/api/form', (req, res) => {
 
     const mail = {
         from: email,
-        to: "konradsob12@gmail.com",  //Change to email address that you want to receive messages on
+        to: "przemus212@gmail.com",  //Change to email address that you want to receive messages on
         replyTo: email,
         subject: subject,
         text: message,

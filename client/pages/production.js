@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
 import Images from '../components/Images';
 import Gallery from "../components/Gallery";
