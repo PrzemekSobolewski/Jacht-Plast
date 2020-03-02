@@ -125,7 +125,7 @@ const Production = () => {
     };
 
     const changeParallax = () => {
-        if (width <= 513 || (width > 600 && width < 1166)) {
+        if (width > 350 && width <= 513 || (width > 600 && width < 1166)) {
             return <Parallax
                 className={"list_div"}
                 y={[-40, 65]}
@@ -133,7 +133,7 @@ const Production = () => {
                 {data.map(mapExpands)}
             </Parallax>;
         }
-        else if (width >= 1166 && width <= 1300) {
+        else if ((width >= 1166 && width <= 1300) || width <= 350) {
             return <Parallax
                 className={"list_div"}
                 y={[-15.5, 25]}

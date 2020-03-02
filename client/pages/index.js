@@ -3,9 +3,9 @@ import Layout from "../components/Layout";
 import {Parallax} from "react-parallax";
 import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'
 import {ScrollTo} from "react-scroll-to";
-import harborImage from "../assets/images/transport/20190515_073912.jpg"
-import interiorImage from "../assets/images/production/versus/20170919_070131.jpg"
-import exteriorImage from "../assets/images/transport/20190603_091020.jpg"
+import exteriorImage from "../assets/images/about_us/hala_out.jpg"
+import interiorImage from "../assets/images/about_us/hala_in.jpg"
+import ramImage from "../assets/images/about_us/ram.jpg"
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 
@@ -37,19 +37,19 @@ const Home = () => {
             </Parallax>
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
-                    <img src={harborImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
+                    <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsSecondText}
                     </div>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={interiorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
+                    <img src={ramImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>
