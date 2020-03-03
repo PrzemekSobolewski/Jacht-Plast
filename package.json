@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm start server\" \"npm run client\"",
-    "build": "concurrently \"npm start server\" \"npm run build --prefix client\""
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "repository": {
     "type": "git",
@@ -27,7 +24,9 @@
     "concurrently": "^5.0.0",
     "express": "^4.17.1",
     "nodemailer": "^6.3.1",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "serverless-http": "^2.3.2",
+    "netlify-lambda": "^1.4.3"
   },
   "devDependencies": {
     "terser-brunch": "^4.0.0"

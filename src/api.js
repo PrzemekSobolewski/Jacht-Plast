@@ -1,17 +1,24 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const serverless = require('serverless-http');
 const nodemailer = require('nodemailer');
+
 const app = express();
 
+const router = express.Router();
+
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://www.jacht-plast.pl"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "http://localhost:9000"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.set('Content-Type', 'application/json');
     next();
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.post('/api/form', (req, res) => {
+app.use('/.netlify/functions/api', router);
+
+router.post('/form', (req, res) => {
     const transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
@@ -27,7 +34,7 @@ app.post('/api/form', (req, res) => {
     });
 
     let {name, email, message, subject} = req.body;
-
+    console.log(req.body);
     const htmlDetails = `
         <h2>Wiadomość ze strony JachtPlast</h2>
         <h3>Dane Kontatkowe</h3>
@@ -47,18 +54,15 @@ app.post('/api/form', (req, res) => {
 
     transport.sendMail(mail, (err, response) => {
         if (err) {
-            res.json({msg: 'fail'})
+            res.json({msg: err})
         } else {
             res.json({msg: 'success'});
         }
     })
 });
 
-const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () => {
-    console.log(`server listening on ${PORT}`)
-});
+module.exports = app;
+module.exports.handler = serverless(app);
 
 
 
