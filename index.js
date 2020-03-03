@@ -17,7 +17,7 @@ app.post('/api/form', (req, res) => {
         port: 587,
         auth: {
             user: "przemus212@gmail.com",
-            pass: "5fmWy4HU"
+            pass: "..."
         },
         secureConnection: 'false',
         tls: {
