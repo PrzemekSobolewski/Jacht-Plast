@@ -34,7 +34,7 @@ const Contact = () => {
             baseURL: 'http://cocky-wilson-df27de.netlify.com',
         });
         if (!((name.trim().length || email.trim().length || subject.trim().length) === 0)) {
-            let response = await instance.post('/api/form', {
+            let response = await instance.post('/.netlify/functions/api/form', {
                 name: name,
                 email: email,
                 subject: subject,
