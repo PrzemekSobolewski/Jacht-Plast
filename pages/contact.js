@@ -47,7 +47,7 @@ const Contact = () => {
             if (response.data.msg === 'success') {
                 setSendingResult("success");
                 resetForm();
-
+                setTimeout((unlockButton()), 1000)
             } else if (response.data.msg === 'fail') {
                 setSendingResult("error");
                 setTimeout((unlockButton()), 1000)
