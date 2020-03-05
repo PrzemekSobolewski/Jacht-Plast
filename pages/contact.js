@@ -5,6 +5,7 @@ import {BounceLoader} from 'react-spinners';
 import {css} from '@emotion/core';
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
+import MessageResult from "../components/MessageResult"
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -12,6 +13,8 @@ const Contact = () => {
     const [message, setMessage] = useState('');
     const [subject, setSubject] = useState('');
     const [loading, setLoading] = useState(true);
+    const [sendingResult, setSendingResult] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false)
     const switchState = useSelector(state => state.switch);
 
     const hideLoading = () => {
@@ -29,6 +32,7 @@ const Contact = () => {
     `;
 
     const handleSubmit = async (e) => {
+        lockButton();
         e.preventDefault();
         const instance = axios.create({
             baseURL: 'https://cocky-wilson-df27de.netlify.com',
@@ -41,13 +45,16 @@ const Contact = () => {
                 message: message
             });
             if (response.data.msg === 'success') {
-                alert('Message Sent.');
+                setSendingResult("success");
                 resetForm();
+
             } else if (response.data.msg === 'fail') {
-                alert('Message failed to send.')
+                setSendingResult("error");
+                setTimeout((unlockButton()), 1000)
             }
         } else {
             alert(switchState.language.alert);
+            setTimeout((unlockButton()), 1000)
         }
     };
 
@@ -57,6 +64,15 @@ const Contact = () => {
         setSubject('');
         setEmail('');
     };
+
+    function lockButton () {
+        setButtonDisabled(true);
+    }
+
+    function unlockButton() {
+        setButtonDisabled(false);
+
+    }
 
     return (
         <Layout>
@@ -80,7 +96,10 @@ const Contact = () => {
                                value={subject} onChange={e => setSubject(e.target.value)}/>
                         <textarea id={'message'} name={'message'} value={message} placeholder={switchState.language.formMessage}
                                   onChange={e => setMessage(e.target.value)}/>
-                        <button type='submit' className='submitButton'>{switchState.language.formSend}</button>
+                        <div>
+                            <button type='submit' disabled={buttonDisabled} className='submitButton'>{switchState.language.formSend}</button>
+                            <MessageResult result={sendingResult}/>
+                        </div>
                     </form>
                 </div>
                 <div className={'map_div'}>
