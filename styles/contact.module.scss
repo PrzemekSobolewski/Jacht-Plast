@@ -115,6 +115,10 @@
         .submitButton:focus {
           outline-style: none;
         }
+        .lockedButton:hover {
+          cursor: auto;
+          background: #3f89a2;
+        }
       }
     }
   }
