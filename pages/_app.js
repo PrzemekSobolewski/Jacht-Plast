@@ -10,6 +10,7 @@ import {Helmet} from "react-helmet";
 import Head from 'next/head';
 import icon from '../public/icon.png';
 import thunk from 'redux-thunk';
+
 const rootReducer = combineReducers({
     contactMail: contactReducer,
     modal: modalReducer,

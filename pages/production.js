@@ -188,7 +188,9 @@ const Production = () => {
                     <meta charSet="utf-8"/>
                     <title>Produkcja - Jacht Plast</title>
                     <meta name="description"
-                          content="Jacht plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerie budowanych jednostek w nsazej firmie."/>
+                          content="Jacht-Plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerię budowanych jednostek w naszej firmie.
+                          Stocznia Jacht-Plast buduje łodzie motorowe oraz łodzie żaglowe. Łodzie są wykonywane z wysokiej jakości komponentów. Każdy projekt wykonywany jest z jak największą dokładnością oraz dbałością o szczegóły.
+                          Produkcja jachtów. Budowa jachtów. Stocznia jachtów. Jachty żaglowe. Jachty motorowe. Jachty centralna Polska. Remont jachtów. Odnowa jachtu. Konserwacja jachtów. Odnowa łodzi. Konserwacja łodzi."/>
                 </Helmet>
                 <div className={"production"}>
                     {changeParallax()}

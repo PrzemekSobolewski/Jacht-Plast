@@ -8,20 +8,21 @@ import {useDispatch, useSelector} from "react-redux";
 import Switch from "react-switch";
 import POLAND from "../assets/images/poland.png";
 import ENG from "../assets/images/uk.png";
-import {useCookies, CookiesProvider} from 'react-cookie';
+import {CookiesProvider} from 'react-cookie';
 import CookiesModal from '../components/cookies';
+import Cookies from 'universal-cookie'
 
-const Nav = (props) => {
+const Nav = () => {
     const dispatch = useDispatch();
     const switchState = useSelector(state => state.switch);
     const cookieState = useSelector(state => state.cookie);
-    const [cookies, setCookie] = useCookies(['switch']);
+    const cookies = new Cookies('switch');
     const router = useRouter();
 
     useEffect(() => {
-        if (cookies.switch !== undefined) {
+        if (cookies.get('switch') !== undefined) {
             dispatch(cookieActions.acceptCookie());
-            setSwitch(cookies.switch === "true")
+            setSwitch(cookies.get('switch') === "true")
         }
     });
 
@@ -32,13 +33,13 @@ const Nav = (props) => {
             dispatch(actions.setEng())
         }
         if (cookieState.cookieAccepted) {
-            setCookie('switch', switchState, {path: '/'});
+            cookies.set('switch', switchState, {path: '/'});
         }
     };
 
     const accept = () => {
         dispatch(cookieActions.acceptCookie());
-        setCookie('switch', switchState, {path: '/'});
+        cookies.set('switch', switchState, {path: '/'});
     };
 
     const close = () => {

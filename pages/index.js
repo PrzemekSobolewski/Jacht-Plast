@@ -17,7 +17,9 @@ const Home = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Strona Główna - Jacht Plast</title>
-                <meta name="description" content="Jacht Plast zajmuje się budową jachtów, wyrobami laminotowymi oraz trasnsportem. Świadczymy usługi dla zadowolonych klientów z całego świata."/>
+                <meta name="description" content="Jacht-Plast zajmuje się budową jachtów, wyrobami laminotowymi oraz trasnsportem łodzi. Świadczymy usługi dla zadowolonych klientów z całego świata.
+                Jacht-Plast posiada wieloletnie doświadczenie w dziedzinie budowy, remotnu oraz przewozu jachtów. Firma posiada swoją siedzibę w centralnej częsci Polski. 
+                Budowa jachtów. Transport jachtów. Produkcja jachtów. Zabudowy łodzi. Jachty żaglowe. Łodzi żaglowe. Łodzie motorowe."/>
             </Helmet>
             <Parallax bgImage={YACHT} strength={600}>
                 <div className={'bgContainer'}>

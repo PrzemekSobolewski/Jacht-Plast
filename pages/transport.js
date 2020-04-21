@@ -45,7 +45,11 @@ const Transport = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Transport - Jacht Plast</title>
-                <meta name="description" content="Jacht plast zajmuje się transportem na terenie całej Europy. Od wielu lat świadczymy usługi logistyczne. Poniżej przedstawiamy informacje oraz przegląd usług."/>
+                <meta name="description" content="Jacht-Plast zajmuje się transportem na terenie całej Europy. Od wielu lat świadczymy usługi logistyczne.
+                Zapewniamy bezpieczny trasport łodzi żaglowych oraz łodzi motorowych. Firma Jacht-Plast przewozi jachty po całej Europie. Jesteśmy na bierząco jeśli chodzi o 
+                wszelkie przepisy prawne dotyczące transportu jachtów. Poniżej przedstawiamy informacje oraz przegląd usług.
+                Przewóz jachtów. Transport jachtów. Usługi logistyczno transportowe. Przewóz łodzi. Przewóz jachtów.
+                "/>
             </Helmet>
             <div className={"transportText"}>
                 <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>
