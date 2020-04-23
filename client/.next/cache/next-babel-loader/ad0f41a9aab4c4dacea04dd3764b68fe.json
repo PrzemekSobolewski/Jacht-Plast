@@ -1,0 +1,1 @@
+{"ast":null,"code":"import _defineProperty from \"@babel/runtime-corejs2/helpers/esm/defineProperty\";\nimport * as textConfig from \"./text\";\nexport default class TextService {}\n\n_defineProperty(TextService, \"textPl\", textConfig.pl);\n\n_defineProperty(TextService, \"textEng\", textConfig.eng);","map":null,"metadata":{},"sourceType":"module"}

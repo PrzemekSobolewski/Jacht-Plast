@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var SET_PL = \"SET_PL\";\nexport var SET_ENG = \"SET_ENG\";\nexport var setPl = function setPl() {\n  return {\n    type: SET_PL\n  };\n};\nexport var setEng = function setEng() {\n  return {\n    type: SET_ENG\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

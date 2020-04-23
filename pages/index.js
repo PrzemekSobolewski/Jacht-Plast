@@ -16,8 +16,8 @@ const Home = () => {
         <Layout>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Strona Główna - Jacht Plast</title>
-                <meta name="description" content="Jacht-Plast zajmuje się budową jachtów, wyrobami laminotowymi oraz trasnsportem łodzi. Świadczymy usługi dla zadowolonych klientów z całego świata.
+                <title>Jacht Plast - Budowa i Transport</title>
+                <meta name="description" content="Jacht-Plast zajmuje się budową jachtów, wyrobami laminotowymi oraz wykonuje trasnsport łodzi. Świadczymy usługi dla zadowolonych klientów z całego świata.
                 Jacht-Plast posiada wieloletnie doświadczenie w dziedzinie budowy, remotnu oraz przewozu jachtów. Firma posiada swoją siedzibę w centralnej częsci Polski. 
                 Budowa jachtów. Transport jachtów. Produkcja jachtów. Zabudowy łodzi. Jachty żaglowe. Łodzi żaglowe. Łodzie motorowe."/>
             </Helmet>

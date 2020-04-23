@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var ACCEPT_COOKIE = 'ACCEPT_COOKIE';\nexport var CANCEL_COOKIE = 'CANCEL_COOKIE';\nexport var acceptCookie = function acceptCookie() {\n  return {\n    type: ACCEPT_COOKIE\n  };\n};\nexport var cancelCookie = function cancelCookie() {\n  return {\n    type: CANCEL_COOKIE\n  };\n};","map":null,"metadata":{},"sourceType":"module"}

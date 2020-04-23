@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const SET_PL = \"SET_PL\";\nexport const SET_ENG = \"SET_ENG\";\nexport const setPl = () => ({\n  type: SET_PL\n});\nexport const setEng = () => ({\n  type: SET_ENG\n});","map":null,"metadata":{},"sourceType":"module"}
