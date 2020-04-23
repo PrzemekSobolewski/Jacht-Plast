@@ -22,7 +22,7 @@ module.exports =
         },
     )));
 
-module.exports = {
+/*module.exports = {
     module: {
         loaders: [
             {
@@ -45,4 +45,4 @@ module.exports = {
             },
         ],
     }
-}
+}*/
