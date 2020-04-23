@@ -18,31 +18,28 @@ module.exports =
                     '/transport.html': {page: '/transport'},
                     '/contact.html': {page: '/contact'},
                 }
+            },
+            module: {
+                loaders: [
+                    {
+                        test: /\.jsx?$/,
+                        exclude: /(node_modules|bower_components)/,
+                        loader: 'babel',
+                        query: {
+                            presets: ['react', 'es2015', 'stage-2']
+                        }
+                    },
+                ],
+                rules: [
+                    {
+                        test: /\.(jpg|JPG|jpeg|png|gif|mp3|svg|ttf|woff2|woff|eot)$/gi,
+                      use: [
+                        {
+                          loader: 'file-loader',
+                        },
+                      ],
+                    },
+                ],
             }
         },
     )));
-
-/*module.exports = {
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel',
-                query: {
-                    presets: ['react', 'es2015', 'stage-2']
-                }
-            },
-        ],
-        rules: [
-            {
-              test: /\.(png|jpe?g|gif)$/i,
-              use: [
-                {
-                  loader: 'file-loader',
-                },
-              ],
-            },
-        ],
-    }
-}*/
