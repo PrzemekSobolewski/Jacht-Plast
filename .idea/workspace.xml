@@ -35,7 +35,7 @@
     <list default="true" id="02945b31-cbda-4068-be82-96ad452128be" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,19 +113,19 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\yacht-plast\client" />
-      <recent name="C:\Users\user\yacht-plast" />
-      <recent name="C:\Users\user\yacht-plast\assets\images\production\678" />
-      <recent name="C:\Users\user\yacht-plast\assets\images\production\illuminatis" />
-      <recent name="C:\Users\user\yacht-plast\assets\images\production\550" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\yacht-plast\assets\images\production\navighator" />
       <recent name="C:\Users\user\yacht-plast\assets\lottie" />
       <recent name="C:\Users\user\yacht-plast" />
       <recent name="C:\Users\user\yacht-plast\server" />
       <recent name="C:\Users\user\yacht-plast\node_modules" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\yacht-plast\client" />
+      <recent name="C:\Users\user\yacht-plast" />
+      <recent name="C:\Users\user\yacht-plast\assets\images\production\678" />
+      <recent name="C:\Users\user\yacht-plast\assets\images\production\illuminatis" />
+      <recent name="C:\Users\user\yacht-plast\assets\images\production\550" />
     </key>
   </component>
   <component name="RunManager">
@@ -365,10 +365,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="navighator images change" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2685" y="455" width="389" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587671944628">
+    <state x="2685" y="455" width="379" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587673338113">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2685" y="455" width="389" height="168" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587671944628" />
+    <state x="2685" y="455" width="379" height="166" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587673338113" />
+    <state x="2605" y="375" width="540" height="326" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1587673360642">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2605" y="375" width="540" height="326" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587673360642" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

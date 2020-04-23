@@ -1,4 +1,3 @@
-const withImages = require('next-images');
 const withFonts = require('next-fonts');
 const withSass = require('@zeit/next-sass');
 const optimizedImages = require('next-optimized-images');
@@ -29,8 +28,7 @@ module.exports = withPlugins(
     [
         [optimizedImages, { handleImages: ['jpeg', 'png']}],
         withFonts,
-        withSass,
-        withImages
+        withSass
     ],
     nextConfig
 );
