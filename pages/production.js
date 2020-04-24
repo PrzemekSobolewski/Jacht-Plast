@@ -186,11 +186,18 @@ const Production = () => {
             <Layout>
                 <Helmet>
                     <meta charSet="utf-8"/>
-                    <title>Produkcja - Jacht Plast</title>
+                    <title>Produkcja Jachtów - Jacht Plast</title>
                     <meta name="description"
-                          content="Jacht-Plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerię budowanych jednostek w naszej firmie.
-                          Stocznia Jacht-Plast buduje łodzie motorowe oraz łodzie żaglowe. Łodzie są wykonywane z wysokiej jakości komponentów. Każdy projekt wykonywany jest z jak największą dokładnością oraz dbałością o szczegóły.
-                          Produkcja jachtów. Budowa jachtów. Stocznia jachtów. Jachty żaglowe. Jachty motorowe. Jachty centralna Polska. Remont jachtów. Odnowa jachtu. Konserwacja jachtów. Odnowa łodzi. Konserwacja łodzi."/>
+                          content="Budowa jachtów. Transport jachtów. Produkcja jachtów. Zabudowy łodzi. Jachty żaglowe. Łodzie żaglowe. Łodzie motorowe.
+                        Transport jachtów Polska. Transport łodzi Polska. Produkcja łodzi Polska. Produkcja jachtów Polska. Łodzie Polska. Jachty w Polsce.
+                        Transport jachtów Europa. Transport łodzi Europa. Produkcja łodzi Europa. Produkcja jachtów Europa. Łodzie Europa. Jachty w Europie.
+                
+                        Yacht construction. Yacht transport. Yacht production. Boat development. Sail yachts. Sailing boats. Motor boats.
+                        Yacht transport Poland. Boat transport Poland. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland.
+                        Yacht transport Europe. Boat transport Europe. Europe boat production. Yacht production Europe. Europe boats. Yachts in Europe.
+                        Jacht Plast produkuje od wielu lat towary najwyższej jakości dla kientów z całego świata. Strona zawiera galerię budowanych jednostek w naszej firmie.
+                        Stocznia Jacht Plast buduje łodzie motorowe oraz łodzie żaglowe. Łodzie są wykonywane z wysokiej jakości komponentów. Każdy projekt wykonywany jest z jak największą dokładnością oraz dbałością o szczegóły.
+                        Przewóz jachtów. Transport jachtów. Usługi logistyczno transportowe. Przewóz łodzi. Przewóz jachtów. Produkcja jachtów. Budowa jachtów. Stocznia jachtów. Jachty żaglowe. Jachty motorowe. Jachty centralna Polska. Remont jachtów. Odnowa jachtu. Konserwacja jachtów. Odnowa łodzi. Konserwacja łodzi."/>
                 </Helmet>
                 <div className={"production"}>
                     {changeParallax()}
