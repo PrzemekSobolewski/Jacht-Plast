@@ -26,7 +26,7 @@ export const sendMail = (body) => async dispatch => {
     dispatch(sendingMail());
 
     const instance = axios.create({
-        baseURL: 'https://cocky-wilson-df27de.netlify.com',
+        baseURL: 'https://cocky-wilson-df27de.netlify.app',
     });
 
     let response = await instance.post('/.netlify/functions/api/form', {
