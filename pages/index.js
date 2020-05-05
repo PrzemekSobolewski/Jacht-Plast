@@ -8,6 +8,7 @@ import interiorImage from "../assets/images/about_us/hala_in.jpg"
 import ramImage from "../assets/images/about_us/ram.jpg"
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
+import JachtSlider from '../components/JachtSlider';
 
 const Home = () => {
     const switchState = useSelector(state => state.switch);
@@ -29,22 +30,7 @@ const Home = () => {
                 Jacht Plast posiada wieloletnie doświadczenie w dziedzinie budowy, remotnu oraz przewozu jachtów. Firma posiada swoją siedzibę w centralnej częsci Polski. 
                 "/>
             </Helmet>
-            <Parallax bgImage={YACHT} strength={600}>
-                <div className={'bgContainer'}>
-                    <div className={'bgText'}>JACHT-PLAST</div>
-                    <ScrollTo>
-                        {({scrollTo}) => <div className={'bgButtonContainer'}
-                                              onClick={() => scrollTo({x: 0, y: 700, smooth: true})}>
-                            <div className={'bgButton2'}>
-                                {switchState.language.aboutUsButton}
-                            </div>
-                            <div className={'bgButton'}>
-                                {switchState.language.aboutUsButton}
-                            </div>
-                        </div>}
-                    </ScrollTo>
-                </div>
-            </Parallax>
+            <JachtSlider/>
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
                     <img src={exteriorImage} className={'about_us_photo'} alt={"Image of Jacht-Plast"}/>
