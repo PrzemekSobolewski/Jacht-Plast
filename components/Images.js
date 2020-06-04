@@ -7,4 +7,5 @@ const Images = (props) => {
         </div>
     );
 };
+
 export default Images

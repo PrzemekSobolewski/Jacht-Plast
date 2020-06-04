@@ -1,14 +1,14 @@
 import React from 'react'
 import {ScrollTo} from "react-scroll-to";
 import {useSelector} from "react-redux";
-import car from "../assets/images/slides/car.jpg";
+import water from "../assets/images/slides/water.jpg";
 import truck from "../assets/images/slides/truck.jpg";
 import exterior from "../assets/images/slides/exterior.jpg";
 
 const JachtSlider = () => {
     const switchState = useSelector(state => state.switch);
     const images = [
-        car,
+        water,
         truck,    
         exterior,   
     ];
