@@ -33,7 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02945b31-cbda-4068-be82-96ad452128be" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/production.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

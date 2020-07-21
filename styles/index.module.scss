@@ -62,9 +62,6 @@
     clip-path: circle(100% at -80% 50%);
     z-index: 2;
     transition: clip-path 0.5s ease-in-out;
-    @media only screen and (max-width: 1000px) {
-      margin-top: 3em;
-    }
   }
 }
 
