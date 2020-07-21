@@ -45,19 +45,7 @@ const Transport = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Transport Jachtów - Jacht Plast</title>
-                <meta name="description" content="  Transport jachtów Polska. Transport łodzi Polska. Produkcja łodzi Polska. Produkcja jachtów Polska. Łodzie Polska. Jachty w Polsce.
-                Transport jachtów Europa. Transport łodzi Europa. Produkcja łodzi Europa. Produkcja jachtów Europa. Łodzie Europa. Jachty w Europie.
-                Przewóz jachtów. Transport jachtów. Usługi logistyczno transportowe. Przewóz łodzi. Przewóz jachtów. Produkcja jachtów. Budowa jachtów. Stocznia jachtów. Jachty żaglowe. Jachty motorowe. Jachty centralna Polska. Remont jachtów. Odnowa jachtu. Konserwacja jachtów. Odnowa łodzi. Konserwacja łodzi.
-
-                
-                Yacht transport Poland. Boat transport Poland. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland.
-                Yacht transport Europe. Boat transport Europe. Europe boat production. Yacht production Europe. Europe boats. Yachts in Europe.
-                Carriage of yachts. Yacht transport. Logistics and transport services. Carriage of boats. Carriage of yachts. Yacht production. Yacht construction. Yacht Shipyard. Sail yachts. Motor yachts. Central Poland yachts. Yacht repair. Yacht renewal. Yacht maintenance. Boat restoration. Boat maintenance.
-                Jacht Plast zajmuje się transportem na terenie całej Europy. Od wielu lat świadczymy usługi logistyczne.
-                Zapewniamy bezpieczny trasport łodzi żaglowych oraz łodzi motorowych. Firma Jacht-Plast przewozi jachty po całej Europie. Jesteśmy na bierząco jeśli chodzi o 
-                wszelkie przepisy prawne dotyczące transportu jachtów. Poniżej przedstawiamy informacje oraz przegląd usług.
-                
-                "/>
+                <meta name="description" content="Jacht Plast transport jachtów, łodzi w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie. Yacht transport Poland. Boat transport Poland. Boats Poland. Yachts in Poland. Yacht transport Europe. Boat transport Europe. Europe boats. Yachts in Europe."/>
             </Helmet>
             <div className={"transportText"}>
                 <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>

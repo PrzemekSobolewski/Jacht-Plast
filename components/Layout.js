@@ -36,9 +36,6 @@ const Layout = (props) => {
                         <Carousel
                             currentIndex={modalState.index}
                             views={modalState.photos}
-                            frameProps = {{
-                                autoSize : 'height'
-                            }}
                             autoSize={ {
                                 width: 2000,
                                 height: 500
