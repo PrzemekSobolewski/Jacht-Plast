@@ -172,11 +172,11 @@ const Production = () => {
         )
     };
 
-    const mapToImage = (photo, index) => {
+    const mapToImage = (photo, index, pickedOne) => {
         return (
             <Images key={index}>
                 <img className={"productionImage"} src={photo}
-                     onClick={() => openLightBox(index)} alt={"Image of production. " + index}/>
+                     onClick={() => openLightBox(index)} alt={pickedOne.alt}/>
             </Images>
         )
     };
@@ -195,7 +195,7 @@ const Production = () => {
                     <div className={"details"}>
                         <div className={'galleryProd'}>
                             <Gallery>
-                                {pickedOne.photos.map(mapToImage)}
+                                {pickedOne.photos.map((it, index) => mapToImage(it, index, pickedOne))}
                             </Gallery>
                         </div>
                     </div>

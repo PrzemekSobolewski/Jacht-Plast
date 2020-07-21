@@ -33,23 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02945b31-cbda-4068-be82-96ad452128be" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/about_us/hala_in.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/about_us/hala_in.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20161221_152308 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20161221_152450 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20170119_145630 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20170119_145652 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20170120_141338 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/production/bt_tes/20170120_141427 — kopia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/JachtSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/JachtSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/text.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/text.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/production.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/production.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/transport.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
