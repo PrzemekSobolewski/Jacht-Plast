@@ -14,15 +14,15 @@
     width: 100%;
     -webkit-animation-name: fade;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 32s;
+    -webkit-animation-duration: 35s;
     animation-name: fade;
     animation-iteration-count: infinite;
-    animation-duration: 32s;
+    animation-duration: 35s;
 }
 
 @-webkit-keyframes fade {
     0% {opacity: 0;}
-    10%{opacity: 1;}
+    10% {opacity: 1;}
     33% {opacity: 1;}
     43% {opacity: 0;}
     100% {opacity: 0;}
@@ -37,15 +37,20 @@
 }
 
 #f2 {
-    -webkit-animation-delay: -9s;
+    -webkit-animation-delay: -8s;
+    animation-delay: -8s;
 }
 
 #f3 {
     -webkit-animation-delay: -16s;
+    animation-delay: -16s;
 }
 #f4 {
     -webkit-animation-delay: -24s;
+    animation-delay: -24s;
 }
-#f5 {
+
+#f1 {
     -webkit-animation-delay: -32s;
+    animation-delay: -32s;
 }

@@ -5,8 +5,8 @@ import Gallery from "../components/Gallery";
 import {IoIosArrowDropright} from "react-icons/io";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
-import bottom_radius from "../assets/images/production/img/bottom_radius.png";
-import upper_radius from "../assets/images/production/img/upper_radius.png";
+
+import radius from "../assets/images/production/img/corner.svg";
 import {Helmet} from "react-helmet";
 import {Parallax, ParallaxProvider} from "react-scroll-parallax";
 
@@ -157,16 +157,16 @@ const Production = () => {
     const mapExpands = (item) => {
         return (
             <div className={'fullExpand'} key={item.id}>
-                <span className={'upper_radius'}><img src={item.open ? upper_radius : ''}
-                                                      style={item.open ? {display: ''} : {display: 'none'}}
+                <span className={'upper_radius'}><img src={radius}
+                                                      className={item.open ? 'active' : ''}
                                                       alt={"upper image"}/> </span>
                 <div onClick={() => openExpand(item)}
                      className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
                     <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
                     {item.title ? item.title : switchState.language.productionModels}
                 </div>
-                <span className={'bottom_radius'}><img src={item.open ? bottom_radius : ''}
-                                                       style={item.open ? {display: 'block'} : {display: 'none'}}
+                <span className={'bottom_radius'}><img src={radius}
+                                                       className={item.open ? 'active' : ''}
                                                        alt={"lower image"}/> </span>
             </div>
         )
