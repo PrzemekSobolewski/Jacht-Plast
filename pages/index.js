@@ -9,63 +9,67 @@ import JachtSlider from '../components/JachtSlider';
 
 const Home = () => {
     const switchState = useSelector(state => state.switch);
+    let structuredData = { 
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Jacht Plast",
+        "legalName" : "PHUP Jacht Plast",
+        "url": "https://www.jacht-plast.pl/",
+        "logo": "https://www.jacht-plast.pl/_next/static/images/logo-d4243a7efeb7684594888ac2f4fe7d5e.png",
+        "description": "Profejsonalny transport i produkcja jachtów. Firma Jacht Plast świadczy usługi logistyczno transportowe oraz budowy jachtów łodzi żaglowych oraz motorowych",
+        "founders": [
+        {
+        "@type": "Person",
+        "name": "Zdzisław Sobolewski"
+        }],
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Przemysłowa 4",
+        "addressLocality": "Drzewica",
+        "addressRegion": "PL",
+        "postalCode": "26-340",
+        "addressCountry": "Polska"
+        },
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "601256133",
+        "email": "jachtplast@gmail.com"
+        },
+        "openingHoursSpecification": [
+            {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "16:00"
+            }
+        ],
+        "sameAs": [ 
+        "https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685", 
+        ]
+    };
 
+    let structuredDataWebsite = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://www.jacht-plast.pl/",
+    }
     return (
         <Layout>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Jacht Plast - Budowa i Transport Jachtów - Stocznia jachtów</title>
                 <script type="application/ld+json">
-                    {`{ "@context": "https://schema.org",
-                    "@type": "Organization",
-                    "name": "Jacht Plast",
-                    "legalName" : "PHUP Jacht Plast",
-                    "url": "https://www.jacht-plast.pl/",
-                    "logo": "https://www.jacht-plast.pl/_next/static/images/logo-d4243a7efeb7684594888ac2f4fe7d5e.png",
-                    "description": "Profejsonalny transport i produkcja jachtów. Firma Jacht Plast świadczy usługi logistyczno transportowe oraz budowy jachtów łodzi żaglowych oraz motorowych",
-                    "founders": [
-                    {
-                    "@type": "Person",
-                    "name": "Zdzisław Sobolewski"
-                    }],
-                    "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Przemysłowa 4",
-                    "addressLocality": "Drzewica",
-                    "addressRegion": "PL",
-                    "postalCode": "26-340",
-                    "addressCountry": "Polska"
-                    },
-                    "contactPoint": {
-                    "@type": "ContactPoint",
-                    "contactType": "customer support",
-                    "telephone": "601256133",
-                    "email": "jachtplast@gmail.com"
-                    },
-                    "openingHoursSpecification": [
-                        {
-                          "@type": "OpeningHoursSpecification",
-                          "dayOfWeek": [
-                            "Monday",
-                            "Tuesday",
-                            "Wednesday",
-                            "Thursday",
-                            "Friday"
-                          ],
-                          "opens": "08:00",
-                          "closes": "16:00"
-                        }
-                    ],
-                    "sameAs": [ 
-                    "https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685", 
-                    ]}`}
+                    {structuredData}
                 </script>
                 <script type="application/ld+json">
-                    {`{
-                        "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        "url": "https://www.jacht-plast.pl/",
-                    }`}
+                    {structuredDataWebsite}
                 </script>
                 <meta name="description" content="Profejsonalny transport i produkcja jachtów. Firma Jacht Plast świadczy usługi logistyczno transportowe oraz budowy jachtów łodzi żaglowych oraz motorowych. Jacht Plast posiada wieloletnie doświadczenie w dziedzinie budowy, remotnu oraz przewozu jachtów. Świadczymy usługi dla zadowolonych klientów z całego świata. Zajmujemy się transportem po całej Polsce jak i w Europie. Firma posiada swoją siedzibę w centralnej częsci Polski. Carriage of yachts. Logistics and transport services. Carriage of boats. Yacht production. Yacht transport Poland. Boat transport Poland. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland. Yacht transport Europe. Boat transport Europe. Europe boat production. Yacht production Europe. Europe boats. Yachts in Europe."/>
             </Helmet>
