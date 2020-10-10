@@ -1,16 +1,11 @@
 import React from 'react'
 import Layout from "../components/Layout";
-import {Parallax} from "react-parallax";
-import YACHT from '../assets/images/slider-jachty-2-2560x12002.png'
-import {ScrollTo} from "react-scroll-to";
 import exteriorImage from "../assets/images/about_us/hala_out.jpg"
 import interiorImage from "../assets/images/about_us/hala_in.jpg"
 import ramImage from "../assets/images/about_us/ram.jpg"
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 import JachtSlider from '../components/JachtSlider';
-import { Organization } from "schema-dts";
-import { helmetJsonLdProp } from "react-schemaorg";
 
 const Home = () => {
     const switchState = useSelector(state => state.switch);
