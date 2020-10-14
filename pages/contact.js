@@ -59,11 +59,20 @@ const Contact = () => {
 
     return (
         <Layout>
+             <Helmet>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+            </Helmet>
+            <Helmet
+                 script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
+                  }]} 
+            />
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Kontakt - Jacht Plast</title>
+                <title>Kontakt - Jacht Plast - Budowa i Transport Jachtów</title>
                 <meta name="description"
-                      content="Prosimy o kontakt z Jacht Plast telefonicznie lub drogą elektroniczną. Zachęcamy do kontaktu mailowego przy użyciu formularza email na stronie. Jacht Plast kontakt. Jacht Plast adres siedziby firmy. Adres stoczni jachtów. Adres firmy produkującej jachty. Kontakt stocznia Drzewica. Kontakt stocznia centralna Polska. Yacht transport Poland and Europe. Boat transport Poland. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland. Jacht Plast contact. Jacht Plast company address. Yacht shipyard address. Address of the yachting company. Contact Drzewica shipyard. Contact Central Shipyard Poland."/>
+                      content="Zachęcamy do kontaktu. Udzielamy rzetelnych inforamcji z dziedziny transportu łodzi jak i ich budowy. Ustalamy indywidualne cenniki transportu jachtów."/>
             </Helmet>
             <div className={'contact_div'}>
                 <h2>{switchState.language.contactHeader}</h2>

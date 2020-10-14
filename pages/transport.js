@@ -42,13 +42,22 @@ const Transport = () => {
     };
     return (
         <Layout>
+             <Helmet>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+            </Helmet>
+            <Helmet
+                 script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
+                  }]} 
+            />
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Transport Jachtów - Jacht Plast</title>
-                <meta name="description" content="Jacht Plast transport jachtów, łodzi w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie. Yacht transport Poland. Boat transport Poland. Boats Poland. Yachts in Poland. Yacht transport Europe. Boat transport Europe. Europe boats. Yachts in Europe."/>
+                <meta name="description" content="Jacht Plast transport jachtów, łodzi w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie."/>
             </Helmet>
             <div className={"transportText"}>
-                <div style={{textAlign: 'center'}}><h2>P.H.U.P. "JACHT-PLAST"</h2></div>
+                <div style={{textAlign: 'center'}}><h1>Transport Jachtów z "JACHT-PLAST"</h1></div>
                 <Fade>
                     <ul className={'transportList'}>
                         <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>

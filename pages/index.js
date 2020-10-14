@@ -60,9 +60,21 @@ const Home = () => {
         "@type": "WebSite",
         "url": "https://www.jacht-plast.pl/",
     }
+    const googleAnalyticsScript = {
+        
+    }
 
     return (
         <Layout>
+            <Helmet>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+            </Helmet>
+            <Helmet
+                 script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
+                  }]} 
+            />
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Jacht Plast - Budowa i Transport Jachtów - Stocznia jachtów</title>
@@ -72,7 +84,7 @@ const Home = () => {
                 <script type="application/ld+json">
                     {JSON.stringify(structuredDataWebsite)}
                 </script>
-                <meta name="description" content="Profejsonalny transport i produkcja jachtów. Firma Jacht Plast świadczy usługi logistyczno transportowe oraz budowy jachtów łodzi żaglowych oraz motorowych. Jacht Plast posiada wieloletnie doświadczenie w dziedzinie budowy, remotnu oraz przewozu jachtów. Świadczymy usługi dla zadowolonych klientów z całego świata. Zajmujemy się transportem po całej Polsce jak i w Europie. Firma posiada swoją siedzibę w centralnej częsci Polski. Carriage of yachts. Logistics and transport services. Carriage of boats. Yacht production. Yacht transport Poland. Boat transport Poland. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland. Yacht transport Europe. Boat transport Europe. Europe boat production. Yacht production Europe. Europe boats. Yachts in Europe."/>
+                <meta name="description" content="Profejsonalna produkcja i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."/>
             </Helmet>
             <JachtSlider/>
             <div className={"about_us_div"}>

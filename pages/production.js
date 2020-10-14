@@ -185,10 +185,19 @@ const Production = () => {
         <ParallaxProvider>
             <Layout>
                 <Helmet>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+                </Helmet>
+                <Helmet
+                    script={[{ 
+                        type: 'text/javascript', 
+                        innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
+                    }]} 
+                />
+                <Helmet>
                     <meta charSet="utf-8"/>
                     <title>Produkcja Jachtów - Jacht Plast</title>
                     <meta name="description"
-                          content="Jacht Plast budowa jachtów, łodzi żaglowych i motorowych. Profesjonalna produkcja jachtów. Wyroby laminatowe oraz remonty jachtów z Polski i Europy. Yacht construction. Yacht production. Boat development. Sail yachts. Sailing boats. Motor boats. Boat production Poland. Yacht production Poland. Boats Poland. Yachts in Poland. Europe boat production. Yacht production Europe. Europe boats. Yachts in Europe."/>
+                          content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"/>
                 </Helmet>
                 <div className={"production"}>
                     {changeParallax()}
