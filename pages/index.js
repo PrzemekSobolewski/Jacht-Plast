@@ -87,6 +87,7 @@ const Home = () => {
                 <meta name="description" content="Profejsonalna produkcja i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."/>
             </Helmet>
             <JachtSlider/>
+            <h1>{switchState.language.aboutUsHeader}</h1>
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
                     <img src={exteriorImage} className={'about_us_photo'} alt={"Building of Jacht-Plast company"}/>

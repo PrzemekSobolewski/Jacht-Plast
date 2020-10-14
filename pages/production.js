@@ -199,6 +199,7 @@ const Production = () => {
                     <meta name="description"
                           content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"/>
                 </Helmet>
+                <h1>{switchState.language.productionHeader}</h1>
                 <div className={"production"}>
                     {changeParallax()}
                     <div className={"details"}>

@@ -75,6 +75,7 @@ const Contact = () => {
                       content="Zachęcamy do kontaktu. Udzielamy rzetelnych inforamcji z dziedziny transportu łodzi jak i ich budowy. Ustalamy indywidualne cenniki transportu jachtów."/>
             </Helmet>
             <div className={'contact_div'}>
+                <h1>{switchState.language.contactHeaderMain}</h1>
                 <h2>{switchState.language.contactHeader}</h2>
                 <div className={'contact_content'}>
                     <div className={'contact_data'}

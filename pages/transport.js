@@ -57,7 +57,7 @@ const Transport = () => {
                 <meta name="description" content="Jacht Plast transport jachtów, łodzi w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie."/>
             </Helmet>
             <div className={"transportText"}>
-                <div style={{textAlign: 'center'}}><h1>Transport Jachtów z "JACHT-PLAST"</h1></div>
+                <div style={{textAlign: 'center'}}><h1>{switchState.language.transportHeader}</h1></div>
                 <Fade>
                     <ul className={'transportList'}>
                         <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>
