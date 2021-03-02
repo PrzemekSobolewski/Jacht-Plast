@@ -195,7 +195,7 @@ const Production = () => {
                 />
                 <Helmet>
                     <meta charSet="utf-8"/>
-                    <title>Produkcja Łodzi żaglowych i motorowych | Jacht Plast</title>
+                    <title>Produkcja łodzi żaglowych i motorowych | Jacht Plast</title>
                     <meta name="description"
                           content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"/>
                 </Helmet>
