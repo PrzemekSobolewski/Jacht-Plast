@@ -77,32 +77,32 @@ const Home = () => {
             />
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Jacht Plast - Budowa i Transport Jachtów - Stocznia jachtów</title>
+                <title>Budowa i Transport Jachtów | Jacht-Plast</title>
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
                 </script>
                 <script type="application/ld+json">
                     {JSON.stringify(structuredDataWebsite)}
                 </script>
-                <meta name="description" content="Profejsonalna produkcja i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."/>
+                <meta name="description" content="Profejsonalna budowa i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."/>
             </Helmet>
             <JachtSlider/>
             <h1>{switchState.language.aboutUsHeader}</h1>
             <div className={"about_us_div"}>
                 <div className={'about_us_first'}>
-                    <img src={exteriorImage} className={'about_us_photo'} alt={"Building of Jacht-Plast company"}/>
+                    <img src={exteriorImage} className={'about_us_photo'} alt={"Siedziba firmy Jacht-Plast"}/>
                     <div>
                         {switchState.language.aboutUsFirstText}
                     </div>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={interiorImage} className={'about_us_photo'} alt={"Production in Jacht-Plast company"}/>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Produkcja łodzi żaglowych przy użyciu tradycyjnych metod"}/>
                     <div>
                         {switchState.language.aboutUsSecondText}
                     </div>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={ramImage} className={'about_us_photo'} alt={"Transport of Jacht-Plast company"}/>
+                    <img src={ramImage} className={'about_us_photo'} alt={"Transport łodzi z wykorzystaniem naczepy"}/>
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>

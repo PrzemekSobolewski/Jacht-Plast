@@ -70,7 +70,7 @@ const Contact = () => {
             />
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Kontakt - Jacht Plast - Budowa i Transport Jachtów</title>
+                <title>Kontakt i dane adresowe | Jacht Plast </title>
                 <meta name="description"
                       content="Zachęcamy do kontaktu. Udzielamy rzetelnych inforamcji z dziedziny transportu łodzi jak i ich budowy. Ustalamy indywidualne cenniki transportu jachtów."/>
             </Helmet>
