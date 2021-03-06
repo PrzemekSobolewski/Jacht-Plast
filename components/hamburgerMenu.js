@@ -26,6 +26,9 @@ const Hamburger = () => {
 
     return (
         <div id="outer-container">
+            <div>
+                <img src={logoImage}  className={'mobile-logo'} alt={"Logo of Jacht-Plast"} onClick={() => router.push("/")}/>
+            </div>
             <Menu left
                   isOpen={isOpen}
                   className={'burger_menu'}

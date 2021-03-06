@@ -1,3 +1,8 @@
+h1 {
+  margin: 64px 32px 32px 32px;
+  font-size: 42px;
+}
+
 .react-parallax-bgimage {
   @media only screen and (max-width: 1000px) {
     transform: scale(0.7) translate3d(-84%, -406.826px, 0px) !important;
@@ -81,41 +86,127 @@
   @include flex-center;
   @include flex-direction(column);
   margin: auto;
-  width: 70%;
-  padding: 2em;
+  width: 75%;
+  padding: 32px 16px;
   color: black;
   font-size: 1.1em;
   line-height: 1.5em;
-  @media only screen and (max-width: 1000px) {
-    width: 90%;
+  box-sizing: border-box;
+  @media only screen and (max-width: 1400px) {
+    width: 85%;
+  }
+  @media only screen and (max-width: 1230px) {
+    width: 100%;
     padding: 1em 1em 2em 1em;
     line-height: 1.3em;
   }
   > .about_us_first {
     @include flex-center;
-    text-align: center;
+    text-align: justify;
     justify-content: space-between;
-    margin: 1em 0;
-    font-size: 1em;
-    @media only screen and (max-width: 1000px) {
-      @include flex-direction(column);
-      display: flex;
-      font-size: 0.9em;
-    }
+    margin: 32px 0;
+    font-size: 20px;
+    line-height: 28px;
+   
     > .about_us_photo {
-      height: 14em;
+      width: calc(50% - 1em);
       border: solid 1px grey;
       filter: drop-shadow(1px 1px 3px #000);
-      margin: 0 2em;
-      @media only screen and (max-width: 1000px) {
-        width: 13.3em;
-        height: 10em;
-        margin: 1em 1.5em;
+    }
+    
+  }
+  >div {
+    &:nth-child(2n - 1) {
+      img {
+        margin: 0 2em 0 0;
+      }
+      
+    }
+    &:nth-child(2n) {
+      img {
+        margin: 0 0 0 2em;
+      }
+    }
+    @media only screen and (max-width: 1023px) {
+      &.about_us_first {
+        margin: 24px 0;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      &:nth-child(2n - 1) {
+        flex-direction: column;
+      }
+      &:nth-child(2n) {
+        flex-direction: column-reverse;
+      }
+      &.about_us_first {
+        font-size: 16px;
+        line-height: 24px;
+        > .about_us_photo {
+          margin: 0 0em 2em 0em !important;
+          width: 70%;
+        }
+      }
+    }
+    @media only screen and (max-width: 510px) {
+      &.about_us_first {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: justify;
+        > .about_us_photo {
+          width: 100%;
+        }
       }
     }
   }
 }
-
+.c-container {
+  padding: 0 16px;
+  width: 100%;
+}
+@media only screen and (max-width: 1400px) {
+  h1 {
+    margin: 48px 16px 16px 16px;
+    font-size: 38px;
+  }
+}
+@media only screen and (max-width: 1230px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin: 48px 16px 16px 16px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .c-container {
+    width: 540px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .c-container {
+    width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .c-container {
+    width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .c-container {
+    width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .c-container {
+    width: 1320px;
+  }
+}
 
 
 

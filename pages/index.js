@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import exteriorImage from "../assets/images/about_us/hala_out.jpg"
 import interiorImage from "../assets/images/about_us/hala_in.jpg"
 import ramImage from "../assets/images/about_us/ram.jpg"
+import transortImage from "../assets/images/transport/20190425_191434.jpg"
 import {useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
 import JachtSlider from '../components/JachtSlider';
@@ -60,14 +61,12 @@ const Home = () => {
         "@type": "WebSite",
         "url": "https://www.jacht-plast.pl/",
     }
-    const googleAnalyticsScript = {
-        
-    }
-
+  
     return (
         <Layout>
             <Helmet>
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-409941666"></script>
             </Helmet>
             <Helmet
                  script={[{ 
@@ -75,6 +74,19 @@ const Home = () => {
                     innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
                   }]} 
             />
+             <Helmet
+                  script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: '  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "AW-409941666");' 
+                  }]} 
+            />
+                  <Helmet
+                  script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' gtag("event", "conversion", {"send_to": "AW-409941666/9L4cCLmYrvoBEKLtvMMB"});'
+                  }]} 
+            />
+            
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Budowa i Transport Jachtów | Jacht-Plast</title>
@@ -86,6 +98,7 @@ const Home = () => {
                 </script>
                 <meta name="description" content="Profejsonalna budowa i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."/>
             </Helmet>
+          
             <JachtSlider/>
             <h1>{switchState.language.aboutUsHeader}</h1>
             <div className={"about_us_div"}>
@@ -96,16 +109,28 @@ const Home = () => {
                     </div>
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={interiorImage} className={'about_us_photo'} alt={"Produkcja łodzi żaglowych przy użyciu tradycyjnych metod"}/>
                     <div>
                         {switchState.language.aboutUsSecondText}
                     </div>
+                    <img src={ramImage} className={'about_us_photo'} alt={"Transport jachtu z wykorzystaniem przyczepy"}/>
+                   
+                   
                 </div>
                 <div className={'about_us_first'}>
-                    <img src={ramImage} className={'about_us_photo'} alt={"Transport łodzi z wykorzystaniem naczepy"}/>
+                   
+                    <img src={transortImage} className={'about_us_photo'} alt={"Transport łodzi motorowej przy użyciu naczepy"}/>
                     <div>
                         {switchState.language.aboutUsThirdText}
                     </div>
+                   
+                   
+                </div>
+                <div className={'about_us_first'}>
+                   
+                    <div>
+                        {switchState.language.aboutUsFourthText}
+                    </div>
+                    <img src={interiorImage} className={'about_us_photo'} alt={"Produkcja łodzi żaglowych przy użyciu tradycyjnych metod"}/>
                 </div>
             </div>
         </Layout>

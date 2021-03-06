@@ -18,10 +18,10 @@ const JachtSlider = () => {
         <div>
             <div className={'bgContainer2'}>
                 <div className="fadein">
-                    <img id="f1" src={images[1]} alt="Interior of yacht"/>
-                    <img id="f2" src={images[0]} alt="Yacht on water"/>
-                    <img id="f3" src={images[2]} alt="Jacht Plast exterior look"/>
-                    <img id="f4" src={images[3]} alt="Beautiful yacht"/>
+                    <img id="f1" src={images[1]} alt="Wnętrze siedziby firmy przepełnione jachtami w produkcji"/>
+                    <img id="f2" src={images[0]} alt="Łódź żaglowa na płynąca po jeziorze"/>
+                    <img id="f3" src={images[2]} alt="Transport jachtu z wykorzystaniem samochodu Dodge Ram oraz odpowiednio przystosowanej przyczepy"/>
+                    <img id="f4" src={images[3]} alt="Jacht Tes 32 zadokowany w porcie"/>
 
                 </div>
                 <ScrollTo>

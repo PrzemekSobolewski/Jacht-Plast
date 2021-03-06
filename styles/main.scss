@@ -17,7 +17,10 @@ body {
   font-family: 'Montserrat-medium', serif;
   display: grid;
 }
-
+html,body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .container {
   display: grid;
 }

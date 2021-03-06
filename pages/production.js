@@ -112,63 +112,41 @@ const Production = () => {
         dispatch(actions.loadDataModal(readyImages));
     }, [pickedOne]);
 
+    useEffect(() => {
+        document.querySelector('.images-select--item[data-id="0"]').classList.add('is-active');
+        document.querySelector('.gallery[data-id="0"]').classList.add('is-active');
+    }, []);
+
     const openLightBox = (index) => {
         dispatch(actions.setNumberModal(index));
         dispatch(actions.openModal());
     };
 
-    const openExpand = async (element) => {
+    const openExpand = async (element, index) => {
         data[pickedOne.id].open = false;
         data[element.id].open = true;
         await setPickedOne(element);
         setData(data);
+
+        document.querySelectorAll('.gallery').forEach((gallery) => {
+            gallery.classList.remove('is-active');
+        });
+        document.querySelectorAll('.images-select--item').forEach((imagesSelector) => {
+            imagesSelector.classList.remove('is-active');
+        });
+
+        document.querySelector('.images-select--item[data-id="'+index+'"]').classList.add('is-active');
+        setTimeout(() => {
+            document.querySelector('.gallery[data-id="'+index+'"]').classList.add('is-active');
+        },300);
+        
     };
 
-    const changeParallax = () => {
-        if (width > 350 && width <= 513 || (width > 600 && width < 1166)) {
-            return <Parallax
-                className={"list_div"}
-                y={[-30, 65]}
-            >
-                {data.map(mapExpands)}
-            </Parallax>;
-        }
-        else if ((width >= 1166 && width <= 1300) || width <= 350) {
-            return <Parallax
-                className={"list_div"}
-                y={[-15.5, 25]}
-
-            >
-                {data.map(mapExpands)}
-            </Parallax>;
-        }
-        else if ((width > 1300) || (width > 513 && width <= 600)) {
-            return <Parallax
-                className={"list_div"}
-                y={[0, 0]}
-
-            >
-                {data.map(mapExpands)}
-            </Parallax>;
-        }
-    };
-
-
-    const mapExpands = (item) => {
+    const mapExpands = (item, index) => {
         return (
-            <div className={'fullExpand'} key={item.id}>
-                <span className={'upper_radius'}><img src={radius}
-                                                      className={item.open ? 'active' : ''}
-                                                      alt={"upper image"}/> </span>
-                <div onClick={() => openExpand(item)}
-                     className={item.open ? 'expandButton openedExpand' : 'expandButton'} style={{display: 'block'}}>
-                    <IoIosArrowDropright className={'fa-blink'} style={item.open ? {display: ''} : {display: 'none'}}/>
-                    {item.title ? item.title : switchState.language.productionModels}
-                </div>
-                <span className={'bottom_radius'}><img src={radius}
-                                                       className={item.open ? 'active' : ''}
-                                                       alt={"lower image"}/> </span>
-            </div>
+            <span className="images-select--item" key={index} data-id={index} onClick={() => openExpand(item, index)}>
+                {item.title ? item.title : switchState.language.productionModels}
+            </span>
         )
     };
 
@@ -181,37 +159,83 @@ const Production = () => {
         )
     };
 
+    const renderAllImages = (data, index) => {
+        return (
+        <Gallery key={index}>  
+            <div className="gallery" data-id={index}>
+                {data.photos.map((it, index) => mapToImage(it, index, pickedOne))}
+            </div> 
+         </Gallery>
+         )
+    }
+
+    const openSelector = () => {
+        let selector = document.querySelector('.images-select__mobile');
+        if(selector.classList.contains('is-active')) {
+            selector.classList.remove('is-active');
+        }else {
+            selector.classList.add('is-active');
+        }
+    }
+
     return (
-        <ParallaxProvider>
-            <Layout>
-                <Helmet>
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
-                </Helmet>
-                <Helmet
-                    script={[{ 
-                        type: 'text/javascript', 
-                        innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
-                    }]} 
-                />
-                <Helmet>
-                    <meta charSet="utf-8"/>
-                    <title>Produkcja łodzi żaglowych i motorowych | Jacht Plast</title>
-                    <meta name="description"
-                          content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"/>
-                </Helmet>
-                <h1>{switchState.language.productionHeader}</h1>
-                <div className={"production"}>
-                    {changeParallax()}
+        <Layout>
+           <Helmet>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180598229-1"></script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-409941666"></script>
+            </Helmet>
+            <Helmet
+                 script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-180598229-1");' 
+                  }]} 
+            />
+             <Helmet
+                  script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: '  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "AW-409941666");' 
+                  }]} 
+            />
+                  <Helmet
+                  script={[{ 
+                    type: 'text/javascript', 
+                    innerHTML: ' gtag("event", "conversion", {"send_to": "AW-409941666/9L4cCLmYrvoBEKLtvMMB"});'
+                  }]} 
+            />
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>Produkcja łodzi żaglowych i motorowych | Jacht Plast</title>
+                <meta name="description"
+                        content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"/>
+            </Helmet>
+            <h1>{switchState.language.productionHeader}</h1>
+            <div className={"production"}>
+                <div className={"c-container"}>
+                    <div className={'images-select'}>
+                        <div className={'images-select__content'}>
+                            {data.map(mapExpands)}
+                        </div>
+                    </div>
+                    <div className={'images-select__mobile'} onClick={() => openSelector()}>
+                        <span className="expand-selector">
+                            {pickedOne.title}
+                            <svg class="selector-arrow" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.29289 8.70711C7.68342 9.09763 8.31658 9.09763 8.70711 8.70711L15.0711 2.34315C15.4616 1.95262 15.4616 1.31946 15.0711 0.928932C14.6805 0.538408 14.0474 0.538408 13.6569 0.928932L8 6.58579L2.34315 0.928932C1.95262 0.538408 1.31946 0.538408 0.928932 0.928932C0.538408 1.31946 0.538408 1.95262 0.928932 2.34315L7.29289 8.70711ZM7 7V8H9V7H7Z"/>
+</svg>
+
+                        </span>
+                        <div className={'images-select__mobile--content'}>
+                            {data.map(mapExpands)}
+                        </div>
+                    </div>
                     <div className={"details"}>
                         <div className={'galleryProd'}>
-                            <Gallery>
-                                {pickedOne.photos.map((it, index) => mapToImage(it, index, pickedOne))}
-                            </Gallery>
+                            {data.map(renderAllImages)}
                         </div>
                     </div>
                 </div>
-            </Layout>
-        </ParallaxProvider>
+            </div>
+        </Layout>
     )
 };
 

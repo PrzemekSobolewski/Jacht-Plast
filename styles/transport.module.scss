@@ -20,6 +20,9 @@
   left:0;
   right:0;
   transition: all 0.3s ease;
+  max-width: 58px;
+  left: 50%;
+  transform: translateX(-50%);
   @include flex-center;
   > svg {
     background: white;
@@ -28,17 +31,17 @@
 .transportIcon:hover {
   cursor: pointer;
   color: #3f89a2;
-  transform: scale(1.2);
+  transform: translateX(-50%) scale(1);
 }
 
 .transportIconActive {
   @extend  .transportIcon;
-  transform: rotate(180deg);
+  transform: translateX(-50%) rotate(180deg);
   transition: all 0.3s ease;
 }
 
 .transportIconActive:hover {
-  transform: scale(1.2) rotate(180deg);
+  transform: translateX(-50%) scale(1.2) rotate(180deg);
   cursor: pointer;
   color: #3f89a2;
 }
@@ -57,7 +60,7 @@
     filter:drop-shadow(1px 2px 4px #aaa);
     @media only screen and (max-width: 1000px) {
       padding: 1em;
-      font-size: 0.8em;
+      font-size: 14px;
       margin: 0.8em;
     }
   }
@@ -67,7 +70,9 @@
   font-size: 4em;
   color: green;
   @media only screen and (max-width: 1000px) {
-    font-size: 8em;
+    font-size: 4em;
+    max-width: 48px;
+    min-width: 48px;
   }
 }
 

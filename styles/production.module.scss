@@ -51,6 +51,56 @@
   cursor: pointer;
   color: #3f89a2;
 }
+.images-select {
+  width: 100%;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    >span:nth-child(n) {
+      border-right: 1px solid #ccc;
+    }
+    >span:nth-child(-n + 4) {
+      border-bottom: 1px solid #ccc;
+    }
+    >span:nth-child(4n) {
+      border-right: none;
+    }
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      >span:nth-child(n) {
+        border-right: 1px solid #ccc;
+      }
+      >span:nth-child(-n + 6) {
+        border-bottom: 1px solid #ccc;
+      }
+      >span:nth-child(3n) {
+        border-right: none;
+      }
+    }
+  }
+  &--item {
+    padding: 15px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    &.is-active {
+      color: #3f89a2;
+    }
+    &:hover {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #3f89a2;
+    }
+  }
+}
+
+.expand-selector {
+  display: none;
+}
 
 .openedExpand {
 
@@ -106,6 +156,13 @@
 .production {
   @include flex;
   margin-bottom: 2em;
+  align-items: center;
+  justify-content:center;
+  .c-container { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .fullExpand {
@@ -121,22 +178,36 @@
 h1 {
   text-align: center;
 }
+
 .productionImage {
   margin: 1em;
   cursor: pointer;
   width: 300px;
   height: 200px;
-  @media only screen and (max-width: 600px) {
-    width: 150px;
-    height: 100px;
-    margin: 0 0 1em 0;
+  @media only screen and (max-width: 768px) {
+    width: 235px;
+    height: 150px;
   }
-  @media only screen and (max-width: 350px) {
-    width: 120px;
-    height: 80px;
-    margin: 0 0 1em 0;
-  }
+  @media only screen and (max-width: 568px) {
+    width: 220px;
+    height: 140px;
 
+  }
+  @media only screen and (max-width: 538px) {
+    width: 205px;
+    height: 130px;
+
+  }
+  @media only screen and (max-width: 508px) {
+    width: 190px;
+    height: 110px;
+
+  }
+  @media only screen and (max-width: 485px) {
+   width: calc(100% - 1em);
+   height: auto;
+
+  }
 }
 
 .productionImage:hover {
@@ -149,12 +220,12 @@ h1 {
   position: relative;
   z-index: 0.5;
   border-left: solid 1px #b3d9ff; //#d9ffa0;
-  border-radius: 15px;
-  margin: 2em 1em 2em 0;
+  border-radius: 5px;
+  margin-top: 2rem;
   padding: 1em 0 1em 0;;
   background: linear-gradient(100deg, #b3d9ff 50%, #FFF 100%);
   width: 100%;
-  min-height: 54em;
+  min-height: 40em;
   @include flex-center();
 }
 
@@ -188,4 +259,78 @@ h1 {
 .bottom_radius > img {
   width: 18px;
   height: 18px;
+}
+.images-select__mobile {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .productionImage {
+    margin: 0.5em;
+  }
+  .images-select {
+    display: none;
+  }
+  .selector-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    path {
+      fill: #14161a;
+    }
+  }
+  .images-select__mobile {
+    display: inline-block;
+    position: relative;
+    .expand-selector {
+      position: relative;
+      display: block;
+      text-align: center;
+      min-width: 400px;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 2px solid #14161a;
+      border-radius: 2px;
+     
+    }
+    &--content {
+      position: absolute;
+      width: 100%;
+      border: 2px solid #14161a;
+      opacity: 0;
+      max-height: 0px;
+      pointer-events: none;
+      transition: all 0.3s ease-out;
+      top: calc(100% - 2px);
+      background-color: #ffffff;
+      z-index: 10;
+      box-sizing: border-box;
+      border-bottom-left-radius: 2px;
+      border-bottom-right-radius: 2px;
+      
+    }
+    &.is-active {
+      .expand-selector {
+        border: 2px solid #3f89a2;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      .images-select__mobile--content {
+        border: 2px solid #3f89a2;
+        opacity: 1;
+        max-height:1000vh;
+        pointer-events: all;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .images-select__mobile  {
+    min-width: 100%;
+    .expand-selector {
+      min-width: unset;
+    }
+  }
+
 }
