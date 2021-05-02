@@ -76,8 +76,8 @@ const Transport = () => {
                 <div className="c-banner-text" style={{textAlign: 'center'}}><h1>{switchState.language.transportHeader}</h1></div>
                 
                 <div className='c-header-banner'>
-                    <img src={headerImageSrc}/>
-                    <img src={headerImageSecondSrc}/>
+                    <img src={headerImageSrc} alt="Rozpoczęcie transportu łodzi - wyjazd z siedziby firmy"/>
+                    <img src={headerImageSecondSrc} alt="Transport ratunkowych łodzi motorowych"/>
                 </div>
                 <Fade>
                     <ul className={'transportList'}>
