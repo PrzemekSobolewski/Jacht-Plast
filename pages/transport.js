@@ -8,7 +8,8 @@ import Fade from 'react-reveal/Fade'
 import * as actions from "../redux/actions/modalActions";
 import {useDispatch, useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
-
+import headerImageSrc from "../assets/images/slides/transport_header.jpg";
+import headerImageSecondSrc from "../assets/images/slides/transport_header_second.jpg";
 function importAll(r) {
     return r.keys().map(r);
 }
@@ -70,7 +71,14 @@ const Transport = () => {
                 <meta name="description" content="Transport łodzi motorowych i żaglowych w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie."/>
             </Helmet>
             <div className={"transportText"}>
-                <div style={{textAlign: 'center'}}><h1>{switchState.language.transportHeader}</h1></div>
+                
+                    
+                <div className="c-banner-text" style={{textAlign: 'center'}}><h1>{switchState.language.transportHeader}</h1></div>
+                
+                <div className='c-header-banner'>
+                    <img src={headerImageSrc}/>
+                    <img src={headerImageSecondSrc}/>
+                </div>
                 <Fade>
                     <ul className={'transportList'}>
                         <li><IoIosCheckmark className={'checkmark'} alt={"Icon checkmark"}/>

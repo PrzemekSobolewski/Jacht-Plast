@@ -81,3 +81,23 @@
   width: 70%
 }
 
+.c-header-banner {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  img {
+    max-width: 100%;
+    filter: drop-shadow(1px 1px 3px #000);
+  }
+}
+.c-banner-text {
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-top: -16px;
+}
+
