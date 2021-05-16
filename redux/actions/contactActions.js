@@ -35,9 +35,7 @@ export const sendMail = (body) => async dispatch => {
         subject: body.subject,
         message: body.message
     });
-    console.log(response);
     if (response.status === 200) {
-        console.log(response.data.msg);
         dispatch(handleSendingSuccess());
 
     } else if (response.status >= 400) {
