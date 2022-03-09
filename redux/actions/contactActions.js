@@ -1,47 +1,44 @@
 import axios from "axios/index";
 
-export const SENDING_MAIL = 'SENDING_MAIL';
-export const SEND_SUCCESS = 'SEND_SUCCESS';
-export const SEND_ERROR = 'SEND_ERROR';
-export const RESET_STATE = 'RESET_STATE';
+export const SENDING_MAIL = "SENDING_MAIL";
+export const SEND_SUCCESS = "SEND_SUCCESS";
+export const SEND_ERROR = "SEND_ERROR";
+export const RESET_STATE = "RESET_STATE";
 
 export const sendingMail = () => ({
-    type: SENDING_MAIL,
+  type: SENDING_MAIL,
 });
 
 export const handleSendingSuccess = () => ({
-    type: SEND_SUCCESS,
+  type: SEND_SUCCESS,
 });
 
 export const handleSendingError = () => ({
-    type: SEND_ERROR,
+  type: SEND_ERROR,
 });
 
 export const resetState = () => ({
-    type: RESET_STATE,
+  type: RESET_STATE,
 });
 
+export const sendMail = (body) => async (dispatch) => {
+  dispatch(sendingMail());
 
-export const sendMail = (body) => async dispatch => {
-    dispatch(sendingMail());
+  const instance = axios.create({
+    baseURL: "https://cocky-wilson-df27de.netlify.app",
+  });
 
-    const instance = axios.create({
-        baseURL: 'https://cocky-wilson-df27de.netlify.app',
-    });
+  let response = await instance.post("/.netlify/functions/api/form", {
+    name: body.name,
+    email: body.email,
+    subject: body.subject,
+    message: body.message,
+  });
+  if (response.status === 200) {
+    dispatch(handleSendingSuccess());
+  } else if (response.status >= 400) {
+    dispatch(handleSendingError());
+  }
 
-    let response = await instance.post('/.netlify/functions/api/form', {
-        name: body.name,
-        email: body.email,
-        subject: body.subject,
-        message: body.message
-    });
-    if (response.status === 200) {
-        dispatch(handleSendingSuccess());
-
-    } else if (response.status >= 400) {
-        dispatch(handleSendingError());
-    }
-
-    setTimeout(() => dispatch(resetState()), 2000);
-
+  setTimeout(() => dispatch(resetState()), 2000);
 };
