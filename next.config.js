@@ -26,7 +26,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
     [
-        [optimizedImages, { handleImages: ['jpeg', 'png']}],
+        [optimizedImages, { handleImages: ['jpeg', 'png', 'webp']}],
         withFonts,
         withSass
     ],

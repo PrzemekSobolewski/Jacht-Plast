@@ -8,13 +8,13 @@ import Fade from 'react-reveal/Fade'
 import * as actions from "../redux/actions/modalActions";
 import {useDispatch, useSelector} from "react-redux";
 import {Helmet} from "react-helmet";
-import headerImageSrc from "../assets/images/slides/transport_header.jpg";
-import headerImageSecondSrc from "../assets/images/slides/transport_header_second.jpg";
+import headerImageSrc from "../assets/images/slides/transport_header.webp";
+import headerImageSecondSrc from "../assets/images/slides/transport_header_second.webp";
 function importAll(r) {
     return r.keys().map(r);
 }
 
-const images = importAll(require.context('../assets/images/transport/', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../assets/images/transport/', false, /\.(png|jpe?g|svg|webp)$/));
 
 const Transport = () => {
     const [open, setOpen] = useState(false);

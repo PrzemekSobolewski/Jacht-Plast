@@ -2,26 +2,23 @@ import React, {useEffect, useState} from 'react'
 import Layout from "../components/Layout";
 import Images from '../components/Images';
 import Gallery from "../components/Gallery";
-import {IoIosArrowDropright} from "react-icons/io";
 import {useDispatch, useSelector} from "react-redux";
 import * as actions from "../redux/actions/modalActions";
 
-import radius from "../assets/images/production/img/corner.svg";
 import {Helmet} from "react-helmet";
-import {Parallax, ParallaxProvider} from "react-scroll-parallax";
 
 function importAll(r) {
     return r.keys().map(r);
 }
 
-const bt_tes = importAll(require.context('../assets/images/production/bt_tes/', false, /\.(png|jpe?g|svg)$/));
-const dreamer = importAll(require.context('../assets/images/production/dreamer/', false, /\.(png|jpe?g|svg)$/));
-const illuminatus = importAll(require.context('../assets/images/production/illuminatis/', false, /\.(png|jpe?g|svg)$/));
-const master = importAll(require.context('../assets/images/production/master/', false, /\.(png|jpe?g|svg)$/));
-const magnam = importAll(require.context('../assets/images/production/magnam/', false, /\.(png|jpe?g|svg)$/));
-const versus = importAll(require.context('../assets/images/production/versus/', false, /\.(png|jpe?g|svg)$/));
-const navighator = importAll(require.context('../assets/images/production/navighator/', false, /\.(png|jpe?g|svg)$/));
-const diffrent = importAll(require.context('../assets/images/production/diffrent/', false, /\.(png|jpe?g|svg)$/));
+const bt_tes = importAll(require.context('../assets/images/production/bt_tes/', false, /\.(png|jpe?g|webp|svg)$/));
+const dreamer = importAll(require.context('../assets/images/production/dreamer/', false, /\.(png|jpe?g|webp|svg)$/));
+const illuminatus = importAll(require.context('../assets/images/production/illuminatis/', false, /\.(png|jpe?g|webp|svg)$/));
+const master = importAll(require.context('../assets/images/production/master/', false, /\.(png|jpe?g|webp|svg)$/));
+const magnam = importAll(require.context('../assets/images/production/magnam/', false, /\.(png|jpe?g|webp|svg)$/));
+const versus = importAll(require.context('../assets/images/production/versus/', false, /\.(png|jpe?g|webp|svg)$/));
+const navighator = importAll(require.context('../assets/images/production/navighator/', false, /\.(png|jpe?g|webp|svg)$/));
+const diffrent = importAll(require.context('../assets/images/production/diffrent/', false, /\.(png|jpe?g|webp|svg)$/));
 const elements = [
     {
         id: 0,

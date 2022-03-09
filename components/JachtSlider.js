@@ -1,10 +1,10 @@
 import React from 'react'
 import {ScrollTo} from "react-scroll-to";
 import {useSelector} from "react-redux";
-import water from "../assets/images/slides/water.jpg";
-import exterior from "../assets/images/slides/exterior.jpg";
-import boat from "../assets/images/slides/boat.jpg";
-import interior from "../assets/images/slides/interior.jpg";
+import water from "../assets/images/slides/water.webp";
+import exterior from "../assets/images/slides/exterior.webp";
+import boat from "../assets/images/slides/boat.webp";
+import interior from "../assets/images/slides/interior.webp";
 const JachtSlider = () => {
     const switchState = useSelector(state => state.switch);
     const images = [
