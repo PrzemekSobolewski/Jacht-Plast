@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/Montserrat-Regular.ttf');
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/Montserrat-Medium.ttf');
-  font-display: swap;
+  font-display: optional;
 }
 
 body {
