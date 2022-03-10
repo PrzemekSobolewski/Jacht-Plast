@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import Images from "../components/images";
 import Gallery from "../components/gallery";
 import { useDispatch, useSelector } from "react-redux";
