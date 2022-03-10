@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
-import Images from "../components/images";
+import Images from "../components/Images";
 import Gallery from "../components/gallery";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../redux/actions/modalActions";
