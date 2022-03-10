@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
+import dynamic from 'next/dynamic';
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import modalReducer from "../redux/reducers/modalReducer";
 import { Provider } from "react-redux";
@@ -11,6 +12,9 @@ import Head from "next/head";
 import icon from "../public/icon.png";
 import thunk from "redux-thunk";
 import { GTMContainer } from "../components/GTM";
+const Hamburger = dynamic(() => import("../components/hamburgerMenu"));
+const Footer = dynamic(() => import("../components/footer"));
+const Nav = dynamic(() => import("../components/nav"));
 
 const rootReducer = combineReducers({
   contactMail: contactReducer,
@@ -22,15 +26,29 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 const MyApp = ({ Component, pageProps }) => {
+
+  const [width, setWidth] = useState(1200);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <CookiesProvider>
       <Provider store={store}>
         <Head>
+          <title>Jacht-Plast</title>
           <link rel="shortcut icon" href={icon} />
         </Head>
         <Helmet htmlAttributes={{ lang: "pl-PL" }} />
         <GTMContainer />
+        <div className={"container"}>
+          {width > 1100 ? <Nav /> : <Hamburger />}
+        </div>
         <Component {...pageProps} />
+        <div className={"container"}>
+        <Footer />
+        </div>
       </Provider>
     </CookiesProvider>
   );

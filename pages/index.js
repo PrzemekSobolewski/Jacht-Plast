@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from 'next/dynamic';
 import Layout from "../components/Layout";
 import exteriorImage from "../assets/images/about_us/hala_out.webp";
 import interiorImage from "../assets/images/about_us/hala_in.webp";
@@ -6,7 +7,7 @@ import ramImage from "../assets/images/about_us/ram.webp";
 import transortImage from "../assets/images/transport/20190425_191434.webp";
 import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
-import JachtSlider from "../components/JachtSlider";
+const JachtSlider = dynamic(() => import("../components/JachtSlider"));
 
 const Home = () => {
   const switchState = useSelector((state) => state.switch);

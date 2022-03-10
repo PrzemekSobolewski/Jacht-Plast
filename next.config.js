@@ -3,6 +3,7 @@ const withSass = require('@zeit/next-sass');
 const optimizedImages = require('next-optimized-images');
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const nextConfig = {
     enableSvg: true,
@@ -28,7 +29,7 @@ module.exports = withPlugins(
     [
         [optimizedImages, { handleImages: ['jpeg', 'png', 'webp']}],
         withFonts,
-        withSass
+        withSass,
     ],
     nextConfig
 );
