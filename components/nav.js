@@ -9,7 +9,7 @@ import Switch from "react-switch";
 import POLAND from "../assets/images/poland.png";
 import ENG from "../assets/images/uk.png";
 import { CookiesProvider } from "react-cookie";
-import CookiesModal from "./Cookies";
+import CookiesModal from "./cookies";
 import Cookies from "universal-cookie";
 
 const Nav = () => {
