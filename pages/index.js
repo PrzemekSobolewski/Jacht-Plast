@@ -39,15 +39,8 @@ const Home = () => {
       contactType: "customer support",
       telephone: "601256133",
       email: "jachtplast@gmail.com",
+      openingHours: "Mo,Tu,We,Th,Fr 08:00-16:00",
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "16:00",
-      },
-    ],
     sameAs: [
       "https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685",
     ],
