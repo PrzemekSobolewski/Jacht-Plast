@@ -7,9 +7,12 @@ const withPlugins = require('next-compose-plugins');
 const nextConfig = {
     enableSvg: true,
     poweredByHeader: false,
-    webpack(config, options) {
+    webpack(config, {isServer}) {
         config.resolve.alias['components'] = path.join(__dirname, 'components')
         config.resolve.alias['static'] = path.join(__dirname, 'static')
+        if (isServer) {
+            require("./scripts/sitemap-generator");
+        }
         return config;
     },
     exportPathMap: async function (
