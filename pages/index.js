@@ -26,6 +26,9 @@ const Home = () => {
         name: "Zdzisław Sobolewski",
       },
     ],
+    openingHours: [
+      "Mo-Fr 07:00-16:00",
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Przemysłowa 4",
@@ -39,7 +42,11 @@ const Home = () => {
       contactType: "customer support",
       telephone: "601256133",
       email: "jachtplast@gmail.com",
-      openingHours: "Mo,Tu,We,Th,Fr 08:00-16:00",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      reviewCount: "19"
     },
     sameAs: [
       "https://www.facebook.com/Jacht-Plast-Zdzis%C5%82aw-Sobolewski-1328748387208685",
