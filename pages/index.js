@@ -26,9 +26,6 @@ const Home = () => {
         name: "Zdzisław Sobolewski",
       },
     ],
-    openingHours: [
-      "Mo-Fr 07:00-16:00",
-    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Przemysłowa 4",
