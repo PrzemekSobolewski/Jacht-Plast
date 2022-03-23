@@ -1,22 +1,14 @@
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/Montserrat-Regular.ttf');
-  font-display: optional;
-}
-
-@font-face {
-  font-family: 'Montserrat-medium';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../assets/fonts/Montserrat-Medium.ttf');
+  src: url('https://fonts.googleapis.com/css?family=Roboto');
   font-display: optional;
 }
 
 body {
   margin: 0;
-  font-family: 'Montserrat-medium', serif;
+  font-family: 'Roboto', serif;
   display: grid;
 }
 html,body {

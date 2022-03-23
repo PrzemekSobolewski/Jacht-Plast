@@ -39,6 +39,7 @@ const MyApp = ({ Component, pageProps }) => {
         <Head>
           <title>Jacht-Plast</title>
           <link rel="shortcut icon" href={icon} />
+          <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
         </Head>
         <Helmet htmlAttributes={{ lang: "pl-PL" }} />
         <GTMContainer />
