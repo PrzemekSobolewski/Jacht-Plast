@@ -20,9 +20,9 @@ const nextConfig = {
     ) {
         return {
             '/': {page: '/'},
-            '/production.html': {page: '/production'},
-            '/transport.html': {page: '/transport'},
-            '/contact.html': {page: '/contact'},
+            '/production.html': {page: '/produkcja'},
+            '/transport.html': {page: '/transport-jachtow'},
+            '/contact.html': {page: '/kontakt'},
         }
     }
 }
