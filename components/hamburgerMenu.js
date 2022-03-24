@@ -74,10 +74,10 @@ const Hamburger = () => {
         <div
           onClick={() => {
             setIsOpen(false);
-            router.push("/production");
+            router.push("/produkcja");
           }}
           className={
-            router.pathname === "/production" ? "item pressed" : "item"
+            router.pathname === "/produkcja" ? "item pressed" : "item"
           }
         >
           {switchState.language.production}
@@ -85,18 +85,18 @@ const Hamburger = () => {
         <div
           onClick={() => {
             setIsOpen(false);
-            router.push("/transport");
+            router.push("/transport-jachtow");
           }}
-          className={router.pathname === "/transport" ? "item pressed" : "item"}
+          className={router.pathname === "/transport-jachtow" ? "item pressed" : "item"}
         >
           {switchState.language.transport}
         </div>
         <div
           onClick={() => {
             setIsOpen(false);
-            router.push("/contact");
+            router.push("/kontakt");
           }}
-          className={router.pathname === "/contact" ? "item pressed" : "item"}
+          className={router.pathname === "/kontakt" ? "item pressed" : "item"}
         >
           {switchState.language.contact}
         </div>
