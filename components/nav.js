@@ -65,20 +65,20 @@ const Nav = () => {
               {switchState.language.aboutUs}
             </li>
             <li
-              onClick={() => router.push("/production")}
-              className={router.pathname === "/production" ? "pressed" : ""}
+              onClick={() => router.push("/produkcja")}
+              className={router.pathname === "/produkcja" ? "pressed" : ""}
             >
               {switchState.language.production}
             </li>
             <li
-              onClick={() => router.push("/transport")}
-              className={router.pathname === "/transport" ? "pressed" : ""}
+              onClick={() => router.push("/transport-jachtow")}
+              className={router.pathname === "/transport-jachtow" ? "pressed" : ""}
             >
               {switchState.language.transport}
             </li>
             <li
-              onClick={() => router.push("/contact")}
-              className={router.pathname === "/contact" ? "pressed" : ""}
+              onClick={() => router.push("/kontakt")}
+              className={router.pathname === "/kontakt" ? "pressed" : ""}
             >
               {switchState.language.contact}
             </li>
