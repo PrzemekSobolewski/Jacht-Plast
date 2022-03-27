@@ -69,7 +69,6 @@ const Contact = () => {
           name="description"
           content="Zachęcamy do kontaktu w sprawie transportu jachtu. Udzielamy rzetelnych inforamcji z dziedziny przewozu łodzi. Ustalamy indywidualne cenniki zależne od gabarytu łodzi oraz miejsca dostarczenia"
         />
-         <link rel="canonical" href="https://www.jacht-plast.pl/kontakt" />
       </Helmet>
       <div className={"contact_div"}>
         <h1>{switchState.language.contactHeaderMain}</h1>

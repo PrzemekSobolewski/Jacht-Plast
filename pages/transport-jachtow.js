@@ -65,7 +65,6 @@ const Transport = () => {
           name="description"
           content="Tansport jachtu z firmą Jacht Plast. Zajmujemy się przewozem łodzi motorowych oraz transportem jachtów żaglowych o masie nawet do 8 ton."
         />
-        <link rel="canonical" href="https://www.jacht-plast.pl/transport-jachtow" />
       </Helmet>
       <div className={"transportText"}>
         <div className="c-banner-text" style={{ textAlign: "center" }}>

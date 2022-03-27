@@ -68,7 +68,7 @@ const Home = () => {
         </script>
         <meta
           name="description"
-          content="Profejsonalna budowa i transport jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."
+          content="Transport i budowa jachtów. Świadczymy usługi transportu łodzi żaglowych jak i motorowych. Transport jachtów na terenie Polski oraz Europy."
         />
       </Helmet>
 
