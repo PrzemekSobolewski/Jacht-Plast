@@ -24,7 +24,14 @@ const nextConfig = {
             '/transport-jachtow.html': {page: '/transport-jachtow'},
             '/kontakt.html': {page: '/kontakt'},
         }
-    }
+    },
+    async redirects() {
+        return [
+           { source: '/transport', destination: '/transport-jachtow', permanent: true },
+           { source: '/production', destination: '/produkcja', permanent: true },
+           { source: '/contact', destination: '/kontakt', permanent: true },
+        ]
+      },
 }
 
 module.exports = withPlugins(

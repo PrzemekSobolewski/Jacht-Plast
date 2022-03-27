@@ -31,13 +31,13 @@ const Footer = () => {
           <div className={"sites"} onClick={() => router.push("/")}>
             {switchState.language.aboutUs}
           </div>
-          <div className={"sites"} onClick={() => router.push("/production")}>
+          <div className={"sites"} onClick={() => router.push("/produkcja")}>
             {switchState.language.production}
           </div>
-          <div className={"sites"} onClick={() => router.push("/transport")}>
+          <div className={"sites"} onClick={() => router.push("/transport-jachtow")}>
             {switchState.language.transport}
           </div>
-          <div className={"sites"} onClick={() => router.push("/contact")}>
+          <div className={"sites"} onClick={() => router.push("/kontakt")}>
             {switchState.language.contact}
           </div>
         </li>

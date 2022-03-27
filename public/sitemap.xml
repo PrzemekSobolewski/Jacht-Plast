@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+    <loc>https://www.jacht-plast.pl/404</loc>
+    <lastmod>2022-03-27T18:30:38.661Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://www.jacht-plast.pl</loc>
-    <lastmod>2022-03-24T16:43:58.370Z</lastmod>
+    <lastmod>2022-03-27T18:30:38.661Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.jacht-plast.pl/kontakt</loc>
-    <lastmod>2022-03-24T16:43:58.370Z</lastmod>
+    <lastmod>2022-03-27T18:30:38.661Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.jacht-plast.pl/produkcja</loc>
-    <lastmod>2022-03-24T16:43:58.370Z</lastmod>
+    <lastmod>2022-03-27T18:30:38.661Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.jacht-plast.pl/transport-jachtow</loc>
-    <lastmod>2022-03-24T16:43:58.370Z</lastmod>
+    <lastmod>2022-03-27T18:30:38.661Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 import headerImageSrc from "../assets/images/slides/transport_header.webp";
 import headerImageSecondSrc from "../assets/images/slides/transport_header_second.webp";
+import ImagesDescService from "../config/imagesDesc.service";
 
 function importAll(r) {
   return r.keys().map(r);
@@ -49,19 +50,22 @@ const Transport = () => {
           className={"image"}
           src={image}
           onClick={() => openLightBox(index)}
-          alt={"Image of transport " + index}
+          alt={ImagesDescService.description[index].alt}
+          title={ImagesDescService.description[index].title}
         />
       </Images>
     );
   };
+
   return (
     <Layout>
       <Helmet>
-        <title>Kompleksowe usługi transportu łodzi | Jacht Plast</title>
+        <title>Transport jachtu oraz przewóz łodzi | Jacht Plast</title>
         <meta
           name="description"
-          content="Transport łodzi motorowych i żaglowych w profesjonalnym podejściu do klienta. Niskie ceny transportu. Przewóz jachtów w Polsce i Europie."
+          content="Tansport jachtu z firmą Jacht Plast. Zajmujemy się przewozem łodzi motorowych oraz transportem jachtów żaglowych o masie nawet do 8 ton."
         />
+        <link rel="canonical" href="https://www.jacht-plast.pl/transport-jachtow" />
       </Helmet>
       <div className={"transportText"}>
         <div className="c-banner-text" style={{ textAlign: "center" }}>
@@ -71,11 +75,13 @@ const Transport = () => {
         <div className="c-header-banner">
           <img
             src={headerImageSrc}
-            alt="Rozpoczęcie transportu łodzi - wyjazd z siedziby firmy"
+            alt="Rozpoczęcie transportu jachtu żaglowego - wyjazd z siedziby firmy"
+            title="Transport jachtu firmy TES"
           />
           <img
             src={headerImageSecondSrc}
-            alt="Transport ratunkowych łodzi motorowych"
+            alt="Przewóz jachtu na przyczepie samochodem Dodge RAM"
+            title="Przewóz jachtu na przyczepie"
           />
         </div>
         <Fade>

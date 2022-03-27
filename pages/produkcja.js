@@ -249,6 +249,7 @@ const Production = () => {
           name="description"
           content="Zajmujemy się budową łodzi żaglowych jak i motorowych. Do każdego projektu podchodzimy z pasją i zaangażowaniem co gwarantuje zadowolenie naszych klientów!"
         />
+        <link rel="canonical" href="https://www.jacht-plast.pl/produkcja" />
       </Helmet>
       <h1>{switchState.language.productionHeader}</h1>
       <div className={"production"}>

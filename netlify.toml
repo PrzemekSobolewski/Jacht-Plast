@@ -3,3 +3,21 @@
 
 [dev]
   publish = "dist"
+
+[[redirects]]
+from = "https://www.jacht-plast.pl/transport"
+to = "https://www.jacht-plast.pl/transport-jachtow"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.jacht-plast.pl/production"
+to = "https://www.jacht-plast.pl/produkcja"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.jacht-plast.pl/contact"
+to = "https://www.jacht-plast.pl/kontakt"
+status = 301
+force = true

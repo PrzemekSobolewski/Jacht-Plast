@@ -59,7 +59,7 @@ const Home = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Budowa i Transport Jachtów | Jacht-Plast</title>
+        <title>Transport Jachtów | Jacht-Plast</title>
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

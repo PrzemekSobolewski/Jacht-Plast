@@ -12,6 +12,7 @@ import Head from "next/head";
 import icon from "../public/icon.png";
 import thunk from "redux-thunk";
 import { GTMContainer } from "../components/GTM";
+
 const Hamburger = dynamic(() => import("../components/hamburgerMenu"));
 const Footer = dynamic(() => import("../components/footer"));
 const Nav = dynamic(() => import("../components/nav"));
