@@ -67,58 +67,86 @@ const diffrent = importAll(
     /\.(png|jpe?g|webp|svg)$/
   )
 );
+const navia = importAll(
+  require.context(
+    "../assets/images/production/navia/",
+    false,
+    /\.(png|jpe?g|webp|svg|JPG)$/
+  )
+);
+const laguna = importAll(
+  require.context(
+    "../assets/images/production/laguna/",
+    false,
+    /\.(png|jpe?g|webp|svg|JPG)$/
+  )
+);
 const elements = [
   {
     id: 0,
-    open: true,
+    open: true, 
+    photos: navia,
+    title: "NAVIA",
+    alt: "Jednostka NAVIA",
+  },
+  {
+    id: 1,
+    open: false,
+    photos: laguna,
+    title: "LAGUNA",
+    alt: "Jednostka Laguna",
+  },
+  {
+    id: 2,
+    open: false,
     photos: navighator,
     title: "NAVIGATHOR 30",
     alt: "Jednostka NAVIGATHOR 30",
   },
   {
-    id: 1,
+    id: 3,
     open: false,
     photos: illuminatus,
     title: "TES 393 ILLUMINATUS",
     alt: "Jednostka TES 393 ILLUMINATUS",
   },
   {
-    id: 2,
+    id: 4,
     open: false,
     photos: dreamer,
     title: "TES 32 DREAMER",
     alt: "Jednostka TES 32 DREAMER",
   },
   {
-    id: 3,
+    id: 5,
     open: false,
     photos: magnam,
     title: "TES 28 MAGNAM",
     alt: "Jednostka TES 28 MAGNAM",
   },
   {
-    id: 4,
+    id: 6,
     open: false,
     photos: versus,
     title: "TES 246 VERSUS",
     alt: "Jednostka TES 246 VERSUS",
   },
   {
-    id: 5,
+    id: 7,
     open: false,
     photos: bt_tes,
     title: "TES 678 BT-TES 720",
     alt: "Jednostki TES 678 oraz BT-TES 720",
   },
   {
-    id: 6,
+    id: 8,
     open: false,
     photos: master,
     title: "TES 550 MASTER",
     alt: "Jednostka TES 550 MASTER",
   },
   {
-    id: 7,
+    id: 9,
     open: false,
     photos: diffrent,
     title: false,
