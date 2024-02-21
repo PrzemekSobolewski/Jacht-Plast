@@ -93,7 +93,7 @@ const elements = [
     id: 1,
     open: false,
     photos: laguna,
-    title: "LAGUNA",
+    title: "LAGUNA 700 Cruiser",
     alt: "Jednostka Laguna",
   },
   {
