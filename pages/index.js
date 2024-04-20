@@ -4,7 +4,9 @@ import Layout from "../components/Layout";
 import exteriorImage from "../assets/images/about_us/hala_out.webp";
 import interiorImage from "../assets/images/about_us/hala_in.webp";
 import ramImage from "../assets/images/about_us/ram.webp";
-import transortImage from "../assets/images/transport/20190425_191434.webp";
+import transortImage from "../assets/images/about_us/hala_exterior.jpeg";
+import transortImage2 from "../assets/images/about_us/transport-vehicle.jpeg";
+import video from "../assets/images/about_us/transport-video.mp4";
 import { useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
 const JachtSlider = dynamic(() => import("../components/JachtSlider"));
@@ -77,7 +79,7 @@ const Home = () => {
       <div className={"about_us_div"}>
         <div className={"about_us_first"}>
           <img
-            src={exteriorImage}
+            src={transortImage}
             className={"about_us_photo"}
             alt={"Siedziba firmy Jacht-Plast"}
           />
@@ -93,7 +95,7 @@ const Home = () => {
         </div>
         <div className={"about_us_first"}>
           <img
-            src={transortImage}
+            src={transortImage2}
             className={"about_us_photo"}
             alt={"Transport łodzi motorowej przy użyciu naczepy"}
           />
@@ -106,6 +108,11 @@ const Home = () => {
             className={"about_us_photo"}
             alt={"Produkcja łodzi żaglowych przy użyciu tradycyjnych metod"}
           />
+        </div>
+        <div className={"about_us_first"}>
+        <video muted autoPlay={true} loop style={{width: '100%'}}>
+          <source src={video} type="video/mp4"/>
+        </video>
         </div>
       </div>
     </Layout>

@@ -7,7 +7,20 @@ const withPlugins = require('next-compose-plugins');
 const nextConfig = {
     enableSvg: true,
     poweredByHeader: false,
+   
     webpack(config, {isServer}) {
+        const prefix =  config.basePath || '';
+        config.module.rules.push({
+          test: /\.mp4$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              publicPath: `${prefix}/_next/static/media/`,
+              outputPath: `${isServer ? '../' : ''}static/media/`,
+              name: '[name].[hash].[ext]',
+            },
+          }],
+        });
         config.resolve.alias['components'] = path.join(__dirname, 'components')
         config.resolve.alias['static'] = path.join(__dirname, 'static')
         if (isServer) {

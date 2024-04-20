@@ -3,7 +3,7 @@ import Expand from "react-expand-animated";
 import Layout from "../components/Layout";
 import Images from "../components/Images";
 import Gallery from "../components/Gallery";
-import { IoIosArrowDropdown, IoIosCheckmark } from "react-icons/io";
+import { IoIosCheckmark } from "react-icons/io";
 import Fade from "react-reveal/Fade";
 import * as actions from "../redux/actions/modalActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,7 @@ const images = importAll(
 );
 
 const Transport = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const dispatch = useDispatch();
   const switchState = useSelector((state) => state.switch);
 
@@ -114,14 +114,7 @@ const Transport = () => {
           }}
         />
       </div>
-      <div className={"transportLine"}>
-        <span
-          onClick={() => setOpen(!open)}
-          className={!open ? "transportIcon" : "transportIconActive"}
-        >
-          <IoIosArrowDropdown />
-        </span>
-      </div>
+
       <Expand open={open} className={"transportExpand"} duration={500}>
         <div className={"transport-gallery"}>
           <Gallery>{images.map(mapToImage)}</Gallery>
