@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 import * as actions from "../redux/actions/modalActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet";
-import headerImageSrc from "../assets/images/slides/transport_header.webp";
+import headerImageSrc from "../assets/images/slides/1-transport.jpeg";
 import headerImageSecondSrc from "../assets/images/slides/transport_header_second.webp";
 import ImagesDescService from "../config/imagesDesc.service";
 
