@@ -37,7 +37,7 @@ export const GTMContainer = () => (
         {
           type: "text/javascript",
           innerHTML:
-            'gtag("event", "conversion", {"send_to": "AW-409941666/9L4cCLmYrvoBEKLtvMMB"});',
+            'gtag("event", "conversion", {"send_to": "AW-16661980602/TVtLCOGw3McZELrLhok-"});',
         },
       ]}
     />
