@@ -28,7 +28,7 @@ export const GTMContainer = () => (
         {
           type: "text/javascript",
           innerHTML:
-            'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "AW-409941666");',
+            'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "AW-16661980602");',
         },
       ]}
     />
